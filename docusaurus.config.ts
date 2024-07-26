@@ -73,7 +73,7 @@ const config: Config = {
           label: 'Documentation',
         },
         {
-          href: 'https://github.com/UNIMIBInside/mantistable-ui',
+          href: 'https://github.com/UNIMIBInside/mammotab',
           label: 'GitHub',
           position: 'right',
         },
