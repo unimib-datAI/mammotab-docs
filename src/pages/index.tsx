@@ -52,7 +52,7 @@ export default function Home(): JSX.Element {
           <ul className="relative border-s border-gray-900 dark:border-gray-200 max-w-screen-lg mx-12 list-none">
             <div className="absolute top-0 left-0 w-[1px] h-full bg-dorange dark:bg-lorange"></div>
             <li className="mb-10 ms-6">
-              <span className="absolute flex items-center justify-center w-6 h-6 bg-dorange rounded-full -start-3  dark:bg-lorange"></span>
+              <span className="absolute flex items-center justify-center w-6 h-6 bg-dorange rounded-full -start-3 dark:bg-lorange"></span>
               <p className="pt-1.5 mb-1 text-lg uppercase leading-none text-gray-500">
                 Mammotab 2024
               </p>
@@ -65,8 +65,9 @@ export default function Home(): JSX.Element {
                 are derived from Wikidata v. 20240401 and follow the structure
                 used in the
                 <a href="https://sem-tab-challenge.github.io/2024/tracks/sti-vs-llm-track.html">
+                  {" "}
                   SemTab challenge.
-                </a>
+                </a>{" "}
                 All tables are stored in a separate CSV file, where each line in
                 the file corresponds to a row in the table. Target columns for
                 annotation, CTA, and CEA are saved in separate CSV files.
@@ -197,7 +198,7 @@ export default function Home(): JSX.Element {
               </p>
               <p className="mb-4 text-md leading-none ">
                 <a href="https://drive.google.com/drive/folders/1csBiqgPQXdDnwI1LcfBBwe3vzf9ujpTW">
-                  Dataset
+                  Dataset{" "}
                 </a>
                 511 tables, 9741 mentions.
               </p>
