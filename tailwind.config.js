@@ -18,6 +18,8 @@ module.exports = {
       colors: {
       dorange: "#973F00",
       lorange: "#E99E57",
+      bronze: "#BE682B",
+      grizzly: "#804A14",
       },
     },
   },

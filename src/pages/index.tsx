@@ -2,14 +2,19 @@ import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
 
 import styles from "./index.module.css";
-import { Check, ArrowRight } from "lucide-react";
+import { Check, ArrowRight, ArrowDownToLine, Github } from "lucide-react";
 
 export default function Home(): JSX.Element {
   const { siteConfig } = useDocusaurusContext();
   return (
     <Layout title={`Hello from ${siteConfig.title}`} description="MammoTab.">
       <main>
-        <section className="mx-auto max-w-6xl">
+        <img
+          src="/mammotab-docs/img/bblurrymam.svg"
+          className="absolute opacity-10 -top-[45rem]"
+        />
+
+        <section className="mx-auto max-w-6xl relative z-10">
           <div className="mx-4 place-content-center lg:gap-12 xl:gap-12 lg:grid-cols-12 pb-12 pt-12">
             <div className="justify-center flex flex-col md:flex-row max-w-8xl gap-12 pb-2 mx-auto">
               <div className="place-content-center max-w-lg pl-2">
@@ -68,16 +73,16 @@ export default function Home(): JSX.Element {
               </p>
               <a
                 href="#"
-                className="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:outline-none focus:ring-gray-100 focus:text-blue-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-700"
+                className="cursor-not-allowed active:pointer-events-none text-center inline-flex items-center border-none dark:bg-lorange dark:text-grey-900 text-white font-sm rounded-lg text-sm px-5 py-2.5 me-2 mb-2 bg-dorange font-semibold"
               >
-                Download
+                Download <ArrowDownToLine className="ml-2 h-5 w-5" />{" "}
               </a>
 
               <div className="space-y-4 mt-8">
                 <div className="grid grid-cols-1 lg:grid-cols-5 gap-5">
-                  <div className="items-center bg-dorange dark:bg-lorange py-10 rounded-lg">
+                  <div className="items-center bg-bronze dark:bg-grizzly py-10 rounded-lg">
                     <div className="flex flex-col items-center">
-                      <span className="font-semibold text-3xl text-white">
+                      <span className="font-semibold text-2xl text-white">
                         888.372
                       </span>
                       <span className="font-semibold text-gray-200">
@@ -85,9 +90,9 @@ export default function Home(): JSX.Element {
                       </span>
                     </div>{" "}
                   </div>
-                  <div className="items-center bg-dorange dark:bg-lorange py-10 rounded-lg">
+                  <div className="items-center bg-bronze dark:bg-grizzly py-10 rounded-lg">
                     <div className="flex flex-col items-center">
-                      <span className="font-semibold text-3xl text-white">
+                      <span className="font-semibold text-2xl text-white">
                         40.702.248
                       </span>
                       <span className="font-semibold text-gray-200">
@@ -95,9 +100,9 @@ export default function Home(): JSX.Element {
                       </span>
                     </div>{" "}
                   </div>{" "}
-                  <div className="items-center bg-dorange dark:bg-lorange py-10 rounded-lg">
+                  <div className="items-center bg-bronze dark:bg-grizzly  py-10 rounded-lg">
                     <div className="flex flex-col items-center">
-                      <span className="font-semibold text-3xl text-white">
+                      <span className="font-semibold text-2xl text-white">
                         4.937.828
                       </span>
                       <span className="font-semibold text-gray-200">
@@ -105,9 +110,9 @@ export default function Home(): JSX.Element {
                       </span>
                     </div>
                   </div>
-                  <div className="items-center bg-dorange dark:bg-lorange py-10 rounded-lg">
+                  <div className="items-center bg-bronze dark:bg-grizzly py-10 rounded-lg">
                     <div className="flex flex-col items-center">
-                      <span className="font-semibold text-3xl text-white">
+                      <span className="font-semibold text-2xl text-white">
                         24.193
                       </span>
                       <span className="font-semibold text-gray-200">
@@ -115,16 +120,16 @@ export default function Home(): JSX.Element {
                       </span>
                     </div>{" "}
                   </div>{" "}
-                  <div className="items-center bg-dorange dark:bg-lorange py-10 rounded-lg">
+                  <div className="items-center bg-bronze dark:bg-grizzly py-10 rounded-lg">
                     <div className="flex flex-col items-center">
-                      <span className="font-semibold text-3xl text-white">
+                      <span className="font-semibold text-2xl text-white">
                         4.121.995
                       </span>
                       <span className="font-semibold text-gray-200">NIL</span>
                     </div>
                   </div>
                 </div>
-                <div className="items-center bg-dorange dark:bg-lorange py-10 rounded-lg">
+                <div className="items-center bg-bronze dark:bg-grizzly py-10 rounded-lg">
                   <div className="grid grid-cols-2 lg:grid-cols-6 gap-4">
                     <div className="flex flex-col items-center">
                       <span className="font-semibold text-xl text-white">
@@ -253,24 +258,33 @@ export default function Home(): JSX.Element {
                   </tbody>{" "}
                 </table>{" "}
               </div>
-              <div className="flex flex-col gap-4 md:flex-row">
-                <a
-                  href="#"
-                  className="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:outline-none focus:ring-gray-100 focus:text-blue-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-700"
-                >
-                  Find on Zenodo
-                </a>
-                <a
-                  href="#"
-                  className="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:outline-none focus:ring-gray-100 focus:text-blue-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-700"
-                >
-                  Find on Github
-                </a>
+              <div className="flex flex-col gap-4 md:flex-row mt-4">
+                <div>
+                  <a
+                    href="#"
+                    className="relative inline-flex justify-center items-center px-4 py-2 text-sm font-bold rounded-lg cursor-not-allowed active:pointer-events-none dark:bg-lorange dark:text-grey-900 text-white font-sm me-2 mb-2 bg-dorange"
+                  >
+                    Find on Zenodo{" "}
+                    <img
+                      src="/mammotab-docs/img/zenodowhite.svg"
+                      className="ml-2 h-5 w-5"
+                      alt="zenodo"
+                    />
+                  </a>
+                </div>
+                <div>
+                  <a
+                    href="#"
+                    className="relative inline-flex justify-center items-center px-4 py-2 text-sm font-bold rounded-lg  dark:bg-lorange dark:text-grey-900 text-white font-sm me-2 mb-2 bg-dorange"
+                  >
+                    Find on Github <Github className="ml-2 h-5 w-5" />{" "}
+                  </a>
+                </div>
               </div>
             </li>
 
             <li className="mb-10 ms-6">
-              <span className="absolute flex items-center justify-center w-6 h-6 bg-dorange rounded-full -start-3  dark:bg-lorange"></span>
+              <span className="absolute flex items-center justify-center w-6 h-6 bg-dorange dark:bg-lorange rounded-full -start-3"></span>
               <p className="mb-1 text-lg uppercase leading-none text-gray-500">
                 Upgrades
               </p>
@@ -301,7 +315,7 @@ export default function Home(): JSX.Element {
             </li>
 
             <li className="mb-10 ms-6">
-              <span className="absolute flex items-center justify-center w-6 h-6 bg-dorange rounded-full -start-3  dark:bg-lorange"></span>
+              <span className="absolute flex items-center justify-center w-6 h-6 bg-dorange dark:bg-lorange rounded-full -start-3"></span>
               <p className=" mb-1 text-lg uppercase leading-none text-gray-500">
                 Mammotab 2022
               </p>
@@ -315,16 +329,16 @@ export default function Home(): JSX.Element {
               </p>
               <a
                 href="#"
-                className="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:outline-none focus:ring-gray-100 focus:text-blue-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-700"
+                className="text-center inline-flex items-center border-none dark:bg-lorange dark:text-grey-900 text-white font-sm rounded-lg text-sm px-5 py-2.5 me-2 mb-2 bg-dorange font-semibold"
               >
-                Download
+                Download <ArrowDownToLine className="ml-2 h-5 w-5" />{" "}
               </a>
 
               <div className="space-y-4 mt-8">
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
-                  <div className="items-center bg-dorange dark:bg-lorange py-10 rounded-lg">
+                  <div className="items-center bg-bronze dark:bg-grizzly  py-10 rounded-lg">
                     <div className="flex flex-col items-center">
-                      <span className="font-semibold text-3xl text-white">
+                      <span className="font-semibold text-2xl text-white">
                         980.254
                       </span>
                       <span className="font-semibold text-gray-200">
@@ -332,9 +346,9 @@ export default function Home(): JSX.Element {
                       </span>
                     </div>{" "}
                   </div>
-                  <div className="items-center bg-dorange dark:bg-lorange py-10 rounded-lg">
+                  <div className="items-center bg-bronze dark:bg-grizzly  py-10 rounded-lg">
                     <div className="flex flex-col items-center">
-                      <span className="font-semibold text-3xl text-white">
+                      <span className="font-semibold text-2xl text-white">
                         43.661.125
                       </span>
                       <span className="font-semibold text-gray-200">
@@ -342,9 +356,9 @@ export default function Home(): JSX.Element {
                       </span>
                     </div>{" "}
                   </div>{" "}
-                  <div className="items-center bg-dorange dark:bg-lorange py-10 rounded-lg">
+                  <div className="items-center bg-bronze dark:bg-grizzly  py-10 rounded-lg">
                     <div className="flex flex-col items-center">
-                      <span className="font-semibold text-3xl text-white">
+                      <span className="font-semibold text-2xl text-white">
                         5.541.283{" "}
                       </span>
                       <span className="font-semibold text-gray-200">
@@ -353,7 +367,7 @@ export default function Home(): JSX.Element {
                     </div>
                   </div>
                 </div>
-                <div className="items-center bg-dorange dark:bg-lorange py-10 rounded-lg">
+                <div className="items-center bg-bronze dark:bg-grizzly  py-10 rounded-lg">
                   <div className="grid grid-cols-2 lg:grid-cols-6 gap-4">
                     <div className="flex flex-col items-center">
                       <span className="font-semibold text-xl text-white">
@@ -510,18 +524,27 @@ export default function Home(): JSX.Element {
                 </div>
               </div>
               <div className="flex flex-col gap-4 md:flex-row">
-                <a
-                  href="#"
-                  className="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:outline-none focus:ring-gray-100 focus:text-blue-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-700"
-                >
-                  Find on Zenodo
-                </a>
-                <a
-                  href="#"
-                  className="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:outline-none focus:ring-gray-100 focus:text-blue-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-700"
-                >
-                  Find on Github
-                </a>
+                <div>
+                  <a
+                    href="#"
+                    className="relative inline-flex justify-center items-center px-4 py-2 text-sm font-bold rounded-lg  dark:bg-lorange dark:text-grey-900 text-white font-sm me-2 mb-2 bg-dorange"
+                  >
+                    Find on Zenodo
+                    <img
+                      src="/mammotab-docs/img/zenodowhite.svg"
+                      className="ml-2 h-5 w-5"
+                      alt="zenodo"
+                    />
+                  </a>
+                </div>
+                <div>
+                  <a
+                    href="#"
+                    className="relative inline-flex justify-center items-center px-4 py-2 text-sm font-bold rounded-lg dark:bg-lorange dark:text-grey-900 text-white font-sm me-2 mb-2 bg-dorange"
+                  >
+                    Find on Github <Github className="ml-2 h-5 w-5" />{" "}
+                  </a>
+                </div>
               </div>
             </li>
           </ul>
