@@ -29,7 +29,7 @@ module.exports = {
       darkvanilla: "#E1D9D0",
       desertsand: "#E6D6CA",
       terracotta: "#BE4F00",
-      brick: "#682A00",
+      brick: "#473020",
       },
     },
   },
