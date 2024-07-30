@@ -205,7 +205,7 @@ export default function Home(): JSX.Element {
                 511 tables, 9741 mentions.
               </p>
               <div className="overflow-x-auto max-w-full">
-                <table className="text-sm">
+                <table className="text-sm w-fit rounded-lg">
                   <thead className="text-xs uppercase dark:bg-umber bg-paletaupe">
                     <tr>
                       <th scope="col" className="p-3 min-w-40">
@@ -439,7 +439,7 @@ export default function Home(): JSX.Element {
               </p>
               <div className="overflow-x-auto rounded-lg max-w-full">
                 <div className="inline-block rounded-lg overflow-x-auto max-w-full">
-                  <table className="text-sm text-left rtl:text-right">
+                  <table className="text-sm text-left rtl:text-right w-fit rounded-lg">
                     <thead className="text-xs uppercase dark:bg-umber bg-paletaupe">
                       <tr>
                         <th scope="col" className="p-3 min-w-40">
