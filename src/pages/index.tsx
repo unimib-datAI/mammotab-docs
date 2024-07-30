@@ -4,6 +4,8 @@ import Layout from "@theme/Layout";
 import styles from "./index.module.css";
 import { Check, ArrowRight } from "lucide-react";
 
+import { Tooltip } from "flowbite-react";
+
 export default function Home(): JSX.Element {
   const { siteConfig } = useDocusaurusContext();
   return (
@@ -17,7 +19,6 @@ export default function Home(): JSX.Element {
                   Mammotab
                 </h1>
                 <p className=" text-dgBackground dark:text-white sm:text-xl lg:mb-8 md:text-xl lg:text-2xl">
-                  {" "}
                   MammoTab, is a dataset composed of 1M Wikipedia tables
                   extracted from over 20M Wikipedia pages and annotated through
                   Wikidata. The lack of this kind of datasets in the
@@ -30,7 +31,7 @@ export default function Home(): JSX.Element {
                   href="/mammotab-docs/docs/introduction"
                   className="text-center inline-flex items-center border-none dark:bg-lorange dark:text-grey-900 text-white font-sm rounded-lg text-sm px-5 py-2.5 me-2 mb-2 bg-dorange font-semibold"
                 >
-                  Learn more <ArrowRight className="ml-2 h-5 w-5" />{" "}
+                  Learn more <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
               </div>
               <img
@@ -57,21 +58,26 @@ export default function Home(): JSX.Element {
                 This version was created for SemTab 2024, it comes from the
                 preliminary version of V2. The annotations within MammoTab 24
                 are derived from Wikidata v. 20240401 and follow the structure
-                used in the{" "}
+                used in the
                 <a href="https://sem-tab-challenge.github.io/2024/tracks/sti-vs-llm-track.html">
-                  {" "}
-                  SemTab challenge.{" "}
+                  SemTab challenge.
                 </a>
                 All tables are stored in a separate CSV file, where each line in
                 the file corresponds to a row in the table. Target columns for
                 annotation, CTA, and CEA are saved in separate CSV files.
               </p>
-              <a
-                href="#"
-                className="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:outline-none focus:ring-gray-100 focus:text-blue-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-700"
+              <Tooltip
+                content="Coming soon after SemTab2024"
+                trigger="hover"
+                placement="top"
               >
-                Download
-              </a>
+                <a
+                  href="#"
+                  className="active:pointer-events-none cursor-not-allowed inline-flex items-center px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:outline-none focus:ring-gray-100 focus:text-blue-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-700"
+                >
+                  Download
+                </a>
+              </Tooltip>
 
               <div className="space-y-4 mt-8">
                 <div className="grid grid-cols-1 lg:grid-cols-5 gap-5">
@@ -83,7 +89,7 @@ export default function Home(): JSX.Element {
                       <span className="font-semibold text-gray-200">
                         N. of tables
                       </span>
-                    </div>{" "}
+                    </div>
                   </div>
                   <div className="items-center bg-dorange dark:bg-lorange py-10 rounded-lg">
                     <div className="flex flex-col items-center">
@@ -93,8 +99,8 @@ export default function Home(): JSX.Element {
                       <span className="font-semibold text-gray-200">
                         Entities
                       </span>
-                    </div>{" "}
-                  </div>{" "}
+                    </div>
+                  </div>
                   <div className="items-center bg-dorange dark:bg-lorange py-10 rounded-lg">
                     <div className="flex flex-col items-center">
                       <span className="font-semibold text-3xl text-white">
@@ -113,8 +119,8 @@ export default function Home(): JSX.Element {
                       <span className="font-semibold text-gray-200">
                         Properties
                       </span>
-                    </div>{" "}
-                  </div>{" "}
+                    </div>
+                  </div>
                   <div className="items-center bg-dorange dark:bg-lorange py-10 rounded-lg">
                     <div className="flex flex-col items-center">
                       <span className="font-semibold text-3xl text-white">
@@ -133,7 +139,7 @@ export default function Home(): JSX.Element {
                       <span className="font-semibold text-gray-200">
                         Total rows
                       </span>
-                    </div>{" "}
+                    </div>
                     <div className="flex flex-col items-center">
                       <span className="font-semibold text-xl text-white">
                         4
@@ -141,7 +147,7 @@ export default function Home(): JSX.Element {
                       <span className="font-semibold text-gray-200">
                         Min rows
                       </span>
-                    </div>{" "}
+                    </div>
                     <div className="flex flex-col items-center">
                       <span className="font-semibold text-xl text-white">
                         24.193
@@ -149,7 +155,7 @@ export default function Home(): JSX.Element {
                       <span className="font-semibold text-gray-200">
                         Max rows
                       </span>
-                    </div>{" "}
+                    </div>
                     <div className="flex flex-col items-center">
                       <span className="font-semibold text-xl text-white">
                         5.030.655
@@ -157,7 +163,7 @@ export default function Home(): JSX.Element {
                       <span className="font-semibold text-gray-200">
                         Total cols
                       </span>
-                    </div>{" "}
+                    </div>
                     <div className="flex flex-col items-center">
                       <span className="font-semibold text-xl text-white">
                         1
@@ -165,7 +171,7 @@ export default function Home(): JSX.Element {
                       <span className="font-semibold text-gray-200">
                         Min cols
                       </span>
-                    </div>{" "}
+                    </div>
                     <div className="flex flex-col items-center">
                       <span className="font-semibold text-xl text-white">
                         1.000
@@ -186,26 +192,22 @@ export default function Home(): JSX.Element {
               </p>
               <p className="mb-4 text-md leading-none ">
                 <a href="https://drive.google.com/drive/folders/1csBiqgPQXdDnwI1LcfBBwe3vzf9ujpTW">
-                  {" "}
                   Dataset
-                </a>{" "}
+                </a>
                 511 tables, 9741 mentions.
               </p>
               <div className="overflow-x-auto rounded-lg max-w-full">
                 <table className="text-sm text-tableText">
                   <thead className="text-xs text-tableText uppercase bg-tableTop">
-                    {" "}
                     <tr>
                       <th scope="col" className="p-3 min-w-40">
-                        {" "}
-                        APPROACHES{" "}
+                        APPROACHES
                       </th>
                       <th scope="col" className="p-3 min-w-24">
-                        {" "}
-                        CEA{" "}
-                      </th>{" "}
+                        CEA
+                      </th>
                     </tr>
-                  </thead>{" "}
+                  </thead>
                   <tbody className="text-foreground">
                     <tr className="even:bg-tableBottom odd:bg-tableBottom/70">
                       <th
@@ -219,8 +221,8 @@ export default function Home(): JSX.Element {
                           Zang 2023
                         </a>
                       </th>
-                      <td className="p-3 min-w-24">0.86</td>{" "}
-                    </tr>{" "}
+                      <td className="p-3 min-w-24">0.86</td>
+                    </tr>
                     <tr className="even:bg-tableBottom odd:bg-tableBottom/70">
                       <th
                         scope="row"
@@ -233,8 +235,8 @@ export default function Home(): JSX.Element {
                           Deng 2022
                         </a>
                       </th>
-                      <td className="p-3 min-w-24">0.31</td>{" "}
-                    </tr>{" "}
+                      <td className="p-3 min-w-24">0.31</td>
+                    </tr>
                     <tr className="even:bg-tableBottom odd:bg-tableBottom/70">
                       <th
                         scope="row"
@@ -244,25 +246,30 @@ export default function Home(): JSX.Element {
                           href="https://www.computer.org/csdl/proceedings-article/wi-iat/2023/091800a142/1T0o1Fv6jV6"
                           target="_blank"
                         >
-                          {" "}
                           Avogadro 2023
                         </a>
-                      </th>{" "}
-                      <td className="p-3 min-w-24">0.62</td>{" "}
-                    </tr>{" "}
-                  </tbody>{" "}
-                </table>{" "}
+                      </th>
+                      <td className="p-3 min-w-24">0.62</td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
-              <div className="flex flex-col gap-4 md:flex-row">
-                <a
-                  href="#"
-                  className="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:outline-none focus:ring-gray-100 focus:text-blue-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-700"
+              <div className="flex flex-col items-start gap-4 md:flex-row">
+                <Tooltip
+                  content="Coming soon after SemTab2024"
+                  trigger="hover"
+                  placement="top"
                 >
-                  Find on Zenodo
-                </a>
+                  <a
+                    href="#"
+                    className="active:pointer-events-none cursor-not-allowed inline-flex items-center px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:outline-none focus:ring-gray-100 focus:text-blue-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-700"
+                  >
+                    Find on Zenodo
+                  </a>
+                </Tooltip>
                 <a
                   href="#"
-                  className="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:outline-none focus:ring-gray-100 focus:text-blue-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-700"
+                  className="items-center px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:outline-none focus:ring-gray-100 focus:text-blue-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-700"
                 >
                   Find on Github
                 </a>
@@ -282,7 +289,7 @@ export default function Home(): JSX.Element {
                     className="aspect-square shrink-0 w-14 h-14"
                   />
                   <div>
-                    <p className="ml-5">Greater accuracy in annotations</p>{" "}
+                    <p className="ml-5">Greater accuracy in annotations</p>
                   </div>
                 </div>
                 <div className="flex gap-4 mt-8 items-center">
@@ -294,7 +301,7 @@ export default function Home(): JSX.Element {
                   <div>
                     <p className="ml-5">
                       New annotations for CPA (Columns Predicate Annotations)
-                    </p>{" "}
+                    </p>
                   </div>
                 </div>
               </div>
@@ -330,7 +337,7 @@ export default function Home(): JSX.Element {
                       <span className="font-semibold text-gray-200">
                         N. of tables
                       </span>
-                    </div>{" "}
+                    </div>
                   </div>
                   <div className="items-center bg-dorange dark:bg-lorange py-10 rounded-lg">
                     <div className="flex flex-col items-center">
@@ -340,12 +347,12 @@ export default function Home(): JSX.Element {
                       <span className="font-semibold text-gray-200">
                         Entities
                       </span>
-                    </div>{" "}
-                  </div>{" "}
+                    </div>
+                  </div>
                   <div className="items-center bg-dorange dark:bg-lorange py-10 rounded-lg">
                     <div className="flex flex-col items-center">
                       <span className="font-semibold text-3xl text-white">
-                        5.541.283{" "}
+                        5.541.283
                       </span>
                       <span className="font-semibold text-gray-200">
                         Classes
@@ -362,7 +369,7 @@ export default function Home(): JSX.Element {
                       <span className="font-semibold text-gray-200">
                         Total rows
                       </span>
-                    </div>{" "}
+                    </div>
                     <div className="flex flex-col items-center">
                       <span className="font-semibold text-xl text-white">
                         4
@@ -370,7 +377,7 @@ export default function Home(): JSX.Element {
                       <span className="font-semibold text-gray-200">
                         Min rows
                       </span>
-                    </div>{" "}
+                    </div>
                     <div className="flex flex-col items-center">
                       <span className="font-semibold text-xl text-white">
                         14.436
@@ -378,7 +385,7 @@ export default function Home(): JSX.Element {
                       <span className="font-semibold text-gray-200">
                         Max rows
                       </span>
-                    </div>{" "}
+                    </div>
                     <div className="flex flex-col items-center">
                       <span className="font-semibold text-xl text-white">
                         5.638.191
@@ -386,7 +393,7 @@ export default function Home(): JSX.Element {
                       <span className="font-semibold text-gray-200">
                         Total cols
                       </span>
-                    </div>{" "}
+                    </div>
                     <div className="flex flex-col items-center">
                       <span className="font-semibold text-xl text-white">
                         1
@@ -394,7 +401,7 @@ export default function Home(): JSX.Element {
                       <span className="font-semibold text-gray-200">
                         Min cols
                       </span>
-                    </div>{" "}
+                    </div>
                     <div className="flex flex-col items-center">
                       <span className="font-semibold text-xl text-white">
                         1.0100.012
@@ -412,104 +419,89 @@ export default function Home(): JSX.Element {
               </p>
               <p className="mb-4 text-md leading-none ">
                 <a href="https://ceur-ws.org/Vol-3103/paper8.pdf">
-                  {" "}
                   Mtab performance
-                </a>{" "}
+                </a>
               </p>
               <div className="overflow-x-auto rounded-lg max-w-full">
                 <div className="inline-block rounded-lg overflow-x-auto max-w-full">
-                  {" "}
                   <table className="text-sm text-left rtl:text-right text-tableText">
-                    {" "}
                     <thead className="text-xs text-tableText uppercase bg-tableTop">
-                      {" "}
                       <tr>
-                        {" "}
                         <th scope="col" className="p-3 min-w-40">
-                          {" "}
-                          DATASET{" "}
-                        </th>{" "}
+                          DATASET
+                        </th>
                         <th scope="col" className="p-3 min-w-24">
-                          {" "}
-                          CEA{" "}
-                        </th>{" "}
+                          CEA
+                        </th>
                         <th scope="col" className="p-3 min-w-24">
-                          {" "}
-                          CTA{" "}
-                        </th>{" "}
+                          CTA
+                        </th>
                         <th scope="col" className="p-3 min-w-24">
-                          {" "}
-                          CPA{" "}
-                        </th>{" "}
-                      </tr>{" "}
-                    </thead>{" "}
+                          CPA
+                        </th>
+                      </tr>
+                    </thead>
                     <tbody className="text-foreground">
-                      {" "}
                       <tr className="even:bg-tableBottom odd:bg-tableBottom/70">
-                        {" "}
                         <th
                           scope="row"
                           className="p-3 min-w-40 font-medium whitespace-nowrap"
                         >
                           Semtab2019 R4
-                        </th>{" "}
-                        <td className="p-3 min-w-24"> 0.983 </td>{" "}
-                        <td className="p-3 min-w-24"> - </td>{" "}
-                        <td className="p-3 min-w-24"> 0.832 </td>{" "}
-                      </tr>{" "}
+                        </th>
+                        <td className="p-3 min-w-24"> 0.983 </td>
+                        <td className="p-3 min-w-24"> - </td>
+                        <td className="p-3 min-w-24"> 0.832 </td>
+                      </tr>
                       <tr className="even:bg-tableBottom odd:bg-tableBottom/70">
-                        {" "}
                         <th
                           scope="row"
                           className="p-3 min-w-40 font-medium whitespace-nowrap"
                         >
                           Semtab2020 R4
-                        </th>{" "}
-                        <td className="p-3 min-w-24"> 0.907 </td>{" "}
-                        <td className="p-3 min-w-24"> 0.993 </td>{" "}
-                        <td className="p-3 min-w-24"> 0.997 </td>{" "}
-                      </tr>{" "}
+                        </th>
+                        <td className="p-3 min-w-24"> 0.907 </td>
+                        <td className="p-3 min-w-24"> 0.993 </td>
+                        <td className="p-3 min-w-24"> 0.997 </td>
+                      </tr>
                       <tr className="even:bg-tableBottom odd:bg-tableBottom/70">
-                        {" "}
                         <th
                           scope="row"
                           className="p-3 min-w-40 font-medium whitespace-nowrap"
                         >
                           Semtab2020 2T
-                        </th>{" "}
-                        <td className="p-3 min-w-24"> 0.907 </td>{" "}
-                        <td className="p-3 min-w-24"> 0.728 </td>{" "}
-                        <td className="p-3 min-w-24"> - </td>{" "}
-                      </tr>{" "}
+                        </th>
+                        <td className="p-3 min-w-24"> 0.907 </td>
+                        <td className="p-3 min-w-24"> 0.728 </td>
+                        <td className="p-3 min-w-24"> - </td>
+                      </tr>
                       <tr className="even:bg-tableBottom odd:bg-tableBottom/70">
-                        {" "}
                         <th
                           scope="row"
                           className="p-3 min-w-40 font-medium whitespace-nowrap"
                         >
                           Semtab2021 R3
-                        </th>{" "}
-                        <td className="p-3 min-w-24"> 0.968 </td>{" "}
-                        <td className="p-3 min-w-24"> 0.984 </td>{" "}
-                        <td className="p-3 min-w-24"> 0.993 </td>{" "}
-                      </tr>{" "}
+                        </th>
+                        <td className="p-3 min-w-24"> 0.968 </td>
+                        <td className="p-3 min-w-24"> 0.984 </td>
+                        <td className="p-3 min-w-24"> 0.993 </td>
+                      </tr>
                       <tr className="even:bg-tableBottom odd:bg-tableBottom/70">
-                        {" "}
                         <th
                           scope="row"
                           className="p-3 min-w-40 font-medium whitespace-nowrap"
                         >
                           MammoTab 22
-                        </th>{" "}
-                        <td className="p-3 min-w-24"> 0.853 </td>{" "}
-                        <td className="p-3 min-w-24"> 0.659 </td>{" "}
-                        <td className="p-3 min-w-24"> - </td>{" "}
-                      </tr>{" "}
-                    </tbody>{" "}
-                  </table>{" "}
+                        </th>
+                        <td className="p-3 min-w-24"> 0.853 </td>
+                        <td className="p-3 min-w-24"> 0.659 </td>
+                        <td className="p-3 min-w-24"> - </td>
+                      </tr>
+                    </tbody>
+                  </table>
                 </div>
               </div>
-              <div className="flex flex-col gap-4 md:flex-row">
+              <div className="flex flex-col items-start gap-4 md:flex-row">
                 <a
                   href="#"
                   className="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:outline-none focus:ring-gray-100 focus:text-blue-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-700"
