@@ -2,7 +2,7 @@ import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
 
 import styles from "./index.module.css";
-import { Check, ArrowRight } from "lucide-react";
+import { Check, ArrowRight, ArrowDownToLine, Github } from "lucide-react";
 
 import { Tooltip } from "flowbite-react";
 
@@ -11,7 +11,12 @@ export default function Home(): JSX.Element {
   return (
     <Layout title={`Hello from ${siteConfig.title}`} description="MammoTab.">
       <main>
-        <section className="mx-auto max-w-6xl">
+        <img
+          src="/mammotab-docs/img/bblurrymam.svg"
+          className="absolute opacity-10 -top-[45rem]"
+        />
+
+        <section className="mx-auto max-w-6xl relative z-10">
           <div className="mx-4 place-content-center lg:gap-12 xl:gap-12 lg:grid-cols-12 pb-12 pt-12">
             <div className="justify-center flex flex-col md:flex-row max-w-8xl gap-12 pb-2 mx-auto">
               <div className="place-content-center max-w-lg pl-2">
@@ -73,17 +78,17 @@ export default function Home(): JSX.Element {
               >
                 <a
                   href="#"
-                  className="active:pointer-events-none cursor-not-allowed inline-flex items-center px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:outline-none focus:ring-gray-100 focus:text-blue-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-700"
+                  className="cursor-not-allowed active:pointer-events-none text-center inline-flex items-center border-none dark:bg-lorange dark:text-grey-900 text-white font-sm rounded-lg text-sm px-5 py-2.5 me-2 mb-2 bg-dorange font-semibold"
                 >
-                  Download
+                  Download <ArrowDownToLine className="ml-2 h-5 w-5" />{" "}
                 </a>
               </Tooltip>
 
               <div className="space-y-4 mt-8">
                 <div className="grid grid-cols-1 lg:grid-cols-5 gap-5">
-                  <div className="items-center bg-dorange dark:bg-lorange py-10 rounded-lg">
+                  <div className="items-center bg-bronze dark:bg-grizzly py-10 rounded-lg">
                     <div className="flex flex-col items-center">
-                      <span className="font-semibold text-3xl text-white">
+                      <span className="font-semibold text-2xl text-white">
                         888.372
                       </span>
                       <span className="font-semibold text-gray-200">
@@ -91,9 +96,9 @@ export default function Home(): JSX.Element {
                       </span>
                     </div>
                   </div>
-                  <div className="items-center bg-dorange dark:bg-lorange py-10 rounded-lg">
+                  <div className="items-center bg-bronze dark:bg-grizzly py-10 rounded-lg">
                     <div className="flex flex-col items-center">
-                      <span className="font-semibold text-3xl text-white">
+                      <span className="font-semibold text-2xl text-white">
                         40.702.248
                       </span>
                       <span className="font-semibold text-gray-200">
@@ -101,9 +106,9 @@ export default function Home(): JSX.Element {
                       </span>
                     </div>
                   </div>
-                  <div className="items-center bg-dorange dark:bg-lorange py-10 rounded-lg">
+                  <div className="items-center bg-bronze dark:bg-grizzly  py-10 rounded-lg">
                     <div className="flex flex-col items-center">
-                      <span className="font-semibold text-3xl text-white">
+                      <span className="font-semibold text-2xl text-white">
                         4.937.828
                       </span>
                       <span className="font-semibold text-gray-200">
@@ -111,9 +116,9 @@ export default function Home(): JSX.Element {
                       </span>
                     </div>
                   </div>
-                  <div className="items-center bg-dorange dark:bg-lorange py-10 rounded-lg">
+                  <div className="items-center bg-bronze dark:bg-grizzly py-10 rounded-lg">
                     <div className="flex flex-col items-center">
-                      <span className="font-semibold text-3xl text-white">
+                      <span className="font-semibold text-2xl text-white">
                         24.193
                       </span>
                       <span className="font-semibold text-gray-200">
@@ -121,16 +126,16 @@ export default function Home(): JSX.Element {
                       </span>
                     </div>
                   </div>
-                  <div className="items-center bg-dorange dark:bg-lorange py-10 rounded-lg">
+                  <div className="items-center bg-bronze dark:bg-grizzly py-10 rounded-lg">
                     <div className="flex flex-col items-center">
-                      <span className="font-semibold text-3xl text-white">
+                      <span className="font-semibold text-2xl text-white">
                         4.121.995
                       </span>
                       <span className="font-semibold text-gray-200">NIL</span>
                     </div>
                   </div>
                 </div>
-                <div className="items-center bg-dorange dark:bg-lorange py-10 rounded-lg">
+                <div className="items-center bg-bronze dark:bg-grizzly py-10 rounded-lg">
                   <div className="grid grid-cols-2 lg:grid-cols-6 gap-4">
                     <div className="flex flex-col items-center">
                       <span className="font-semibold text-xl text-white">
@@ -197,8 +202,8 @@ export default function Home(): JSX.Element {
                 511 tables, 9741 mentions.
               </p>
               <div className="overflow-x-auto rounded-lg max-w-full">
-                <table className="text-sm text-tableText">
-                  <thead className="text-xs text-tableText uppercase bg-tableTop">
+                <table className="text-sm  border-0">
+                  <thead className="text-xs uppercase dark:bg-umber bg-paletaupe">
                     <tr>
                       <th scope="col" className="p-3 min-w-40">
                         APPROACHES
@@ -209,7 +214,7 @@ export default function Home(): JSX.Element {
                     </tr>
                   </thead>
                   <tbody className="text-foreground">
-                    <tr className="even:bg-tableBottom odd:bg-tableBottom/70">
+                    <tr className="dark:even:bg-darksilver even:bg-darkvanilla dark:odd:bg-rocketmetallic odd:bg-desertsand">
                       <th
                         scope="row"
                         className="p-3 min-w-40 font-medium whitespace-nowrap"
@@ -223,7 +228,7 @@ export default function Home(): JSX.Element {
                       </th>
                       <td className="p-3 min-w-24">0.86</td>
                     </tr>
-                    <tr className="even:bg-tableBottom odd:bg-tableBottom/70">
+                    <tr className="dark:even:bg-darksilver even:bg-darkvanilla dark:odd:bg-rocketmetallic odd:bg-desertsand">
                       <th
                         scope="row"
                         className="p-3 min-w-40 font-medium whitespace-nowrap"
@@ -237,7 +242,7 @@ export default function Home(): JSX.Element {
                       </th>
                       <td className="p-3 min-w-24">0.31</td>
                     </tr>
-                    <tr className="even:bg-tableBottom odd:bg-tableBottom/70">
+                    <tr className="dark:even:bg-darksilver even:bg-darkvanilla dark:odd:bg-rocketmetallic odd:bg-desertsand">
                       <th
                         scope="row"
                         className="p-3 min-w-40 font-medium whitespace-nowrap"
@@ -254,7 +259,7 @@ export default function Home(): JSX.Element {
                   </tbody>
                 </table>
               </div>
-              <div className="flex flex-col items-start gap-4 md:flex-row">
+              <div className="flex flex-col items-start gap-4 md:flex-row mt-4">
                 <Tooltip
                   content="Coming soon after SemTab2024"
                   trigger="hover"
@@ -262,22 +267,27 @@ export default function Home(): JSX.Element {
                 >
                   <a
                     href="#"
-                    className="active:pointer-events-none cursor-not-allowed inline-flex items-center px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:outline-none focus:ring-gray-100 focus:text-blue-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-700"
+                    className="relative inline-flex justify-center items-center px-4 py-2 text-sm font-bold rounded-lg cursor-not-allowed active:pointer-events-none dark:bg-lorange dark:text-grey-900 text-white font-sm me-2 mb-2 bg-dorange"
                   >
                     Find on Zenodo
+                    <img
+                      src="/mammotab-docs/img/zenodowhite.svg"
+                      className="ml-2 h-5 w-5"
+                      alt="zenodo"
+                    />
                   </a>
                 </Tooltip>
                 <a
-                  href="#"
-                  className="items-center px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:outline-none focus:ring-gray-100 focus:text-blue-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-700"
+                  href="https://github.com/UNIMIBInside/mammotab"
+                  className="relative inline-flex justify-center items-center px-4 py-2 text-sm font-bold rounded-lg  dark:bg-lorange dark:text-grey-900 text-white font-sm me-2 mb-2 bg-dorange"
                 >
-                  Find on Github
+                  Find on Github <Github className="ml-2 h-5 w-5" />{" "}
                 </a>
               </div>
             </li>
 
             <li className="mb-10 ms-6">
-              <span className="absolute flex items-center justify-center w-6 h-6 bg-dorange rounded-full -start-3  dark:bg-lorange"></span>
+              <span className="absolute flex items-center justify-center w-6 h-6 bg-dorange dark:bg-lorange rounded-full -start-3"></span>
               <p className="mb-1 text-lg uppercase leading-none text-gray-500">
                 Upgrades
               </p>
@@ -308,7 +318,7 @@ export default function Home(): JSX.Element {
             </li>
 
             <li className="mb-10 ms-6">
-              <span className="absolute flex items-center justify-center w-6 h-6 bg-dorange rounded-full -start-3  dark:bg-lorange"></span>
+              <span className="absolute flex items-center justify-center w-6 h-6 bg-dorange dark:bg-lorange rounded-full -start-3"></span>
               <p className=" mb-1 text-lg uppercase leading-none text-gray-500">
                 Mammotab 2022
               </p>
@@ -322,16 +332,16 @@ export default function Home(): JSX.Element {
               </p>
               <a
                 href="#"
-                className="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:outline-none focus:ring-gray-100 focus:text-blue-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-700"
+                className="text-center inline-flex items-center border-none dark:bg-lorange dark:text-grey-900 text-white font-sm rounded-lg text-sm px-5 py-2.5 me-2 mb-2 bg-dorange font-semibold"
               >
-                Download
+                Download <ArrowDownToLine className="ml-2 h-5 w-5" />{" "}
               </a>
 
               <div className="space-y-4 mt-8">
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
-                  <div className="items-center bg-dorange dark:bg-lorange py-10 rounded-lg">
+                  <div className="items-center bg-bronze dark:bg-grizzly  py-10 rounded-lg">
                     <div className="flex flex-col items-center">
-                      <span className="font-semibold text-3xl text-white">
+                      <span className="font-semibold text-2xl text-white">
                         980.254
                       </span>
                       <span className="font-semibold text-gray-200">
@@ -339,9 +349,9 @@ export default function Home(): JSX.Element {
                       </span>
                     </div>
                   </div>
-                  <div className="items-center bg-dorange dark:bg-lorange py-10 rounded-lg">
+                  <div className="items-center bg-bronze dark:bg-grizzly  py-10 rounded-lg">
                     <div className="flex flex-col items-center">
-                      <span className="font-semibold text-3xl text-white">
+                      <span className="font-semibold text-2xl text-white">
                         43.661.125
                       </span>
                       <span className="font-semibold text-gray-200">
@@ -349,10 +359,10 @@ export default function Home(): JSX.Element {
                       </span>
                     </div>
                   </div>
-                  <div className="items-center bg-dorange dark:bg-lorange py-10 rounded-lg">
+                  <div className="items-center bg-bronze dark:bg-grizzly  py-10 rounded-lg">
                     <div className="flex flex-col items-center">
                       <span className="font-semibold text-3xl text-white">
-                        5.541.283
+                        5.541.283{" "}
                       </span>
                       <span className="font-semibold text-gray-200">
                         Classes
@@ -360,7 +370,7 @@ export default function Home(): JSX.Element {
                     </div>
                   </div>
                 </div>
-                <div className="items-center bg-dorange dark:bg-lorange py-10 rounded-lg">
+                <div className="items-center bg-bronze dark:bg-grizzly  py-10 rounded-lg">
                   <div className="grid grid-cols-2 lg:grid-cols-6 gap-4">
                     <div className="flex flex-col items-center">
                       <span className="font-semibold text-xl text-white">
@@ -424,8 +434,8 @@ export default function Home(): JSX.Element {
               </p>
               <div className="overflow-x-auto rounded-lg max-w-full">
                 <div className="inline-block rounded-lg overflow-x-auto max-w-full">
-                  <table className="text-sm text-left rtl:text-right text-tableText">
-                    <thead className="text-xs text-tableText uppercase bg-tableTop">
+                  <table className="text-sm text-left rtl:text-right">
+                    <thead className="text-xs uppercase dark:bg-umber bg-paletaupe">
                       <tr>
                         <th scope="col" className="p-3 min-w-40">
                           DATASET
@@ -442,7 +452,7 @@ export default function Home(): JSX.Element {
                       </tr>
                     </thead>
                     <tbody className="text-foreground">
-                      <tr className="even:bg-tableBottom odd:bg-tableBottom/70">
+                      <tr className="dark:even:bg-darksilver even:bg-darkvanilla dark:odd:bg-rocketmetallic odd:bg-desertsand">
                         <th
                           scope="row"
                           className="p-3 min-w-40 font-medium whitespace-nowrap"
@@ -453,7 +463,7 @@ export default function Home(): JSX.Element {
                         <td className="p-3 min-w-24"> - </td>
                         <td className="p-3 min-w-24"> 0.832 </td>
                       </tr>
-                      <tr className="even:bg-tableBottom odd:bg-tableBottom/70">
+                      <tr className="dark:even:bg-darksilver even:bg-darkvanilla dark:odd:bg-rocketmetallic odd:bg-desertsand">
                         <th
                           scope="row"
                           className="p-3 min-w-40 font-medium whitespace-nowrap"
@@ -464,7 +474,7 @@ export default function Home(): JSX.Element {
                         <td className="p-3 min-w-24"> 0.993 </td>
                         <td className="p-3 min-w-24"> 0.997 </td>
                       </tr>
-                      <tr className="even:bg-tableBottom odd:bg-tableBottom/70">
+                      <tr className="dark:even:bg-darksilver even:bg-darkvanilla dark:odd:bg-rocketmetallic odd:bg-desertsand">
                         <th
                           scope="row"
                           className="p-3 min-w-40 font-medium whitespace-nowrap"
@@ -475,7 +485,7 @@ export default function Home(): JSX.Element {
                         <td className="p-3 min-w-24"> 0.728 </td>
                         <td className="p-3 min-w-24"> - </td>
                       </tr>
-                      <tr className="even:bg-tableBottom odd:bg-tableBottom/70">
+                      <tr className="dark:even:bg-darksilver even:bg-darkvanilla dark:odd:bg-rocketmetallic odd:bg-desertsand">
                         <th
                           scope="row"
                           className="p-3 min-w-40 font-medium whitespace-nowrap"
@@ -486,7 +496,7 @@ export default function Home(): JSX.Element {
                         <td className="p-3 min-w-24"> 0.984 </td>
                         <td className="p-3 min-w-24"> 0.993 </td>
                       </tr>
-                      <tr className="even:bg-tableBottom odd:bg-tableBottom/70">
+                      <tr className="dark:even:bg-darksilver even:bg-darkvanilla dark:odd:bg-rocketmetallic odd:bg-desertsand">
                         <th
                           scope="row"
                           className="p-3 min-w-40 font-medium whitespace-nowrap"
@@ -502,18 +512,27 @@ export default function Home(): JSX.Element {
                 </div>
               </div>
               <div className="flex flex-col items-start gap-4 md:flex-row">
-                <a
-                  href="#"
-                  className="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:outline-none focus:ring-gray-100 focus:text-blue-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-700"
-                >
-                  Find on Zenodo
-                </a>
-                <a
-                  href="#"
-                  className="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:outline-none focus:ring-gray-100 focus:text-blue-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 dark:focus:ring-gray-700"
-                >
-                  Find on Github
-                </a>
+                <div>
+                  <a
+                    href="#"
+                    className="relative inline-flex justify-center items-center px-4 py-2 text-sm font-bold rounded-lg  dark:bg-lorange dark:text-grey-900 text-white font-sm me-2 mb-2 bg-dorange"
+                  >
+                    Find on Zenodo
+                    <img
+                      src="/mammotab-docs/img/zenodowhite.svg"
+                      className="ml-2 h-5 w-5"
+                      alt="zenodo"
+                    />
+                  </a>
+                </div>
+                <div>
+                  <a
+                    href="#"
+                    className="relative inline-flex justify-center items-center px-4 py-2 text-sm font-bold rounded-lg dark:bg-lorange dark:text-grey-900 text-white font-sm me-2 mb-2 bg-dorange"
+                  >
+                    Find on Github <Github className="ml-2 h-5 w-5" />{" "}
+                  </a>
+                </div>
               </div>
             </li>
           </ul>
