@@ -41,7 +41,7 @@ export default function Home(): JSX.Element {
               </div>
               <img
                 alt="Logo"
-                src="/mammotab-docs/img/geometric-mammoth.svg"
+                src="/mammotab-docs/img/Geometric-Mammoth.svg"
                 className="lg:mt-0 lg:col-span-4 lg:flex w-[36rem] object-fit-cover max-w-full"
               />
             </div>
