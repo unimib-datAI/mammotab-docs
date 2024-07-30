@@ -63,7 +63,7 @@ const config: Config = {
       title: 'MammoTab',
       logo: {
         alt: 'MammoTab',
-        src: 'img/logo.svg',
+        src: 'img/geometric-mammoth.svg',
       },
       items: [
         {

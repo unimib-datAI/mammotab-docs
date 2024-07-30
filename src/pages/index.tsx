@@ -18,10 +18,10 @@ export default function Home(): JSX.Element {
           <div className="mx-4 place-content-center lg:gap-12 xl:gap-12 lg:grid-cols-12 pb-12 pt-12">
             <div className="justify-center flex flex-col md:flex-row max-w-8xl gap-12 pb-2 mx-auto">
               <div className="place-content-center max-w-lg pl-2">
-                <h1 className="pt-12 leading-none text-dorange sm:text-4xl md:text-5xl lg:text-6xl dark:text-lorange font-bold tracking-wide">
+                <h1 className="pt-12 leading-none text-dorange sm:text-4xl md:text-5xl lg:text-6xl dark:text-terracotta font-bold tracking-wide">
                   Mammotab
                 </h1>
-                <p className=" text-dgBackground dark:text-white sm:text-xl lg:mb-8 md:text-xl lg:text-2xl">
+                <p className=" text-stone-800 dark:text-stone-100 sm:text-xl lg:mb-8 md:text-xl lg:text-2xl">
                   {" "}
                   MammoTab, is a dataset composed of 1M Wikipedia tables
                   extracted from over 20M Wikipedia pages and annotated through
@@ -33,7 +33,7 @@ export default function Home(): JSX.Element {
                 </p>
                 <a
                   href="/mammotab-docs/docs/introduction"
-                  className="text-center inline-flex items-center border-none dark:bg-lorange dark:text-grey-900 text-white font-sm rounded-lg text-sm px-5 py-2.5 me-2 mb-2 bg-dorange font-semibold"
+                  className="text-center inline-flex items-center border-none dark:bg-brick bg-chocolate hover:text-stone-100 text-stone-100 font-sm rounded-lg text-sm px-5 py-2.5 me-2 mb-2 font-semibold"
                 >
                   Learn more <ArrowRight className="ml-2 h-5 w-5" />{" "}
                 </a>
@@ -48,17 +48,17 @@ export default function Home(): JSX.Element {
         </section>
 
         <section className="mx-auto max-w-6xl">
-          <ul className="relative border-s border-gray-900 dark:border-gray-200 max-w-screen-lg mx-12 list-none">
-            <div className="absolute top-0 left-0 w-[1px] h-full bg-dorange dark:bg-lorange"></div>
+          <ul className="relative border-s border-stone-900 dark:border-stone-200 max-w-screen-lg mx-12 list-none">
+            <div className="absolute top-0 left-0 w-[1px] h-full bg-dorange dark:bg-brick"></div>
             <li className="mb-10 ms-6">
-              <span className="absolute flex items-center justify-center w-6 h-6 bg-dorange rounded-full -start-3  dark:bg-lorange"></span>
-              <p className="pt-1.5 mb-1 text-lg uppercase leading-none text-gray-500">
+              <span className="absolute flex items-center justify-center w-6 h-6 bg-dorange rounded-full -start-3 dark:bg-brick"></span>
+              <p className="pt-1.5 mb-1 text-lg uppercase leading-none text-stone-500 dark:text-stone-400">
                 Mammotab 2024
               </p>
-              <h3 className="text-3xl font-semibold text-lorange">
+              <h3 className="text-3xl font-semibold text-dorange dark:text-terracotta">
                 V2-alpha (SemTab)
               </h3>
-              <p className="mb-4 text-base font-normal text-gray-600 dark:text-gray-200">
+              <p className="mb-4 text-base font-normal text-stone-800 dark:text-stone-100">
                 This version was created for SemTab 2024, it comes from the
                 preliminary version of V2. The annotations within MammoTab 24
                 are derived from Wikidata v. 20240401 and follow the structure
@@ -73,7 +73,7 @@ export default function Home(): JSX.Element {
               </p>
               <a
                 href="#"
-                className="cursor-not-allowed active:pointer-events-none text-center inline-flex items-center border-none dark:bg-lorange dark:text-grey-900 text-white font-sm rounded-lg text-sm px-5 py-2.5 me-2 mb-2 bg-dorange font-semibold"
+                className="cursor-not-allowed active:pointer-events-none text-center inline-flex items-center border-none  font-sm rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-brick bg-chocolate hover:text-stone-100 text-stone-100 font-semibold"
               >
                 Download <ArrowDownToLine className="ml-2 h-5 w-5" />{" "}
               </a>
@@ -82,100 +82,102 @@ export default function Home(): JSX.Element {
                 <div className="grid grid-cols-1 lg:grid-cols-5 gap-5">
                   <div className="items-center bg-bronze dark:bg-grizzly py-10 rounded-lg">
                     <div className="flex flex-col items-center">
-                      <span className="font-semibold text-2xl text-white">
+                      <span className="font-semibold text-2xl dark:text-stone-100 text-stone-800">
                         888.372
                       </span>
-                      <span className="font-semibold text-gray-200">
+                      <span className="font-semibold dark:text-stone-200 text-stone-700">
                         N. of tables
                       </span>
                     </div>{" "}
                   </div>
                   <div className="items-center bg-bronze dark:bg-grizzly py-10 rounded-lg">
                     <div className="flex flex-col items-center">
-                      <span className="font-semibold text-2xl text-white">
+                      <span className="font-semibold text-2xl dark:text-stone-100 text-stone-800">
                         40.702.248
                       </span>
-                      <span className="font-semibold text-gray-200">
+                      <span className="font-semibold dark:text-stone-200 text-stone-700">
                         Entities
                       </span>
                     </div>{" "}
                   </div>{" "}
                   <div className="items-center bg-bronze dark:bg-grizzly  py-10 rounded-lg">
                     <div className="flex flex-col items-center">
-                      <span className="font-semibold text-2xl text-white">
+                      <span className="font-semibold text-2xl dark:text-stone-100 text-stone-800">
                         4.937.828
                       </span>
-                      <span className="font-semibold text-gray-200">
+                      <span className="font-semibold dark:text-stone-200 text-stone-700">
                         Classes
                       </span>
                     </div>
                   </div>
                   <div className="items-center bg-bronze dark:bg-grizzly py-10 rounded-lg">
                     <div className="flex flex-col items-center">
-                      <span className="font-semibold text-2xl text-white">
+                      <span className="font-semibold text-2xl dark:text-stone-100 text-stone-800">
                         24.193
                       </span>
-                      <span className="font-semibold text-gray-200">
+                      <span className="font-semibold dark:text-stone-200 text-stone-700">
                         Properties
                       </span>
                     </div>{" "}
                   </div>{" "}
                   <div className="items-center bg-bronze dark:bg-grizzly py-10 rounded-lg">
                     <div className="flex flex-col items-center">
-                      <span className="font-semibold text-2xl text-white">
+                      <span className="font-semibold text-2xl dark:text-stone-100 text-stone-800">
                         4.121.995
                       </span>
-                      <span className="font-semibold text-gray-200">NIL</span>
+                      <span className="font-semibold dark:text-stone-200 text-stone-700">
+                        NIL
+                      </span>
                     </div>
                   </div>
                 </div>
                 <div className="items-center bg-bronze dark:bg-grizzly py-10 rounded-lg">
                   <div className="grid grid-cols-2 lg:grid-cols-6 gap-4">
                     <div className="flex flex-col items-center">
-                      <span className="font-semibold text-xl text-white">
+                      <span className="font-semibold text-xl dark:text-stone-100 text-stone-800">
                         21.731.092
                       </span>
-                      <span className="font-semibold text-gray-200">
+                      <span className="font-semibold dark:text-stone-200 text-stone-700">
                         Total rows
                       </span>
                     </div>{" "}
                     <div className="flex flex-col items-center">
-                      <span className="font-semibold text-xl text-white">
+                      <span className="font-semibold text-xl dark:text-stone-100 text-stone-800">
                         4
                       </span>
-                      <span className="font-semibold text-gray-200">
+                      <span className="font-semibold dark:text-stone-200 text-stone-700">
                         Min rows
                       </span>
                     </div>{" "}
                     <div className="flex flex-col items-center">
-                      <span className="font-semibold text-xl text-white">
+                      <span className="font-semibold text-xl dark:text-stone-100 text-stone-800">
                         24.193
                       </span>
-                      <span className="font-semibold text-gray-200">
+                      <span className="font-semibold dark:text-stone-200 text-stone-700">
                         Max rows
                       </span>
                     </div>{" "}
                     <div className="flex flex-col items-center">
-                      <span className="font-semibold text-xl text-white">
+                      <span className="font-semibold text-xl dark:text-stone-100 text-stone-800">
                         5.030.655
                       </span>
-                      <span className="font-semibold text-gray-200">
+                      <span className="font-semibold dark:text-stone-200 text-stone-700">
                         Total cols
                       </span>
                     </div>{" "}
                     <div className="flex flex-col items-center">
-                      <span className="font-semibold text-xl text-white">
+                      <span className="font-semibold text-xl dark:text-stone-100 text-stone-800">
                         1
                       </span>
-                      <span className="font-semibold text-gray-200">
+                      <span className="font-semibold dark:text-stone-200 text-stone-700">
                         Min cols
                       </span>
                     </div>{" "}
                     <div className="flex flex-col items-center">
-                      <span className="font-semibold text-xl text-white">
+                      <span className="font-semibold text-xl dark:text-stone-100 text-stone-800">
                         1.000
                       </span>
-                      <span className="font-semibold text-gray-200">
+                      <span className="font-semibold dark:text-stone-200 text-stone-700">
                         Max cols
                       </span>
                     </div>
@@ -183,10 +185,10 @@ export default function Home(): JSX.Element {
                 </div>
               </div>
               <iframe
-                className="mt-8 rounded-lg bg-gray-600 grid place-content-center w-full aspect-video"
+                className="mt-8 rounded-lg bg-stone-600 grid place-content-center w-full aspect-video"
                 src="https://www.dailymotion.com/embed/video/k7DiUU7svU7bsLANU2E"
               ></iframe>
-              <p className="mt-6 mb-3 text-lg leading-none text-gray-500">
+              <p className="mt-6 mb-3 text-lg leading-none text-stone-500 dark:text-stone-400">
                 Evaluation
               </p>
               <p className="mb-4 text-md leading-none ">
@@ -196,8 +198,8 @@ export default function Home(): JSX.Element {
                 </a>{" "}
                 511 tables, 9741 mentions.
               </p>
-              <div className="overflow-x-auto rounded-lg max-w-full">
-                <table className="text-sm  border-0">
+              <div className="overflow-x-auto max-w-full">
+                <table className="text-sm">
                   <thead className="text-xs uppercase dark:bg-umber bg-paletaupe">
                     {" "}
                     <tr>
@@ -262,7 +264,7 @@ export default function Home(): JSX.Element {
                 <div>
                   <a
                     href="#"
-                    className="relative inline-flex justify-center items-center px-4 py-2 text-sm font-bold rounded-lg cursor-not-allowed active:pointer-events-none dark:bg-lorange dark:text-grey-900 text-white font-sm me-2 mb-2 bg-dorange"
+                    className="hover:text-stone-100 relative inline-flex justify-center items-center px-4 py-2 text-sm font-bold rounded-lg cursor-not-allowed active:pointer-events-nonefont-sm me-2 mb-2 text-stone-100 dark:bg-brick bg-chocolate"
                   >
                     Find on Zenodo{" "}
                     <img
@@ -275,7 +277,7 @@ export default function Home(): JSX.Element {
                 <div>
                   <a
                     href="https://github.com/UNIMIBInside/mammotab"
-                    className="relative inline-flex justify-center items-center px-4 py-2 text-sm font-bold rounded-lg  dark:bg-lorange dark:text-grey-900 text-white font-sm me-2 mb-2 bg-dorange"
+                    className="hover:text-stone-100 relative inline-flex justify-center items-center px-4 py-2 text-sm font-bold rounded-lg   text-stone-100 dark:bg-brick bg-chocolate font-sm me-2 mb-2"
                   >
                     Find on Github <Github className="ml-2 h-5 w-5" />{" "}
                   </a>
@@ -284,8 +286,8 @@ export default function Home(): JSX.Element {
             </li>
 
             <li className="mb-10 ms-6">
-              <span className="absolute flex items-center justify-center w-6 h-6 bg-dorange dark:bg-lorange rounded-full -start-3"></span>
-              <p className="mb-1 text-lg uppercase leading-none text-gray-500">
+              <span className="absolute flex items-center justify-center w-6 h-6 bg-dorange rounded-full -start-3 dark:bg-brick"></span>
+              <p className="mb-1 text-lg uppercase leading-none text-stone-500 dark:text-stone-400">
                 Upgrades
               </p>
               <div className="space-y-6">
@@ -296,7 +298,9 @@ export default function Home(): JSX.Element {
                     className="aspect-square shrink-0 w-14 h-14"
                   />
                   <div>
-                    <p className="ml-5">Greater accuracy in annotations</p>{" "}
+                    <p className="ml-5  text-base font-normal text-stone-800 dark:text-stone-100">
+                      Greater accuracy in annotations
+                    </p>{" "}
                   </div>
                 </div>
                 <div className="flex gap-4 mt-8 items-center">
@@ -306,7 +310,7 @@ export default function Home(): JSX.Element {
                     className="aspect-square shrink-0 w-14 h-14"
                   />
                   <div>
-                    <p className="ml-5">
+                    <p className="ml-5  text-base font-normal text-stone-800 dark:text-stone-100">
                       New annotations for CPA (Columns Predicate Annotations)
                     </p>{" "}
                   </div>
@@ -315,12 +319,12 @@ export default function Home(): JSX.Element {
             </li>
 
             <li className="mb-10 ms-6">
-              <span className="absolute flex items-center justify-center w-6 h-6 bg-dorange dark:bg-lorange rounded-full -start-3"></span>
-              <p className=" mb-1 text-lg uppercase leading-none text-gray-500">
+              <span className="absolute flex items-center justify-center w-6 h-6 bg-dorange rounded-full -start-3 dark:bg-brick"></span>
+              <p className=" mb-1 text-lg uppercase leading-none text-stone-500 dark:text-stone-400">
                 Mammotab 2022
               </p>
-              <h3 className="text-3xl font-semibold text-lorange">V1</h3>
-              <p className="mb-4 text-base font-normal text-gray-600 dark:text-gray-200">
+              <h3 className="text-3xl font-semibold text-dorange">V1</h3>
+              <p className="mb-4 text-base font-normal text-stone-800 dark:text-stone-100">
                 The annotations within MammoTab22 are derived from Wikidata v.
                 20220511 and follow the structure used in the SemTab challenge.
                 All tables are stored in a separate CSV file, where each line in
@@ -329,7 +333,7 @@ export default function Home(): JSX.Element {
               </p>
               <a
                 href="#"
-                className="text-center inline-flex items-center border-none dark:bg-lorange dark:text-grey-900 text-white font-sm rounded-lg text-sm px-5 py-2.5 me-2 mb-2 bg-dorange font-semibold"
+                className="hover:text-stone-100 text-center inline-flex items-center border-none text-stone-100 dark:bg-brick bg-chocolate font-sm rounded-lg text-sm px-5 py-2.5 me-2 mb-2 font-semibold"
               >
                 Download <ArrowDownToLine className="ml-2 h-5 w-5" />{" "}
               </a>
@@ -338,30 +342,30 @@ export default function Home(): JSX.Element {
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
                   <div className="items-center bg-bronze dark:bg-grizzly  py-10 rounded-lg">
                     <div className="flex flex-col items-center">
-                      <span className="font-semibold text-2xl text-white">
+                      <span className="font-semibold text-xl dark:text-stone-100 text-stone-800">
                         980.254
                       </span>
-                      <span className="font-semibold text-gray-200">
+                      <span className="font-semibold dark:text-stone-200 text-stone-700">
                         N. of tables
                       </span>
                     </div>{" "}
                   </div>
                   <div className="items-center bg-bronze dark:bg-grizzly  py-10 rounded-lg">
                     <div className="flex flex-col items-center">
-                      <span className="font-semibold text-2xl text-white">
+                      <span className="font-semibold text-xl dark:text-stone-100 text-stone-800">
                         43.661.125
                       </span>
-                      <span className="font-semibold text-gray-200">
+                      <span className="font-semibold dark:text-stone-200 text-stone-700">
                         Entities
                       </span>
                     </div>{" "}
                   </div>{" "}
                   <div className="items-center bg-bronze dark:bg-grizzly  py-10 rounded-lg">
                     <div className="flex flex-col items-center">
-                      <span className="font-semibold text-2xl text-white">
+                      <span className="font-semibold text-xl dark:text-stone-100 text-stone-800">
                         5.541.283{" "}
                       </span>
-                      <span className="font-semibold text-gray-200">
+                      <span className="font-semibold dark:text-stone-200 text-stone-700">
                         Classes
                       </span>
                     </div>
@@ -370,50 +374,50 @@ export default function Home(): JSX.Element {
                 <div className="items-center bg-bronze dark:bg-grizzly  py-10 rounded-lg">
                   <div className="grid grid-cols-2 lg:grid-cols-6 gap-4">
                     <div className="flex flex-col items-center">
-                      <span className="font-semibold text-xl text-white">
+                      <span className="font-semibold text-xl dark:text-stone-100 text-stone-800">
                         23.229.899
                       </span>
-                      <span className="font-semibold text-gray-200">
+                      <span className="font-semibold dark:text-stone-200 text-stone-700">
                         Total rows
                       </span>
                     </div>{" "}
                     <div className="flex flex-col items-center">
-                      <span className="font-semibold text-xl text-white">
+                      <span className="font-semibold text-xl dark:text-stone-100 text-stone-800">
                         4
                       </span>
-                      <span className="font-semibold text-gray-200">
+                      <span className="font-semibold dark:text-stone-200 text-stone-700">
                         Min rows
                       </span>
                     </div>{" "}
                     <div className="flex flex-col items-center">
-                      <span className="font-semibold text-xl text-white">
+                      <span className="font-semibold text-xl dark:text-stone-100 text-stone-800">
                         14.436
                       </span>
-                      <span className="font-semibold text-gray-200">
+                      <span className="font-semibold dark:text-stone-200 text-stone-700">
                         Max rows
                       </span>
                     </div>{" "}
                     <div className="flex flex-col items-center">
-                      <span className="font-semibold text-xl text-white">
+                      <span className="font-semibold text-xl dark:text-stone-100 text-stone-800">
                         5.638.191
                       </span>
-                      <span className="font-semibold text-gray-200">
+                      <span className="font-semibold dark:text-stone-200 text-stone-700">
                         Total cols
                       </span>
                     </div>{" "}
                     <div className="flex flex-col items-center">
-                      <span className="font-semibold text-xl text-white">
+                      <span className="font-semibold text-xl dark:text-stone-100 text-stone-800">
                         1
                       </span>
-                      <span className="font-semibold text-gray-200">
+                      <span className="font-semibold dark:text-stone-200 text-stone-700">
                         Min cols
                       </span>
                     </div>{" "}
                     <div className="flex flex-col items-center">
-                      <span className="font-semibold text-xl text-white">
+                      <span className="font-semibold text-xl dark:text-stone-100 text-stone-800">
                         1.0100.012
                       </span>
-                      <span className="font-semibold text-gray-200">
+                      <span className="font-semibold dark:text-stone-200 text-stone-700">
                         Max cols
                       </span>
                     </div>
@@ -421,7 +425,7 @@ export default function Home(): JSX.Element {
                 </div>
               </div>
 
-              <p className="mt-6 mb-3 text-lg leading-none text-gray-500">
+              <p className="mt-6 mb-3 text-lg leading-none text-stone-500 dark:text-stone-400">
                 Evaluation
               </p>
               <p className="mb-4 text-md leading-none ">
@@ -527,7 +531,7 @@ export default function Home(): JSX.Element {
                 <div>
                   <a
                     href="#"
-                    className="relative inline-flex justify-center items-center px-4 py-2 text-sm font-bold rounded-lg  dark:bg-lorange dark:text-grey-900 text-white font-sm me-2 mb-2 bg-dorange"
+                    className="hover:text-stone-100 relative inline-flex justify-center items-center px-4 py-2 text-sm font-bold rounded-lg font-sm me-2 mb-2  dark:bg-brick bg-chocolate text-stone-100"
                   >
                     Find on Zenodo
                     <img
@@ -540,7 +544,7 @@ export default function Home(): JSX.Element {
                 <div>
                   <a
                     href="#"
-                    className="relative inline-flex justify-center items-center px-4 py-2 text-sm font-bold rounded-lg dark:bg-lorange dark:text-grey-900 text-white font-sm me-2 mb-2 bg-dorange"
+                    className="hover:text-stone-100 relative inline-flex justify-center items-center px-4 py-2 text-sm font-bold rounded-lg font-sm me-2 mb-2  dark:bg-brick bg-chocolate text-stone-100"
                   >
                     Find on Github <Github className="ml-2 h-5 w-5" />{" "}
                   </a>
