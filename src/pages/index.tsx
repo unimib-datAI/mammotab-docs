@@ -206,7 +206,7 @@ export default function Home(): JSX.Element {
               </p>
               <div className="overflow-x-auto max-w-full">
                 <table className="text-sm">
-                  <thead className="text-xs uppercase dark:bg-umber bg-paletaupe">
+                  <thead className="text-xs uppercase dark:bg-rocketmetallic bg-paletaupe">
                     <tr>
                       <th scope="col" className="p-3 min-w-40">
                         APPROACHES
@@ -217,7 +217,7 @@ export default function Home(): JSX.Element {
                     </tr>
                   </thead>
                   <tbody className="text-foreground">
-                    <tr className="dark:even:bg-darksilver even:bg-darkvanilla dark:odd:bg-rocketmetallic odd:bg-desertsand">
+                    <tr className="dark:even:bg-darksilver even:bg-darkvanilla dark:odd:bg-umber odd:bg-desertsand">
                       <th
                         scope="row"
                         className="p-3 min-w-40 font-medium whitespace-nowrap"
@@ -231,7 +231,7 @@ export default function Home(): JSX.Element {
                       </th>
                       <td className="p-3 min-w-24">0.86</td>
                     </tr>
-                    <tr className="dark:even:bg-darksilver even:bg-darkvanilla dark:odd:bg-rocketmetallic odd:bg-desertsand">
+                    <tr className="dark:even:bg-darksilver even:bg-darkvanilla dark:odd:bg-umber odd:bg-desertsand">
                       <th
                         scope="row"
                         className="p-3 min-w-40 font-medium whitespace-nowrap"
@@ -245,7 +245,7 @@ export default function Home(): JSX.Element {
                       </th>
                       <td className="p-3 min-w-24">0.31</td>
                     </tr>
-                    <tr className="dark:even:bg-darksilver even:bg-darkvanilla dark:odd:bg-rocketmetallic odd:bg-desertsand">
+                    <tr className="dark:even:bg-darksilver even:bg-darkvanilla  dark:odd:bg-umber odd:bg-desertsand">
                       <th
                         scope="row"
                         className="p-3 min-w-40 font-medium whitespace-nowrap"
@@ -440,7 +440,7 @@ export default function Home(): JSX.Element {
               <div className="overflow-x-auto rounded-lg max-w-full">
                 <div className="inline-block rounded-lg overflow-x-auto max-w-full">
                   <table className="text-sm text-left rtl:text-right">
-                    <thead className="text-xs uppercase dark:bg-umber bg-paletaupe">
+                    <thead className="text-xs uppercase dark:bg-rocketmetallic bg-paletaupe">
                       <tr>
                         <th scope="col" className="p-3 min-w-40">
                           DATASET
@@ -457,7 +457,7 @@ export default function Home(): JSX.Element {
                       </tr>
                     </thead>
                     <tbody className="text-foreground">
-                      <tr className="dark:even:bg-darksilver even:bg-darkvanilla dark:odd:bg-rocketmetallic odd:bg-desertsand">
+                      <tr className="dark:even:bg-darksilver even:bg-darkvanilla dark:odd:bg-umber odd:bg-desertsand">
                         <th
                           scope="row"
                           className="p-3 min-w-40 font-medium whitespace-nowrap"
@@ -468,7 +468,7 @@ export default function Home(): JSX.Element {
                         <td className="p-3 min-w-24"> - </td>
                         <td className="p-3 min-w-24"> 0.832 </td>
                       </tr>
-                      <tr className="dark:even:bg-darksilver even:bg-darkvanilla dark:odd:bg-rocketmetallic odd:bg-desertsand">
+                      <tr className="dark:even:bg-darksilver even:bg-darkvanilla dark:odd:bg-umber odd:bg-desertsand">
                         <th
                           scope="row"
                           className="p-3 min-w-40 font-medium whitespace-nowrap"
@@ -479,7 +479,7 @@ export default function Home(): JSX.Element {
                         <td className="p-3 min-w-24"> 0.993 </td>
                         <td className="p-3 min-w-24"> 0.997 </td>
                       </tr>
-                      <tr className="dark:even:bg-darksilver even:bg-darkvanilla dark:odd:bg-rocketmetallic odd:bg-desertsand">
+                      <tr className="dark:even:bg-darksilver even:bg-darkvanilla dark:odd:bg-umber odd:bg-desertsand">
                         <th
                           scope="row"
                           className="p-3 min-w-40 font-medium whitespace-nowrap"
@@ -490,7 +490,7 @@ export default function Home(): JSX.Element {
                         <td className="p-3 min-w-24"> 0.728 </td>
                         <td className="p-3 min-w-24"> - </td>
                       </tr>
-                      <tr className="dark:even:bg-darksilver even:bg-darkvanilla dark:odd:bg-rocketmetallic odd:bg-desertsand">
+                      <tr className="dark:even:bg-darksilver even:bg-darkvanilla dark:odd:bg-umber odd:bg-desertsand">
                         <th
                           scope="row"
                           className="p-3 min-w-40 font-medium whitespace-nowrap"
@@ -501,7 +501,7 @@ export default function Home(): JSX.Element {
                         <td className="p-3 min-w-24"> 0.984 </td>
                         <td className="p-3 min-w-24"> 0.993 </td>
                       </tr>
-                      <tr className="dark:even:bg-darksilver even:bg-darkvanilla dark:odd:bg-rocketmetallic odd:bg-desertsand">
+                      <tr className="dark:even:bg-darksilver even:bg-darkvanilla dark:odd:bg-umber odd:bg-desertsand">
                         <th
                           scope="row"
                           className="p-3 min-w-40 font-medium whitespace-nowrap"
