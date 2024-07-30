@@ -197,8 +197,8 @@ export default function Home(): JSX.Element {
                 511 tables, 9741 mentions.
               </p>
               <div className="overflow-x-auto rounded-lg max-w-full">
-                <table className="text-sm text-tableText">
-                  <thead className="text-xs text-tableText uppercase bg-tableTop">
+                <table className="text-sm  border-0">
+                  <thead className="text-xs uppercase dark:bg-umber bg-paletaupe">
                     {" "}
                     <tr>
                       <th scope="col" className="p-3 min-w-40">
@@ -212,7 +212,7 @@ export default function Home(): JSX.Element {
                     </tr>
                   </thead>{" "}
                   <tbody className="text-foreground">
-                    <tr className="even:bg-tableBottom odd:bg-tableBottom/70">
+                    <tr className="dark:even:bg-darksilver even:bg-darkvanilla dark:odd:bg-rocketmetallic odd:bg-desertsand">
                       <th
                         scope="row"
                         className="p-3 min-w-40 font-medium whitespace-nowrap"
@@ -226,7 +226,7 @@ export default function Home(): JSX.Element {
                       </th>
                       <td className="p-3 min-w-24">0.86</td>{" "}
                     </tr>{" "}
-                    <tr className="even:bg-tableBottom odd:bg-tableBottom/70">
+                    <tr className="dark:even:bg-darksilver even:bg-darkvanilla dark:odd:bg-rocketmetallic odd:bg-desertsand">
                       <th
                         scope="row"
                         className="p-3 min-w-40 font-medium whitespace-nowrap"
@@ -240,7 +240,7 @@ export default function Home(): JSX.Element {
                       </th>
                       <td className="p-3 min-w-24">0.31</td>{" "}
                     </tr>{" "}
-                    <tr className="even:bg-tableBottom odd:bg-tableBottom/70">
+                    <tr className="dark:even:bg-darksilver even:bg-darkvanilla dark:odd:bg-rocketmetallic odd:bg-desertsand">
                       <th
                         scope="row"
                         className="p-3 min-w-40 font-medium whitespace-nowrap"
@@ -274,7 +274,7 @@ export default function Home(): JSX.Element {
                 </div>
                 <div>
                   <a
-                    href="#"
+                    href="https://github.com/UNIMIBInside/mammotab"
                     className="relative inline-flex justify-center items-center px-4 py-2 text-sm font-bold rounded-lg  dark:bg-lorange dark:text-grey-900 text-white font-sm me-2 mb-2 bg-dorange"
                   >
                     Find on Github <Github className="ml-2 h-5 w-5" />{" "}
@@ -433,9 +433,9 @@ export default function Home(): JSX.Element {
               <div className="overflow-x-auto rounded-lg max-w-full">
                 <div className="inline-block rounded-lg overflow-x-auto max-w-full">
                   {" "}
-                  <table className="text-sm text-left rtl:text-right text-tableText">
+                  <table className="text-sm text-left rtl:text-right">
                     {" "}
-                    <thead className="text-xs text-tableText uppercase bg-tableTop">
+                    <thead className="text-xs uppercase dark:bg-umber bg-paletaupe">
                       {" "}
                       <tr>
                         {" "}
@@ -459,7 +459,7 @@ export default function Home(): JSX.Element {
                     </thead>{" "}
                     <tbody className="text-foreground">
                       {" "}
-                      <tr className="even:bg-tableBottom odd:bg-tableBottom/70">
+                      <tr className="dark:even:bg-darksilver even:bg-darkvanilla dark:odd:bg-rocketmetallic odd:bg-desertsand">
                         {" "}
                         <th
                           scope="row"
@@ -471,7 +471,7 @@ export default function Home(): JSX.Element {
                         <td className="p-3 min-w-24"> - </td>{" "}
                         <td className="p-3 min-w-24"> 0.832 </td>{" "}
                       </tr>{" "}
-                      <tr className="even:bg-tableBottom odd:bg-tableBottom/70">
+                      <tr className="dark:even:bg-darksilver even:bg-darkvanilla dark:odd:bg-rocketmetallic odd:bg-desertsand">
                         {" "}
                         <th
                           scope="row"
@@ -483,7 +483,7 @@ export default function Home(): JSX.Element {
                         <td className="p-3 min-w-24"> 0.993 </td>{" "}
                         <td className="p-3 min-w-24"> 0.997 </td>{" "}
                       </tr>{" "}
-                      <tr className="even:bg-tableBottom odd:bg-tableBottom/70">
+                      <tr className="dark:even:bg-darksilver even:bg-darkvanilla dark:odd:bg-rocketmetallic odd:bg-desertsand">
                         {" "}
                         <th
                           scope="row"
@@ -495,7 +495,7 @@ export default function Home(): JSX.Element {
                         <td className="p-3 min-w-24"> 0.728 </td>{" "}
                         <td className="p-3 min-w-24"> - </td>{" "}
                       </tr>{" "}
-                      <tr className="even:bg-tableBottom odd:bg-tableBottom/70">
+                      <tr className="dark:even:bg-darksilver even:bg-darkvanilla dark:odd:bg-rocketmetallic odd:bg-desertsand">
                         {" "}
                         <th
                           scope="row"
@@ -507,7 +507,7 @@ export default function Home(): JSX.Element {
                         <td className="p-3 min-w-24"> 0.984 </td>{" "}
                         <td className="p-3 min-w-24"> 0.993 </td>{" "}
                       </tr>{" "}
-                      <tr className="even:bg-tableBottom odd:bg-tableBottom/70">
+                      <tr className="dark:even:bg-darksilver even:bg-darkvanilla dark:odd:bg-rocketmetallic odd:bg-desertsand">
                         {" "}
                         <th
                           scope="row"
