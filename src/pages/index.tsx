@@ -79,7 +79,7 @@ export default function Home(): JSX.Element {
               >
                 <a
                   href="#"
-                  className="cursor-not-allowed active:pointer-events-none text-center inline-flex items-center border-none dark:bg-lorange dark:text-grey-900 text-white font-sm rounded-lg text-sm px-5 py-2.5 me-2 mb-2 bg-dorange font-semibold"
+                  className="cursor-not-allowed active:pointer-events-none text-center inline-flex items-center border-none dark:text-grey-900 text-white font-sm rounded-lg text-sm px-5 py-2.5 me-2 mb-2 bg-dorange font-semibold dark:bg-slate-600 hover:text-white hover:no-underline"
                 >
                   Download <ArrowDownToLine className="ml-2 h-5 w-5" />{" "}
                 </a>
@@ -268,7 +268,7 @@ export default function Home(): JSX.Element {
                 >
                   <a
                     href="#"
-                    className="relative inline-flex justify-center items-center px-4 py-2 text-sm font-bold rounded-lg cursor-not-allowed active:pointer-events-none dark:bg-lorange dark:text-grey-900 text-white font-sm me-2 mb-2 bg-dorange"
+                    className="relative inline-flex justify-center items-center px-4 py-2 text-sm font-bold rounded-lg cursor-not-allowed active:pointer-events-none dark:text-grey-900 text-white font-sm me-2 mb-2 bg-dorange dark:bg-slate-600 hover:text-white hover:no-underline"
                   >
                     Find on Zenodo
                     <img
