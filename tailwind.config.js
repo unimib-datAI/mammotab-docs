@@ -15,7 +15,10 @@ module.exports = {
         sm: "0px",
         lg: "997px",
       },
-      colors: {},
+      colors: {
+      dorange: "#973F00",
+      lorange: "#E99E57",
+      },
     },
   },
   plugins: [],
