@@ -58,7 +58,7 @@ const config: Config = {
 
   themeConfig: {
     // Replace with your project's social card
-    image: 'img/mantistable-ui-social-card.png',
+    image: 'img/mammotab-social-card.png',
     navbar: {
       title: 'MammoTab',
       logo: {
