@@ -487,7 +487,7 @@ export default function Home(): JSX.Element {
               <p className=" mb-1 text-lg uppercase leading-none text-stone-500 dark:text-stone-400">
                 Mammotab 2022
               </p>
-              <h3 className="text-3xl font-semibold text-dorange">V1</h3>
+              <h3 className="text-3xl font-semibold dark:text-terracotta">V1</h3>
               <p className="mb-4 text-base font-normal text-stone-800 dark:text-stone-100">
                 The annotations within MammoTab22 are derived from Wikidata v.
                 20220511 and follow the structure used in the SemTab challenge.
