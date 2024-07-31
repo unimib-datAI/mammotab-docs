@@ -21,7 +21,7 @@ export default function Home(): JSX.Element {
             <div className="justify-center flex flex-col md:flex-row max-w-8xl gap-12 pb-2 mx-auto">
               <div className="place-content-center max-w-lg pl-2">
                 <h1 className="pt-12 leading-none text-dorange sm:text-4xl md:text-5xl lg:text-6xl dark:text-terracotta font-bold tracking-wide">
-                  Mammotab
+                  MammoTab
                 </h1>
                 <p className=" text-stone-800 dark:text-stone-100 sm:text-xl lg:mb-8 md:text-xl lg:text-2xl">
                   MammoTab, is a dataset composed of 1M Wikipedia tables
