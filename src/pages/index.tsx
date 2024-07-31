@@ -51,29 +51,23 @@ export default function Home(): JSX.Element {
         <section className="mx-auto max-w-6xl">
           <ul className="relative border-s border-stone-900 dark:border-stone-200 max-w-screen-lg mx-12 list-none">
             <div className="absolute top-0 left-0 w-[1px] h-full bg-dorange dark:bg-brick"></div>
+
+
+
+
             <li className="mb-10 ms-6">
               <span className="absolute flex items-center justify-center w-6 h-6 bg-dorange rounded-full -start-3 dark:bg-brick"></span>
               <p className="pt-1.5 mb-1 text-lg uppercase leading-none text-stone-500 dark:text-stone-400">
                 Mammotab 2024
               </p>
               <h3 className="text-3xl font-semibold text-dorange dark:text-terracotta">
-                V2-alpha (SemTab)
+                V2
               </h3>
               <p className="mb-4 text-base font-normal text-stone-800 dark:text-stone-100">
-                This version was created for SemTab 2024, it comes from the
-                preliminary version of V2. The annotations within MammoTab 24
-                are derived from Wikidata v. 20240401 and follow the structure
-                used in the
-                <a href="https://sem-tab-challenge.github.io/2024/tracks/sti-vs-llm-track.html">
-                  {" "}
-                  SemTab challenge.
-                </a>{" "}
-                All tables are stored in a separate CSV file, where each line in
-                the file corresponds to a row in the table. Target columns for
-                annotation, CTA, and CEA are saved in separate CSV files.
+              Introducing the enhanced MammoTab 2.0! This latest version features a fully refactored codebase, resulting in a streamlined number of tables. Thanks to advanced data cleaning techniques, the annotations are now of superior quality. Additionally, each table is complemented by comprehensive metadata that detail their features, addressing the key challenges of the STI.
               </p>
               <Tooltip
-                content="Coming soon after SemTab2024"
+                content="Coming soon..."
                 trigger="hover"
                 placement="top"
               >
@@ -191,6 +185,169 @@ export default function Home(): JSX.Element {
                   </div>
                 </div>
               </div>
+              <p className="mt-6 mb-3 text-lg leading-none text-stone-500 dark:text-stone-400">
+                Evaluation
+              </p>
+              <p className="mb-4 text-md leading-none ">
+                <a href="https://drive.google.com/drive/folders/1csBiqgPQXdDnwI1LcfBBwe3vzf9ujpTW">
+                  Dataset{" "}
+                </a>
+                511 tables, 9741 mentions.
+              </p>
+              <div className="overflow-x-auto max-w-full">
+                <table className="text-sm w-fit rounded-lg">
+                  <thead className="text-xs uppercase dark:bg-rocketmetallic bg-paletaupe">
+                    <tr>
+                      <th scope="col" className="p-3 min-w-40">
+                        APPROACHES
+                      </th>
+                      <th scope="col" className="p-3 min-w-24">
+                        CEA
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody className="text-foreground">
+                    <tr className="dark:even:bg-darksilver even:bg-darkvanilla dark:odd:bg-umber odd:bg-desertsand">
+                      <th
+                        scope="row"
+                        className="p-3 min-w-40 font-medium whitespace-nowrap"
+                      >
+                        <a
+                          href="https://arxiv.org/abs/2311.09206"
+                          target="_blank"
+                        >
+                          Zang 2023
+                        </a>
+                      </th>
+                      <td className="p-3 min-w-24">0.86</td>
+                    </tr>
+                    <tr className="dark:even:bg-darksilver even:bg-darkvanilla dark:odd:bg-umber odd:bg-desertsand">
+                      <th
+                        scope="row"
+                        className="p-3 min-w-40 font-medium whitespace-nowrap"
+                      >
+                        <a
+                          href="https://arxiv.org/abs/2006.14806"
+                          target="_blank"
+                        >
+                          Deng 2022
+                        </a>
+                      </th>
+                      <td className="p-3 min-w-24">0.31</td>
+                    </tr>
+                    <tr className="dark:even:bg-darksilver even:bg-darkvanilla  dark:odd:bg-umber odd:bg-desertsand">
+                      <th
+                        scope="row"
+                        className="p-3 min-w-40 font-medium whitespace-nowrap"
+                      >
+                        <a
+                          href="https://www.computer.org/csdl/proceedings-article/wi-iat/2023/091800a142/1T0o1Fv6jV6"
+                          target="_blank"
+                        >
+                          Avogadro 2023
+                        </a>
+                      </th>
+                      <td className="p-3 min-w-24">0.62</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div className="flex flex-col items-start gap-4 md:flex-row mt-4">
+                <Tooltip
+                  content="Coming soon after SemTab2024"
+                  trigger="hover"
+                  placement="top"
+                >
+                  <a
+                    href="#"
+                    className="hover:text-stone-100 relative inline-flex justify-center items-center px-4 py-2 text-sm font-bold rounded-lg cursor-not-allowed active:pointer-events-nonefont-sm me-2 mb-2 text-stone-100 dark:bg-brick bg-chocolate"
+                  >
+                    Find on Zenodo
+                    <img
+                      src="/mammotab-docs/img/zenodowhite.svg"
+                      className="ml-2 h-5 w-5"
+                      alt="zenodo"
+                    />
+                  </a>
+                </Tooltip>
+                <a
+                  href="https://github.com/UNIMIBInside/mammotab"
+                  className="hover:text-stone-100 relative inline-flex justify-center items-center px-4 py-2 text-sm font-bold rounded-lg   text-stone-100 dark:bg-brick bg-chocolate font-sm me-2 mb-2"
+                >
+                  Find on Github <Github className="ml-2 h-5 w-5" />{" "}
+                </a>
+              </div>
+            </li>
+
+            <li className="mb-10 ms-6">
+              <span className="absolute flex items-center justify-center w-6 h-6 bg-dorange rounded-full -start-3 dark:bg-brick"></span>
+              <p className="mb-1 text-lg uppercase leading-none text-stone-500 dark:text-stone-400">
+                Upgrades
+              </p>
+              <div className="space-y-6">
+                <div className="flex gap-4 mt-8 items-center">
+                  <img
+                    alt="arcs"
+                    src="/mammotab-docs/img/arcs.svg"
+                    className="aspect-square shrink-0 w-14 h-14"
+                  />
+                  <div>
+                    <p className="ml-5  text-base font-normal text-stone-800 dark:text-stone-100">
+                      Greater accuracy in annotations
+                    </p>{" "}
+                  </div>
+                </div>
+                <div className="flex gap-4 mt-8 items-center">
+                  <img
+                    alt="arcs"
+                    src="/mammotab-docs/img/reti.svg"
+                    className="aspect-square shrink-0 w-14 h-14"
+                  />
+                  <div>
+                    <p className="ml-5  text-base font-normal text-stone-800 dark:text-stone-100">
+                      New annotations for CPA (Columns Predicate Annotations)
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </li>
+
+
+
+
+            <li className="mb-10 ms-6">
+              <span className="absolute flex items-center justify-center w-6 h-6 bg-dorange rounded-full -start-3 dark:bg-brick"></span>
+              <p className="pt-1.5 mb-1 text-lg uppercase leading-none text-stone-500 dark:text-stone-400">
+                Mammotab 2024
+              </p>
+              <h3 className="text-3xl font-semibold text-dorange dark:text-terracotta">
+                V2-alpha (SemTab)
+              </h3>
+              <p className="mb-4 text-base font-normal text-stone-800 dark:text-stone-100">
+                This version was created for SemTab 2024, it comes from the
+                preliminary version of V2. The annotations within MammoTab 24
+                are derived from Wikidata v. 20240401 and follow the structure
+                used in the
+                <a href="https://sem-tab-challenge.github.io/2024/tracks/sti-vs-llm-track.html">
+                  {" "}
+                  SemTab challenge.
+                </a>{" "}
+                All tables are stored in a separate CSV file, where each line in
+                the file corresponds to a row in the table. Target columns for
+                annotation, CTA, and CEA are saved in separate CSV files.
+              </p>
+              <Tooltip
+                content="Coming soon after SemTab2024"
+                trigger="hover"
+                placement="top"
+              >
+                <a
+                  href="#"
+                  className="hover:text-stone-100 relative inline-flex justify-center items-center px-4 py-2 text-sm font-bold rounded-lg text-stone-100 dark:bg-brick bg-chocolate font-sm me-2 mb-2"
+                >
+                  Download <ArrowDownToLine className="ml-2 h-5 w-5" />{" "}
+                </a>
+              </Tooltip>
               <iframe
                 className="mt-8 rounded-lg bg-stone-600 grid place-content-center w-full aspect-video"
                 src="https://www.dailymotion.com/embed/video/k7DiUU7svU7bsLANU2E"
@@ -321,6 +478,9 @@ export default function Home(): JSX.Element {
                 </div>
               </div>
             </li>
+
+
+
 
             <li className="mb-10 ms-6">
               <span className="absolute flex items-center justify-center w-6 h-6 bg-dorange rounded-full -start-3 dark:bg-brick"></span>
