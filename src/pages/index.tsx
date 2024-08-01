@@ -52,9 +52,6 @@ export default function Home(): JSX.Element {
           <ul className="relative border-s border-stone-900 dark:border-stone-200 max-w-screen-lg mx-12 list-none">
             <div className="absolute top-0 left-0 w-[1px] h-full bg-dorange dark:bg-brick"></div>
 
-
-
-
             <li className="mb-10 ms-6">
               <span className="absolute flex items-center justify-center w-6 h-6 bg-dorange rounded-full -start-3 dark:bg-brick"></span>
               <p className="pt-1.5 mb-1 text-lg uppercase leading-none text-stone-500 dark:text-stone-400">
@@ -64,13 +61,14 @@ export default function Home(): JSX.Element {
                 V2
               </h3>
               <p className="mb-4 text-base font-normal text-stone-800 dark:text-stone-100">
-              Introducing the enhanced MammoTab 2.0! This latest version features a fully refactored codebase, resulting in a streamlined number of tables. Thanks to advanced data cleaning techniques, the annotations are now of superior quality. Additionally, each table is complemented by comprehensive metadata that detail their features, addressing the key challenges of the STI.
+                Introducing the enhanced MammoTab 2.0! This latest version
+                features a fully refactored codebase, resulting in a streamlined
+                number of tables. Thanks to advanced data cleaning techniques,
+                the annotations are now of superior quality. Additionally, each
+                table is complemented by comprehensive metadata that detail
+                their features, addressing the key challenges of the STI.
               </p>
-              <Tooltip
-                content="Coming soon..."
-                trigger="hover"
-                placement="top"
-              >
+              <Tooltip content="Coming soon..." trigger="hover" placement="top">
                 <a
                   href="#"
                   className="hover:text-stone-100 relative inline-flex justify-center items-center px-4 py-2 text-sm font-bold rounded-lg text-stone-100 dark:bg-brick bg-chocolate font-sm me-2 mb-2"
@@ -287,33 +285,66 @@ export default function Home(): JSX.Element {
               <div className="space-y-6">
                 <div className="flex gap-4 mt-8 items-center">
                   <img
-                    alt="arcs"
-                    src="/mammotab-docs/img/arcs.svg"
+                    alt="metadata"
+                    src="/mammotab-docs/img/metadata.svg"
                     className="aspect-square shrink-0 w-14 h-14"
                   />
-                  <div>
-                    <p className="ml-5  text-base font-normal text-stone-800 dark:text-stone-100">
-                      Greater accuracy in annotations
-                    </p>{" "}
-                  </div>
+                  <p className="ml-5 mb-0 text-base font-normal text-stone-800 dark:text-stone-100">
+                    Add table metadata
+                  </p>{" "}
                 </div>
                 <div className="flex gap-4 mt-8 items-center">
                   <img
-                    alt="arcs"
-                    src="/mammotab-docs/img/reti.svg"
+                    alt="column classification"
+                    src="/mammotab-docs/img/columnclass.svg"
                     className="aspect-square shrink-0 w-14 h-14"
                   />
-                  <div>
-                    <p className="ml-5  text-base font-normal text-stone-800 dark:text-stone-100">
-                      New annotations for CPA (Columns Predicate Annotations)
-                    </p>
-                  </div>
+                  <p className="ml-5 mb-0 text-base font-normal text-stone-800 dark:text-stone-100">
+                    Column classification (NIL, Ne)
+                  </p>{" "}
+                </div>
+                <div className="flex gap-4 mt-8 items-center">
+                  <img
+                    alt="Domain classification"
+                    src="/mammotab-docs/img/domain.svg"
+                    className="aspect-square shrink-0 w-14 h-14"
+                  />
+                  <p className="ml-5 mb-0 text-base font-normal text-stone-800 dark:text-stone-100">
+                    Domain classification
+                  </p>{" "}
+                </div>
+                <div className="flex gap-4 mt-8 items-center">
+                  <img
+                    alt="table context"
+                    src="/mammotab-docs/img/context.svg"
+                    className="aspect-square shrink-0 w-14 h-14"
+                  />
+                  <p className="ml-5 mb-0 text-base font-normal text-stone-800 dark:text-stone-100">
+                    Add table context
+                  </p>{" "}
+                </div>
+                <div className="flex gap-4 mt-8 items-center">
+                  <img
+                    alt="keys"
+                    src="/mammotab-docs/img/keys.svg"
+                    className="aspect-square shrink-0 w-14 h-14"
+                  />
+                  <p className="ml-5 mb-0 text-base font-normal text-stone-800 dark:text-stone-100">
+                    Add classification for key STI challenges
+                  </p>{" "}
+                </div>
+                <div className="flex gap-4 mt-8 items-center">
+                  <img
+                    alt="keys"
+                    src="/mammotab-docs/img/keys.svg"
+                    className="aspect-square shrink-0 w-14 h-14"
+                  />
+                  <p className="ml-5 mb-0 text-base font-normal text-stone-800 dark:text-stone-100">
+                    Add export material
+                  </p>{" "}
                 </div>
               </div>
             </li>
-
-
-
 
             <li className="mb-10 ms-6">
               <span className="absolute flex items-center justify-center w-6 h-6 bg-dorange rounded-full -start-3 dark:bg-brick"></span>
@@ -458,36 +489,31 @@ export default function Home(): JSX.Element {
                     src="/mammotab-docs/img/arcs.svg"
                     className="aspect-square shrink-0 w-14 h-14"
                   />
-                  <div>
-                    <p className="ml-5  text-base font-normal text-stone-800 dark:text-stone-100">
-                      Greater accuracy in annotations
-                    </p>{" "}
-                  </div>
+                  <p className="ml-5 mb-0 text-base font-normal text-stone-800 dark:text-stone-100">
+                    Greater accuracy in annotations
+                  </p>{" "}
                 </div>
                 <div className="flex gap-4 mt-8 items-center">
                   <img
-                    alt="arcs"
-                    src="/mammotab-docs/img/reti.svg"
+                    alt="annotations"
+                    src="/mammotab-docs/img/annotation.svg"
                     className="aspect-square shrink-0 w-14 h-14"
                   />
-                  <div>
-                    <p className="ml-5  text-base font-normal text-stone-800 dark:text-stone-100">
-                      New annotations for CPA (Columns Predicate Annotations)
-                    </p>
-                  </div>
+                  <p className="ml-5 mb-0 text-base font-normal text-stone-800 dark:text-stone-100">
+                    New annostions for CPA (Columns Predicate Annotations)
+                  </p>{" "}
                 </div>
               </div>
             </li>
-
-
-
 
             <li className="mb-10 ms-6">
               <span className="absolute flex items-center justify-center w-6 h-6 bg-dorange rounded-full -start-3 dark:bg-brick"></span>
               <p className=" mb-1 text-lg uppercase leading-none text-stone-500 dark:text-stone-400">
                 Mammotab 2022
               </p>
-              <h3 className="text-3xl font-semibold dark:text-terracotta">V1</h3>
+              <h3 className="text-3xl font-semibold dark:text-terracotta">
+                V1
+              </h3>
               <p className="mb-4 text-base font-normal text-stone-800 dark:text-stone-100">
                 The annotations within MammoTab22 are derived from Wikidata v.
                 20220511 and follow the structure used in the SemTab challenge.
