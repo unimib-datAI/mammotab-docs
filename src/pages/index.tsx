@@ -335,8 +335,8 @@ export default function Home(): JSX.Element {
                 </div>
                 <div className="flex gap-4 mt-8 items-center">
                   <img
-                    alt="keys"
-                    src="/mammotab-docs/img/keys.svg"
+                    alt="export"
+                    src="/mammotab-docs/img/export.svg"
                     className="aspect-square shrink-0 w-14 h-14"
                   />
                   <p className="ml-5 mb-0 text-base font-normal text-stone-800 dark:text-stone-100">
