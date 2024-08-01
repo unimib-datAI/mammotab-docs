@@ -73,6 +73,11 @@ const config: Config = {
           label: "Documentation",
         },
         {
+          href: 'https://unimib-datai.github.io/sti-website/',
+          label: 'Our works',
+          position: 'right',
+        },
+        {
           href: "https://github.com/unimib-datai/mammotab",
           label: "GitHub",
           position: "right",

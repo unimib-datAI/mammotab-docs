@@ -9,7 +9,7 @@ import { Tooltip } from "flowbite-react";
 export default function Home(): JSX.Element {
   const { siteConfig } = useDocusaurusContext();
   return (
-    <Layout title={`Hello from ${siteConfig.title}`} description="MammoTab.">
+    <Layout title={`Hello from ${siteConfig.title}`} description="MammoTab, is a dataset composed of 1M Wikipedia tables extracted from over 20M Wikipedia pages and annotated through Wikidata.">
       <main>
         <img
           src="/mammotab-docs/img/bblurrymam.svg"
