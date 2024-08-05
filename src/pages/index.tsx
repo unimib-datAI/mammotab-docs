@@ -9,7 +9,10 @@ import { Tooltip } from "flowbite-react";
 export default function Home(): JSX.Element {
   const { siteConfig } = useDocusaurusContext();
   return (
-    <Layout title={`Hello from ${siteConfig.title}`} description="MammoTab, is a dataset composed of 1M Wikipedia tables extracted from over 20M Wikipedia pages and annotated through Wikidata.">
+    <Layout
+      title={`Hello from ${siteConfig.title}`}
+      description="MammoTab, is a dataset composed of 1M Wikipedia tables extracted from over 20M Wikipedia pages and annotated through Wikidata."
+    >
       <main>
         <img
           src="/mammotab-docs/img/bblurrymam.svg"
@@ -522,7 +525,7 @@ export default function Home(): JSX.Element {
                 annotation, CTA, and CEA are saved in separate CSV files
               </p>
               <a
-                href="#"
+                href="https://zenodo.org/records/7014472"
                 className="hover:text-stone-100 text-center inline-flex items-center border-none text-stone-100 dark:bg-brick bg-chocolate font-sm rounded-lg text-sm px-5 py-2.5 me-2 mb-2 font-semibold"
               >
                 Download <ArrowDownToLine className="ml-2 h-5 w-5" />{" "}
@@ -705,7 +708,7 @@ export default function Home(): JSX.Element {
               <div className="flex flex-col items-start gap-4 md:flex-row">
                 <div>
                   <a
-                    href="#"
+                    href="https://zenodo.org/records/7014472"
                     className="hover:text-stone-100 relative inline-flex justify-center items-center px-4 py-2 text-sm font-bold rounded-lg font-sm me-2 mb-2  dark:bg-brick bg-chocolate text-stone-100"
                   >
                     Find on Zenodo
@@ -718,10 +721,15 @@ export default function Home(): JSX.Element {
                 </div>
                 <div>
                   <a
-                    href="#"
+                    href="https://bitbucket.org/disco_unimib/mammotab/src/master/"
                     className="hover:text-stone-100 relative inline-flex justify-center items-center px-4 py-2 text-sm font-bold rounded-lg font-sm me-2 mb-2  dark:bg-brick bg-chocolate text-stone-100"
                   >
-                    Find on Github <Github className="ml-2 h-5 w-5" />{" "}
+                    Find on Bitbucket{" "}
+                    <img
+                      src="/mammotab-docs/img/bitbucketicon.png"
+                      className="ml-2 h-5 w-5"
+                      alt="zenodo"
+                    />{" "}
                   </a>
                 </div>
               </div>
