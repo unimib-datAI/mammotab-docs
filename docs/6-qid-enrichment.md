@@ -4,7 +4,7 @@ sidebar_position: 6
 
 # 6. Enrich the dump with wikidata IDs
 
-This scripts requires some pickle files to work (see section [Auxiliary files](#auxiliary-files)).
+This scripts requires some pickle files to work (see section [Auxiliary files](/mammotab-docs/docs/auxiliary-files)).
 This scripts gets the wikidata entities corresponding to wikipedia links and add columns types and it detects which mentions are NIL.
 
 [LamAPI](https://bitbucket.org/disco_unimib/lamapi) is used to easily access Wikidata and DBpedia data.

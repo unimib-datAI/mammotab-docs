@@ -8,7 +8,7 @@ sidebar_position: 8
 
 Required to sort the types from generic to specific:
 
-1. Download and filter subclass relationships from a wikidata dump, e.g.:
+1. Download and filter subclass relationships from a wikidata [dump](https://dumps.wikimedia.org/wikidatawiki/entities/), e.g.:
 
 ```bash
 sudo apt install bzip2   #or equivament for non debian based systems
