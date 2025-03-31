@@ -9,7 +9,10 @@ import { Tooltip } from "flowbite-react";
 export default function Home(): JSX.Element {
   const { siteConfig } = useDocusaurusContext();
   return (
-    <Layout title={`Hello from ${siteConfig.title}`} description="MammoTab, is a dataset composed of 1M Wikipedia tables extracted from over 20M Wikipedia pages and annotated through Wikidata.">
+    <Layout
+      title={`Hello from ${siteConfig.title}`}
+      description="MammoTab, is a dataset composed of 1M Wikipedia tables extracted from over 20M Wikipedia pages and annotated through Wikidata."
+    >
       <main>
         <img
           src="/mammotab-docs/img/bblurrymam.svg"
@@ -69,12 +72,9 @@ export default function Home(): JSX.Element {
                 their features, addressing the key challenges of the STI.
               </p>
               <Tooltip content="Coming soon..." trigger="hover" placement="top">
-                <a
-                  href="#"
-                  className="hover:text-stone-100 relative inline-flex justify-center items-center px-4 py-2 text-sm font-bold rounded-lg text-stone-100 dark:bg-brick bg-chocolate font-sm me-2 mb-2"
-                >
+                <span className="hover:text-stone-100 relative inline-flex justify-center items-center px-4 py-2 text-sm font-bold rounded-lg text-stone-100 dark:bg-brick bg-chocolate font-sm me-2 mb-2">
                   Download <ArrowDownToLine className="ml-2 h-5 w-5" />{" "}
-                </a>
+                </span>
               </Tooltip>
 
               <div className="space-y-4 mt-8">
@@ -187,7 +187,10 @@ export default function Home(): JSX.Element {
                 Evaluation
               </p>
               <p className="mb-4 text-md leading-none ">
-                <a href="https://drive.google.com/drive/folders/1csBiqgPQXdDnwI1LcfBBwe3vzf9ujpTW">
+                <a
+                  href="https://drive.google.com/drive/folders/1csBiqgPQXdDnwI1LcfBBwe3vzf9ujpTW"
+                  target="_blank"
+                >
                   Dataset{" "}
                 </a>
                 511 tables, 9741 mentions.
@@ -256,19 +259,17 @@ export default function Home(): JSX.Element {
                   trigger="hover"
                   placement="top"
                 >
-                  <a
-                    href="#"
-                    className="hover:text-stone-100 relative inline-flex justify-center items-center px-4 py-2 text-sm font-bold rounded-lg cursor-not-allowed active:pointer-events-nonefont-sm me-2 mb-2 text-stone-100 dark:bg-brick bg-chocolate"
-                  >
+                  <span className="hover:text-stone-100 relative inline-flex justify-center items-center px-4 py-2 text-sm font-bold rounded-lg cursor-not-allowed active:pointer-events-nonefont-sm me-2 mb-2 text-stone-100 dark:bg-brick bg-chocolate">
                     Find on Zenodo
                     <img
                       src="/mammotab-docs/img/zenodowhite.svg"
                       className="ml-2 h-5 w-5"
                       alt="zenodo"
                     />
-                  </a>
+                  </span>
                 </Tooltip>
                 <a
+                  target="_blank"
                   href="https://github.com/UNIMIBInside/mammotab"
                   className="hover:text-stone-100 relative inline-flex justify-center items-center px-4 py-2 text-sm font-bold rounded-lg   text-stone-100 dark:bg-brick bg-chocolate font-sm me-2 mb-2"
                 >
@@ -359,7 +360,10 @@ export default function Home(): JSX.Element {
                 preliminary version of V2. The annotations within MammoTab 24
                 are derived from Wikidata v. 20240401 and follow the structure
                 used in the
-                <a href="https://sem-tab-challenge.github.io/2024/tracks/sti-vs-llm-track.html">
+                <a
+                  href="https://sem-tab-challenge.github.io/2024/tracks/sti-vs-llm-track.html"
+                  target="_blank"
+                >
                   {" "}
                   SemTab challenge.
                 </a>{" "}
@@ -372,12 +376,9 @@ export default function Home(): JSX.Element {
                 trigger="hover"
                 placement="top"
               >
-                <a
-                  href="#"
-                  className="hover:text-stone-100 relative inline-flex justify-center items-center px-4 py-2 text-sm font-bold rounded-lg text-stone-100 dark:bg-brick bg-chocolate font-sm me-2 mb-2"
-                >
+                <span className="hover:text-stone-100 relative inline-flex justify-center items-center px-4 py-2 text-sm font-bold rounded-lg text-stone-100 dark:bg-brick bg-chocolate font-sm me-2 mb-2">
                   Download <ArrowDownToLine className="ml-2 h-5 w-5" />{" "}
-                </a>
+                </span>
               </Tooltip>
               <iframe
                 className="mt-8 rounded-lg bg-stone-600 grid place-content-center w-full aspect-video"
@@ -387,7 +388,10 @@ export default function Home(): JSX.Element {
                 Evaluation
               </p>
               <p className="mb-4 text-md leading-none ">
-                <a href="https://drive.google.com/drive/folders/1csBiqgPQXdDnwI1LcfBBwe3vzf9ujpTW">
+                <a
+                  href="https://drive.google.com/drive/folders/1csBiqgPQXdDnwI1LcfBBwe3vzf9ujpTW"
+                  target="_blank"
+                >
                   Dataset{" "}
                 </a>
                 511 tables, 9741 mentions.
@@ -456,19 +460,17 @@ export default function Home(): JSX.Element {
                   trigger="hover"
                   placement="top"
                 >
-                  <a
-                    href="#"
-                    className="hover:text-stone-100 relative inline-flex justify-center items-center px-4 py-2 text-sm font-bold rounded-lg cursor-not-allowed active:pointer-events-nonefont-sm me-2 mb-2 text-stone-100 dark:bg-brick bg-chocolate"
-                  >
+                  <span className="hover:text-stone-100 relative inline-flex justify-center items-center px-4 py-2 text-sm font-bold rounded-lg cursor-not-allowed active:pointer-events-nonefont-sm me-2 mb-2 text-stone-100 dark:bg-brick bg-chocolate">
                     Find on Zenodo
                     <img
                       src="/mammotab-docs/img/zenodowhite.svg"
                       className="ml-2 h-5 w-5"
                       alt="zenodo"
                     />
-                  </a>
+                  </span>
                 </Tooltip>
                 <a
+                  target="_blank"
                   href="https://github.com/UNIMIBInside/mammotab"
                   className="hover:text-stone-100 relative inline-flex justify-center items-center px-4 py-2 text-sm font-bold rounded-lg   text-stone-100 dark:bg-brick bg-chocolate font-sm me-2 mb-2"
                 >
@@ -522,7 +524,8 @@ export default function Home(): JSX.Element {
                 annotation, CTA, and CEA are saved in separate CSV files
               </p>
               <a
-                href="#"
+                href="https://zenodo.org/records/7014472"
+                target="_blank"
                 className="hover:text-stone-100 text-center inline-flex items-center border-none text-stone-100 dark:bg-brick bg-chocolate font-sm rounded-lg text-sm px-5 py-2.5 me-2 mb-2 font-semibold"
               >
                 Download <ArrowDownToLine className="ml-2 h-5 w-5" />{" "}
@@ -619,7 +622,10 @@ export default function Home(): JSX.Element {
                 Evaluation
               </p>
               <p className="mb-4 text-md leading-none ">
-                <a href="https://ceur-ws.org/Vol-3103/paper8.pdf">
+                <a
+                  href="https://ceur-ws.org/Vol-3103/paper8.pdf"
+                  target="_blank"
+                >
                   Mtab performance
                 </a>
               </p>
@@ -705,7 +711,8 @@ export default function Home(): JSX.Element {
               <div className="flex flex-col items-start gap-4 md:flex-row">
                 <div>
                   <a
-                    href="#"
+                    href="https://zenodo.org/records/7014472"
+                    target="_blank"
                     className="hover:text-stone-100 relative inline-flex justify-center items-center px-4 py-2 text-sm font-bold rounded-lg font-sm me-2 mb-2  dark:bg-brick bg-chocolate text-stone-100"
                   >
                     Find on Zenodo
@@ -718,10 +725,16 @@ export default function Home(): JSX.Element {
                 </div>
                 <div>
                   <a
-                    href="#"
+                    href="https://bitbucket.org/disco_unimib/mammotab/src/master/"
+                    target="_blank"
                     className="hover:text-stone-100 relative inline-flex justify-center items-center px-4 py-2 text-sm font-bold rounded-lg font-sm me-2 mb-2  dark:bg-brick bg-chocolate text-stone-100"
                   >
-                    Find on Github <Github className="ml-2 h-5 w-5" />{" "}
+                    Find on Bitbucket{" "}
+                    <img
+                      src="/mammotab-docs/img/bitbucketicon.png"
+                      className="ml-2 h-5 w-5"
+                      alt="zenodo"
+                    />{" "}
                   </a>
                 </div>
               </div>
