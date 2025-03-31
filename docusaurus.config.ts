@@ -67,6 +67,11 @@ const config: Config = {
       },
       items: [
         {
+          href: '/leaderboard',
+          label: 'LLM Leaderboard',
+          position: 'left',
+        },
+        {
           type: "docSidebar",
           sidebarId: "tutorialSidebar",
           position: "left",
