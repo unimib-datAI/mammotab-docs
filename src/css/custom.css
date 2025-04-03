@@ -26,7 +26,6 @@
   --table-header-text: #973f01;
   --table-row-bg: #ffffff;
   --table-row-alt-bg: #faf7f4;
-  --table-border: #e8e0d8;
   --table-hover-bg: #fff5ed;
   --table-border-radius: 8px;
 }
@@ -48,7 +47,6 @@
   --table-header-text: #c2a289;
   --table-row-bg: #1c1a17;
   --table-row-alt-bg: #24211d;
-  --table-border: #3a332b;
   --table-hover-bg: #2a231c;
 }
 
@@ -59,7 +57,7 @@ table {
   border-spacing: 0;
   margin: 1rem 0;
   font-size: 0.9rem;
-  border: 1px solid var(--table-border);
+  border: none;
   border-radius: var(--table-border-radius);
   overflow: hidden;
 }
@@ -70,27 +68,27 @@ table th {
   font-weight: 600;
   padding: 0.75rem 1rem;
   text-align: left;
-  border-bottom: 1px solid var(--table-border);
+  border: none;
   position: relative;
 }
 
 table th:not(:last-child) {
-  border-right: 1px solid var(--table-border);
+  border: none;
 }
 
 table td {
   padding: 0.75rem 1rem;
-  border-bottom: 1px solid var(--table-border);
+  border: none;
   background-color: var(--table-row-bg);
   position: relative;
 }
 
 table td:not(:last-child) {
-  border-right: 1px solid var(--table-border);
+  border: none;
 }
 
 table tr:last-child td {
-  border-bottom: none;
+  border: none;
 }
 
 table tr:nth-child(even) td {

@@ -26,12 +26,16 @@ export default function Home(): JSX.Element {
                 <h1 className="pt-12 leading-none text-dorange sm:text-4xl md:text-5xl lg:text-6xl dark:text-terracotta font-bold tracking-wide">
                   MammoTab
                 </h1>
-                <p className=" text-stone-800 dark:text-stone-100 sm:text-xl lg:mb-8 md:text-xl lg:text-2xl">
+                <p className="text-stone-800 dark:text-stone-100 sm:text-lg lg:mb-8 md:text-lg lg:text-xl">
                   MammoTab, is a dataset composed of 1M Wikipedia tables
                   extracted from over 20M Wikipedia pages and annotated through
-                  Wikidata. The lack of this kind of datasets in the
+                  Wikidata.
+                  <br />
+                  The lack of this kind of datasets in the
                   stateof-the-art makes MammoTab a good resource for testing and
-                  training Semantic Table Interpretation approaches. The dataset
+                  training Semantic Table Interpretation approaches.
+                  <br />
+                  The dataset
                   has been designed to cover several key challenges, such as
                   disambiguation, homonymy, and NIL-mentions
                 </p>

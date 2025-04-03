@@ -20,7 +20,11 @@ const MAX_VALUES = {
   nils: 100,
   acronyms: 70,
   aliases: 100,
-  typos: 35
+  typos: 35,
+  genericTypes: 50,
+  specificTypes: 50,
+  singleDomain: 100,
+  multiDomain: 100
 };
 
 const columnHelper = createColumnHelper<any>();
@@ -72,53 +76,11 @@ const columns = [
     },
     sortingFn: "alphanumeric",
   }),
-  columnHelper.accessor("accuracy", {
-    header: "Accuracy",
+  columnHelper.accessor("cea", {
+    header: "CEA",
     cell: (info) => {
       const value = parseFloat(info.getValue());
       const percentage = Math.round((value / MAX_VALUES.accuracy) * 100);
-      return (
-        <div className="flex items-center justify-center gap-1">
-          <span>{value}</span>
-          <span className="text-xs text-gray-400">[{percentage}%]</span>
-        </div>
-      );
-    },
-    sortingFn: "alphanumeric",
-  }),
-  columnHelper.accessor("annotatedCells", {
-    header: "Annotated Cells",
-    cell: (info) => {
-      const value = parseInt(info.getValue().replace(/,/g, ''));
-      const percentage = Math.round((value / MAX_VALUES.annotatedCells) * 100);
-      return (
-        <div className="flex items-center justify-center gap-1">
-          <span>{info.getValue()}</span>
-          <span className="text-xs text-gray-400">[{percentage}%]</span>
-        </div>
-      );
-    },
-    sortingFn: "alphanumeric",
-  }),
-  columnHelper.accessor("neColumns", {
-    header: "NE-columns",
-    cell: (info) => {
-      const value = parseInt(info.getValue());
-      const percentage = Math.round((value / MAX_VALUES.neColumns) * 100);
-      return (
-        <div className="flex items-center justify-center gap-1">
-          <span>{value}</span>
-          <span className="text-xs text-gray-400">[{percentage}%]</span>
-        </div>
-      );
-    },
-    sortingFn: "alphanumeric",
-  }),
-  columnHelper.accessor("lColumns", {
-    header: "L-columns",
-    cell: (info) => {
-      const value = parseInt(info.getValue());
-      const percentage = Math.round((value / MAX_VALUES.lColumns) * 100);
       return (
         <div className="flex items-center justify-center gap-1">
           <span>{value}</span>
@@ -184,6 +146,62 @@ const columns = [
     },
     sortingFn: "alphanumeric",
   }),
+  columnHelper.accessor("genericTypes", {
+    header: "Generic Types",
+    cell: (info) => {
+      const value = parseInt(info.getValue());
+      const percentage = Math.round((value / MAX_VALUES.genericTypes) * 100);
+      return (
+        <div className="flex items-center justify-center gap-1">
+          <span>{value}</span>
+          <span className="text-xs text-gray-400">[{percentage}%]</span>
+        </div>
+      );
+    },
+    sortingFn: "alphanumeric",
+  }),
+  columnHelper.accessor("specificTypes", {
+    header: "Specific Types",
+    cell: (info) => {
+      const value = parseInt(info.getValue());
+      const percentage = Math.round((value / MAX_VALUES.specificTypes) * 100);
+      return (
+        <div className="flex items-center justify-center gap-1">
+          <span>{value}</span>
+          <span className="text-xs text-gray-400">[{percentage}%]</span>
+        </div>
+      );
+    },
+    sortingFn: "alphanumeric",
+  }),
+  columnHelper.accessor("singleDomain", {
+    header: "Single Domain",
+    cell: (info) => {
+      const value = parseInt(info.getValue());
+      const percentage = Math.round((value / MAX_VALUES.singleDomain) * 100);
+      return (
+        <div className="flex items-center justify-center gap-1">
+          <span>{value}</span>
+          <span className="text-xs text-gray-400">[{percentage}%]</span>
+        </div>
+      );
+    },
+    sortingFn: "alphanumeric",
+  }),
+  columnHelper.accessor("multiDomain", {
+    header: "Multi Domain",
+    cell: (info) => {
+      const value = parseInt(info.getValue());
+      const percentage = Math.round((value / MAX_VALUES.multiDomain) * 100);
+      return (
+        <div className="flex items-center justify-center gap-1">
+          <span>{value}</span>
+          <span className="text-xs text-gray-400">[{percentage}%]</span>
+        </div>
+      );
+    },
+    sortingFn: "alphanumeric",
+  }),
 ];
 
 const data = [
@@ -191,248 +209,267 @@ const data = [
     model: "Gemini-1.0 Pro",
     parameters: "1.8B",
     status: "To do",
-    accuracy: "0.85",
-    annotatedCells: "1,100",
-    neColumns: "45",
-    lColumns: "32",
+    cea: "0.85",
     nils: "78",
     acronyms: "56",
     aliases: "89",
-    typos: "23"
+    typos: "23",
+    genericTypes: "45",
+    specificTypes: "42",
+    singleDomain: "85",
+    multiDomain: "75"
   },
   {
     model: "Gemini-1.5 Pro",
     parameters: "3.2B",
     status: "In progress",
-    accuracy: "0.88", 
-    annotatedCells: "1,150",
-    neColumns: "48",
-    lColumns: "35",
+    cea: "0.88",
     nils: "82",
     acronyms: "59",
     aliases: "92",
-    typos: "25"
+    typos: "25",
+    genericTypes: "48",
+    specificTypes: "45",
+    singleDomain: "88",
+    multiDomain: "78"
   },
   {
     model: "Gemini-1.5 Flash",
     parameters: "2.5B",
     status: "Done",
-    accuracy: "0.87",
-    annotatedCells: "1,120",
-    neColumns: "47",
-    lColumns: "34",
+    cea: "0.87",
     nils: "80",
     acronyms: "58",
     aliases: "91",
-    typos: "24"
+    typos: "24",
+    genericTypes: "47",
+    specificTypes: "44",
+    singleDomain: "87",
+    multiDomain: "77"
   },
   {
     model: "Gemma",
     parameters: "2B",
     status: "To do",
-    accuracy: "0.84",
-    annotatedCells: "1,050",
-    neColumns: "44",
-    lColumns: "31",
+    cea: "0.84",
     nils: "76",
     acronyms: "55",
     aliases: "88",
-    typos: "22"
+    typos: "22",
+    genericTypes: "44",
+    specificTypes: "41",
+    singleDomain: "84",
+    multiDomain: "74"
   },
   {
     model: "Gemma 2",
     parameters: "7B",
     status: "In progress",
-    accuracy: "0.86",
-    annotatedCells: "1,080",
-    neColumns: "46",
-    lColumns: "33",
+    cea: "0.86",
     nils: "79",
     acronyms: "57",
     aliases: "90",
-    typos: "23"
+    typos: "23",
+    genericTypes: "46",
+    specificTypes: "43",
+    singleDomain: "86",
+    multiDomain: "76"
   },
   {
     model: "Phi-3 Mini",
     parameters: "3.8B",
     status: "To do",
-    accuracy: "0.83",
-    annotatedCells: "1,020",
-    neColumns: "43",
-    lColumns: "30",
+    cea: "0.83",
     nils: "75",
     acronyms: "54",
     aliases: "87",
-    typos: "21"
+    typos: "21",
+    genericTypes: "43",
+    specificTypes: "40",
+    singleDomain: "83",
+    multiDomain: "73"
   },
   {
     model: "Phi-3 Small",
     parameters: "7B",
     status: "In progress",
-    accuracy: "0.85",
-    annotatedCells: "1,040",
-    neColumns: "44",
-    lColumns: "31",
+    cea: "0.85",
     nils: "76",
     acronyms: "55",
     aliases: "88",
-    typos: "22"
+    typos: "22",
+    genericTypes: "44",
+    specificTypes: "41",
+    singleDomain: "84",
+    multiDomain: "74"
   },
   {
     model: "Phi-3 Medium",
     parameters: "14B",
     status: "Done",
-    accuracy: "0.87",
-    annotatedCells: "1,060",
-    neColumns: "46",
-    lColumns: "33",
+    cea: "0.87",
     nils: "79",
     acronyms: "57",
     aliases: "90",
-    typos: "23"
+    typos: "23",
+    genericTypes: "46",
+    specificTypes: "43",
+    singleDomain: "86",
+    multiDomain: "76"
   },
   {
     model: "Phi-3.5 Mini",
     parameters: "4.2B",
     status: "To do",
-    accuracy: "0.84",
-    annotatedCells: "1,030",
-    neColumns: "44",
-    lColumns: "31",
+    cea: "0.84",
     nils: "77",
     acronyms: "56",
     aliases: "89",
-    typos: "22"
+    typos: "22",
+    genericTypes: "45",
+    specificTypes: "42",
+    singleDomain: "85",
+    multiDomain: "75"
   },
   {
     model: "Mixtral",
     parameters: "7B",
     status: "In progress",
-    accuracy: "0.89",
-    annotatedCells: "1,180",
-    neColumns: "49",
-    lColumns: "36",
+    cea: "0.89",
     nils: "83",
     acronyms: "60",
     aliases: "93",
-    typos: "26"
+    typos: "26",
+    genericTypes: "49",
+    specificTypes: "46",
+    singleDomain: "89",
+    multiDomain: "79"
   },
   {
     model: "Mixtral-Instruct",
     parameters: "8B",
     status: "Done",
-    accuracy: "0.90",
-    annotatedCells: "1,200",
-    neColumns: "50",
-    lColumns: "37",
+    cea: "0.90",
     nils: "84",
     acronyms: "61",
     aliases: "94",
-    typos: "27"
+    typos: "27",
+    genericTypes: "50",
+    specificTypes: "47",
+    singleDomain: "90",
+    multiDomain: "80"
   },
   {
     model: "Claude 3 Sonnet",
     parameters: "7B",
     status: "In progress",
-    accuracy: "0.91",
-    annotatedCells: "1,220",
-    neColumns: "51",
-    lColumns: "38",
+    cea: "0.91",
     nils: "85",
     acronyms: "62",
     aliases: "95",
-    typos: "28"
+    typos: "28",
+    genericTypes: "51",
+    specificTypes: "48",
+    singleDomain: "91",
+    multiDomain: "81"
   },
   {
     model: "Claude 3 Haiku",
     parameters: "3.5B",
     status: "To do",
-    accuracy: "0.89",
-    annotatedCells: "1,190",
-    neColumns: "49",
-    lColumns: "36",
+    cea: "0.89",
     nils: "83",
     acronyms: "60",
     aliases: "93",
-    typos: "26"
+    typos: "26",
+    genericTypes: "49",
+    specificTypes: "46",
+    singleDomain: "89",
+    multiDomain: "79"
   },
   {
     model: "Claude 3.5 Sonnet",
     parameters: "8.5B",
     status: "Done",
-    accuracy: "0.92",
-    annotatedCells: "1,240",
-    neColumns: "52",
-    lColumns: "39",
+    cea: "0.92",
     nils: "86",
     acronyms: "63",
     aliases: "96",
-    typos: "29"
+    typos: "29",
+    genericTypes: "52",
+    specificTypes: "49",
+    singleDomain: "92",
+    multiDomain: "82"
   },
   {
     model: "Llama 3.2",
     parameters: "7B",
     status: "In progress",
-    accuracy: "0.88",
-    annotatedCells: "1,160",
-    neColumns: "48",
-    lColumns: "35",
+    cea: "0.88",
     nils: "82",
     acronyms: "59",
     aliases: "92",
-    typos: "25"
+    typos: "25",
+    genericTypes: "48",
+    specificTypes: "45",
+    singleDomain: "88",
+    multiDomain: "78"
   },
   {
     model: "Llama 3.1",
     parameters: "6.5B",
     status: "To do",
-    accuracy: "0.87",
-    annotatedCells: "1,140",
-    neColumns: "47",
-    lColumns: "34",
+    cea: "0.87",
     nils: "81",
     acronyms: "58",
     aliases: "91",
-    typos: "24"
+    typos: "24",
+    genericTypes: "47",
+    specificTypes: "44",
+    singleDomain: "87",
+    multiDomain: "77"
   },
   {
     model: "Qwen 2",
     parameters: "7B",
     status: "In progress",
-    accuracy: "0.86",
-    annotatedCells: "1,120",
-    neColumns: "46",
-    lColumns: "33",
+    cea: "0.86",
     nils: "80",
     acronyms: "57",
     aliases: "90",
-    typos: "23"
+    typos: "23",
+    genericTypes: "46",
+    specificTypes: "43",
+    singleDomain: "86",
+    multiDomain: "76"
   },
   {
     model: "Qwen-2.5",
     parameters: "8B",
     status: "Done",
-    accuracy: "0.88",
-    annotatedCells: "1,170",
-    neColumns: "48",
-    lColumns: "35",
+    cea: "0.88",
     nils: "82",
     acronyms: "59",
     aliases: "92",
-    typos: "25"
+    typos: "25",
+    genericTypes: "48",
+    specificTypes: "45",
+    singleDomain: "88",
+    multiDomain: "78"
   },
   {
     model: "Yi-1.5",
     parameters: "6B",
     status: "To do",
-    accuracy: "0.85",
-    annotatedCells: "1,110",
-    neColumns: "45",
-    lColumns: "32",
+    cea: "0.85",
     nils: "78",
     acronyms: "56",
     aliases: "89",
-    typos: "23"
+    typos: "23",
+    genericTypes: "45",
+    specificTypes: "42",
+    singleDomain: "85",
+    multiDomain: "75"
   }
 ];
 
@@ -456,7 +493,7 @@ export default function Leaderboard(): JSX.Element {
   });
 
   return (
-    <Layout title={`Hello from ${siteConfig.title}`} description="MammoTab, is a dataset composed of 1M Wikipedia tables extracted from over 20M Wikipedia pages and annotated through Wikidata.">
+    <Layout title={`${siteConfig.title}`} description="MammoTab, is a dataset composed of 1M Wikipedia tables extracted from over 20M Wikipedia pages and annotated through Wikidata.">
       <main>
         <img
           src="/mammotab-docs/img/bblurrymam.svg"
@@ -464,6 +501,13 @@ export default function Leaderboard(): JSX.Element {
         />
 
         <section id="tanstack-table-container" className="mx-auto relative z-10 p-8 w-full">
+          <div className="mb-8">
+            <h1 className="text-4xl font-bold text-dorange dark:text-terracotta">LLM Leaderboard</h1>
+            <p className="text-stone-800 dark:text-stone-100 mt-2">Compare the performance of different language models on the MammoTab dataset</p>
+            <p className="text-stone-600 dark:text-stone-300 mt-4 text-sm">
+              This leaderboard has been generated using the MammoTab sample dataset, which consists of 844 tables containing a total of 84,145 distinct mentions.
+            </p>
+          </div>
           <div className="mb-4 flex justify-end">
             <div className="relative">
               <button 
