@@ -54,4 +54,23 @@ LAMAPI_ROOT=http://example.lamapi.address:port/
 LAMAPI_TOKEN=lamapi_token_secret
 ```
 
+Where the first 4 variables consist of flags to enable data transformation techniques to add acronyms, aliases, typos and appoximate numeric literal values.
+
+MaxLines and MaxColumns are threasholds to exclude excessively large tables present in Wikipedia.
+
+MaxHeaders is a threashold to exclude some improper tables having more headers than content.
+
+ENABLE_EXTERNAL_CONTEXT adds the out table context to the json data, WARNING: if used the size is Huge!
+
+The Lamapi variables reprent the endpoint and access token to the instance of Lamapi neeeded to process the WikiData dumps.
+
+There are some additional env variables to manage export threasholds
+
+```bash
+ADDACRONIMSPERCENT = 70
+ADDTYPOSPERCENT = 50
+APPROXIMATENUMBERSPERCENT = 30
+ADDALIASESPERCENT = 70
+```
+
 The current user home folder should be writable, otherwise downloading of nltk data will fail and you need to manually provide the data. Check `utilities/column_classifier.py` for details.
