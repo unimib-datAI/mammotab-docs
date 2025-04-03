@@ -1,8 +1,8 @@
 ---
-sidebar_position: 6
+sidebar_position: 5
 ---
 
-# 6. Enrich the dump with wikidata IDs
+# 5. Enrich the dump with wikidata IDs
 
 This scripts requires some pickle files to work (see section [Auxiliary files](/mammotab-docs/docs/auxiliary-files)).
 This scripts gets the wikidata entities corresponding to wikipedia links and add columns types and it detects which mentions are NIL.

@@ -1,8 +1,8 @@
 ---
-sidebar_position: 5
+sidebar_position: 4
 ---
 
-# 5. NIL Detection using Wikipedia titles
+# 4. NIL Detection using Wikipedia titles
 
 To detect which mentions are NIL we obtain all the titles/links actually present in wikipedia (if a title/link is not present the mention is NIL).
 For each dump run:

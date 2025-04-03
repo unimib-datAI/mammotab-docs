@@ -1,8 +1,8 @@
 ---
-sidebar_position: 4
+sidebar_position: 3
 ---
 
-# 4. Filter the dump
+# 3. Filter the dump
 
 This step removes meaningless columns/rows (e.g. all cells are the empty string).
 To process a single dump run:

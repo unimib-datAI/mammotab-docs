@@ -1,8 +1,8 @@
 ---
-sidebar_position: 7
+sidebar_position: 6
 ---
 
-# 7. Create semtab dataset
+# 6. Create semtab dataset
 
 To create the dataset for semtab (with tables, targets, and gt) run
 
