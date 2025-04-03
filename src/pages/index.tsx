@@ -58,7 +58,7 @@ export default function Home(): JSX.Element {
             <li className="mb-10 ms-6">
               <span className="absolute flex items-center justify-center w-6 h-6 bg-dorange rounded-full -start-3 dark:bg-brick"></span>
               <p className="pt-1.5 mb-1 text-lg uppercase leading-none text-stone-500 dark:text-stone-400">
-                Mammotab 2024
+                Mammotab 2025
               </p>
               <h3 className="text-3xl font-semibold text-dorange dark:text-terracotta">
                 V2
