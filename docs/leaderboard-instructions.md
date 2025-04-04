@@ -6,6 +6,25 @@ sidebar_position: 9
 
 This guide will walk you through the process of testing a model and contributing to the MammoTab Leaderboard.
 
+The testing is performed on a sample of 870 tables, containing a total of 85,565 cells. This sample has been carefully selected to represent the diverse characteristics of the MammoTab dataset and STI key challenges:
+
+## Dataset Characteristics
+
+The test sample includes:
+- **Entity Annotations**:
+  - 71,500 entities
+  - 14,856 NIL mentions
+- **Type Annotations**:
+  - 266,703 generic types
+  - 1,125,199 specific types
+- **Additional Features**:
+  - 3,518 acronyms
+  - 12,135 typos
+  - 7,117 aliases
+- **Domain Distribution**:
+  - 435 single-domain tables
+  - 435 multi-domain tables
+
 ## Prerequisites
 
 Before starting, ensure you have:

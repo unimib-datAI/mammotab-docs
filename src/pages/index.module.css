@@ -21,3 +21,30 @@
   align-items: center;
   justify-content: center;
 }
+
+.gradientText {
+  background: linear-gradient(
+    45deg,
+    #DF8849,
+    #88512D,
+    #3F3533,
+    #504843
+  );
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: gradient 8s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}

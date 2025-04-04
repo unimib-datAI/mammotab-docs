@@ -505,7 +505,7 @@ export default function Leaderboard(): JSX.Element {
             <h1 className="text-4xl font-bold text-dorange dark:text-terracotta">LLM Leaderboard</h1>
             <p className="text-stone-800 dark:text-stone-100 mt-2">Compare the performance of different language models on the MammoTab dataset</p>
             <p className="text-stone-600 dark:text-stone-300 mt-4 text-sm">
-              This leaderboard has been generated using the MammoTab sample dataset, which consists of 844 tables containing a total of 84,145 distinct mentions.
+              This leaderboard has been generated using the MammoTab sample dataset, which consists of 870 tables containing a total of 85,565 distinct mentions.
             </p>
           </div>
           <div className="mb-4 flex justify-end">

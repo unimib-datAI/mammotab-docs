@@ -23,8 +23,8 @@ export default function Home(): JSX.Element {
           <div className="mx-4 place-content-center lg:gap-12 xl:gap-12 lg:grid-cols-12 pb-12 pt-12">
             <div className="justify-center flex flex-col md:flex-row max-w-8xl gap-12 pb-2 mx-auto">
               <div className="place-content-center max-w-lg pl-2">
-                <h1 className="pt-12 leading-none text-dorange sm:text-4xl md:text-5xl lg:text-6xl dark:text-terracotta font-bold tracking-wide">
-                  MammoTab
+                <h1 className="pt-12 leading-none sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-wide">
+                  <span className={styles.gradientText}>MammoTab</span>
                 </h1>
                 <p className="text-stone-800 dark:text-stone-100 sm:text-lg lg:mb-8 md:text-lg lg:text-xl">
                   MammoTab, is a dataset composed of 1M Wikipedia tables
