@@ -9,7 +9,34 @@ import {
   SortingState,
   ColumnVisibility,
 } from "@tanstack/react-table";
-import { useState } from "react";
+import { useState, useMemo, useCallback } from "react";
+
+// Define types for our data
+type ModelData = {
+  model: string;
+  parameters: string;
+  status: "To do" | "In progress" | "Done";
+  system: string;
+  total_time: string;
+  accuracy: string;
+  total_correct: string;
+  ne_cells: string;
+  cea: string;
+  nils: string;
+  acronyms: string;
+  aliases: string;
+  typos: string;
+  genericTypes: string;
+  specificTypes: string;
+  singleDomain: string;
+  multiDomain: string;
+  small_per_cols: string;
+  medium_per_cols: string;
+  large_per_cols: string;
+  small_per_rows: string;
+  medium_per_rows: string;
+  large_per_rows: string;
+};
 
 // Maximum values for percentage calculation
 const MAX_VALUES = {
@@ -28,11 +55,70 @@ const MAX_VALUES = {
   mediumPerRows: 100,
   largePerRows: 100,
   annotatedCells: 1500
+} as const;
+
+// Helper function for rendering cells with percentage
+const renderCellWithPercentage = (value: string, maxValue: number) => {
+  if (!value) return "";
+  const percentage = Math.round((parseInt(value) / maxValue) * 100);
+  return (
+    <div className="flex items-center justify-center gap-1">
+      <span>{value}</span>
+      <span className="text-xs text-gray-400">[{percentage}%]</span>
+    </div>
+  );
 };
 
-const columnHelper = createColumnHelper<any>();
+// Helper function for rendering simple cells
+const renderSimpleCell = (value: string) => {
+  if (!value) return "";
+  return (
+    <div className="flex items-center justify-center gap-1">
+      <span>{value}</span>
+    </div>
+  );
+};
 
-const columns = [
+// Helper function for rendering accuracy cells
+const renderAccuracyCell = (value: string) => {
+  if (!value) return "";
+  return (
+    <div className="flex items-center justify-center gap-1">
+      <span>{parseFloat(value).toFixed(2)}</span>
+    </div>
+  );
+};
+
+// Helper function for rendering status cells
+const renderStatusCell = (status: ModelData["status"]) => {
+  let bgColor = "";
+  let textColor = "text-stone-100";
+  
+  switch (status) {
+    case "To do":
+      bgColor = "bg-brick";
+      break;
+    case "In progress":
+      bgColor = "bg-dorange";
+      break;
+    case "Done":
+      bgColor = "bg-chocolate";
+      break;
+  }
+  
+  return (
+    <div className="flex justify-center items-center">
+      <span className={`${bgColor} ${textColor} px-3 py-1 rounded-full text-xs font-semibold w-24 text-center`}>
+        {status}
+      </span>
+    </div>
+  );
+};
+
+const columnHelper = createColumnHelper<ModelData>();
+
+// Memoize columns to prevent unnecessary re-renders
+const createColumns = () => [
   columnHelper.accessor("model", {
     header: "Model",
     cell: (info) => <span className="font-bold">{info.getValue()}</span>,
@@ -40,69 +126,31 @@ const columns = [
   }),
   columnHelper.accessor("parameters", {
     header: "Parameters",
-    cell: (info) => {
-      const value = info.getValue();
-      return (
-        <div className="flex items-center justify-center gap-1">
-          <span>{value}</span>
-        </div>
-      );
-    },
+    cell: (info) => renderSimpleCell(info.getValue()),
     sortingFn: "alphanumeric",
   }),
   columnHelper.accessor("status", {
     header: "Status",
-    cell: (info) => {
-      const status = info.getValue();
-      let bgColor = "";
-      let textColor = "text-stone-100";
-      
-      switch (status) {
-        case "To do":
-          bgColor = "bg-brick";
-          break;
-        case "In progress":
-          bgColor = "bg-dorange";
-          break;
-        case "Done":
-          bgColor = "bg-chocolate";
-          break;
-      }
-      
-      return (
-        <div className="flex justify-center items-center">
-          <span className={`${bgColor} ${textColor} px-3 py-1 rounded-full text-xs font-semibold w-24 text-center`}>
-            {status}
-          </span>
-        </div>
-      );
-    },
+    cell: (info) => renderStatusCell(info.getValue()),
     sortingFn: (rowA, rowB) => {
-      const statusOrder: Record<string, number> = { "Done": 0, "In progress": 1, "To do": 2 };
-      const statusA = rowA.getValue("status") as string;
-      const statusB = rowB.getValue("status") as string;
-      return statusOrder[statusA] - statusOrder[statusB];
+      const statusOrder: Record<ModelData["status"], number> = { "Done": 0, "In progress": 1, "To do": 2 };
+      return statusOrder[rowA.getValue("status")] - statusOrder[rowB.getValue("status")];
     },
   }),
   columnHelper.accessor("system", {
     header: "System",
-    cell: (info) => {
-      const value = info.getValue();
-      return (
-        <div className="flex items-center justify-center gap-1">
-          <span>{value}</span>
-        </div>
-      );
-    },
+    cell: (info) => renderSimpleCell(info.getValue()),
     sortingFn: "alphanumeric",
   }),
   columnHelper.accessor("total_time", {
     header: "Total Time",
     cell: (info) => {
       const value = info.getValue();
+      if (!value) return "";
+      const hours = (parseFloat(value) / 3600).toFixed(2);
       return (
         <div className="flex items-center justify-center gap-1">
-          <span>{value}</span>
+          <span>{hours}h</span>
         </div>
       );
     },
@@ -110,253 +158,87 @@ const columns = [
   }),
   columnHelper.accessor("accuracy", {
     header: "Accuracy",
-    cell: (info) => {
-      const value = info.getValue();
-      if (!value) return "";
-      return (
-        <div className="flex items-center justify-center gap-1">
-          <span>{parseFloat(value).toFixed(2)}</span>
-        </div>
-      );
-    },
+    cell: (info) => renderAccuracyCell(info.getValue()),
     sortingFn: "alphanumeric",
   }),
   columnHelper.accessor("total_correct", {
     header: "Total Correct",
-    cell: (info) => {
-      const value = info.getValue();
-      if (!value) return "";
-      return (
-        <div className="flex items-center justify-center gap-1">
-          <span>{value}</span>
-        </div>
-      );
-    },
+    cell: (info) => renderSimpleCell(info.getValue()),
     sortingFn: "alphanumeric",
   }),
   columnHelper.accessor("ne_cells", {
     header: "NE Cells",
-    cell: (info) => {
-      const value = info.getValue();
-      if (!value) return "";
-      const percentage = Math.round((parseInt(value) / MAX_VALUES.annotatedCells) * 100);
-      return (
-        <div className="flex items-center justify-center gap-1">
-          <span>{value}</span>
-          <span className="text-xs text-gray-400">[{percentage}%]</span>
-        </div>
-      );
-    },
+    cell: (info) => renderCellWithPercentage(info.getValue(), MAX_VALUES.annotatedCells),
     sortingFn: "alphanumeric",
   }),
   columnHelper.accessor("nils", {
     header: "NILs",
-    cell: (info) => {
-      const value = info.getValue();
-      if (!value) return "";
-      const percentage = Math.round((parseInt(value) / MAX_VALUES.nils) * 100);
-      return (
-        <div className="flex items-center justify-center gap-1">
-          <span>{value}</span>
-          <span className="text-xs text-gray-400">[{percentage}%]</span>
-        </div>
-      );
-    },
+    cell: (info) => renderCellWithPercentage(info.getValue(), MAX_VALUES.nils),
     sortingFn: "alphanumeric",
   }),
   columnHelper.accessor("acronyms", {
     header: "Acronyms",
-    cell: (info) => {
-      const value = info.getValue();
-      if (!value) return "";
-      const percentage = Math.round((parseInt(value) / MAX_VALUES.acronyms) * 100);
-      return (
-        <div className="flex items-center justify-center gap-1">
-          <span>{value}</span>
-          <span className="text-xs text-gray-400">[{percentage}%]</span>
-        </div>
-      );
-    },
+    cell: (info) => renderCellWithPercentage(info.getValue(), MAX_VALUES.acronyms),
     sortingFn: "alphanumeric",
   }),
   columnHelper.accessor("typos", {
     header: "Typos",
-    cell: (info) => {
-      const value = info.getValue();
-      if (!value) return "";
-      const percentage = Math.round((parseInt(value) / MAX_VALUES.typos) * 100);
-      return (
-        <div className="flex items-center justify-center gap-1">
-          <span>{value}</span>
-          <span className="text-xs text-gray-400">[{percentage}%]</span>
-        </div>
-      );
-    },
+    cell: (info) => renderCellWithPercentage(info.getValue(), MAX_VALUES.typos),
     sortingFn: "alphanumeric",
   }),
   columnHelper.accessor("aliases", {
     header: "Aliases",
-    cell: (info) => {
-      const value = info.getValue();
-      if (!value) return "";
-      const percentage = Math.round((parseInt(value) / MAX_VALUES.aliases) * 100);
-      return (
-        <div className="flex items-center justify-center gap-1">
-          <span>{value}</span>
-          <span className="text-xs text-gray-400">[{percentage}%]</span>
-        </div>
-      );
-    },
+    cell: (info) => renderCellWithPercentage(info.getValue(), MAX_VALUES.aliases),
     sortingFn: "alphanumeric",
   }),
   columnHelper.accessor("genericTypes", {
     header: "Generic Types",
-    cell: (info) => {
-      const value = info.getValue();
-      if (!value) return "";
-      const percentage = Math.round((parseInt(value) / MAX_VALUES.genericTypes) * 100);
-      return (
-        <div className="flex items-center justify-center gap-1">
-          <span>{value}</span>
-          <span className="text-xs text-gray-400">[{percentage}%]</span>
-        </div>
-      );
-    },
+    cell: (info) => renderCellWithPercentage(info.getValue(), MAX_VALUES.genericTypes),
     sortingFn: "alphanumeric",
   }),
   columnHelper.accessor("specificTypes", {
     header: "Specific Types",
-    cell: (info) => {
-      const value = info.getValue();
-      if (!value) return "";
-      const percentage = Math.round((parseInt(value) / MAX_VALUES.specificTypes) * 100);
-      return (
-        <div className="flex items-center justify-center gap-1">
-          <span>{value}</span>
-          <span className="text-xs text-gray-400">[{percentage}%]</span>
-        </div>
-      );
-    },
+    cell: (info) => renderCellWithPercentage(info.getValue(), MAX_VALUES.specificTypes),
     sortingFn: "alphanumeric",
   }),
   columnHelper.accessor("singleDomain", {
     header: "Single Domain",
-    cell: (info) => {
-      const value = info.getValue();
-      if (!value) return "";
-      const percentage = Math.round((parseInt(value) / MAX_VALUES.singleDomain) * 100);
-      return (
-        <div className="flex items-center justify-center gap-1">
-          <span>{value}</span>
-          <span className="text-xs text-gray-400">[{percentage}%]</span>
-        </div>
-      );
-    },
+    cell: (info) => renderCellWithPercentage(info.getValue(), MAX_VALUES.singleDomain),
     sortingFn: "alphanumeric",
   }),
   columnHelper.accessor("multiDomain", {
     header: "Multi Domain",
-    cell: (info) => {
-      const value = info.getValue();
-      if (!value) return "";
-      const percentage = Math.round((parseInt(value) / MAX_VALUES.multiDomain) * 100);
-      return (
-        <div className="flex items-center justify-center gap-1">
-          <span>{value}</span>
-          <span className="text-xs text-gray-400">[{percentage}%]</span>
-        </div>
-      );
-    },
+    cell: (info) => renderCellWithPercentage(info.getValue(), MAX_VALUES.multiDomain),
     sortingFn: "alphanumeric",
   }),
   columnHelper.accessor("small_per_cols", {
     header: "Small % Cols",
-    cell: (info) => {
-      const value = info.getValue();
-      if (!value) return "";
-      const percentage = Math.round((parseInt(value) / MAX_VALUES.smallPerCols) * 100);
-      return (
-        <div className="flex items-center justify-center gap-1">
-          <span>{value}</span>
-          <span className="text-xs text-gray-400">[{percentage}%]</span>
-        </div>
-      );
-    },
+    cell: (info) => renderCellWithPercentage(info.getValue(), MAX_VALUES.smallPerCols),
     sortingFn: "alphanumeric",
   }),
   columnHelper.accessor("medium_per_cols", {
     header: "Medium % Cols",
-    cell: (info) => {
-      const value = info.getValue();
-      if (!value) return "";
-      const percentage = Math.round((parseInt(value) / MAX_VALUES.mediumPerCols) * 100);
-      return (
-        <div className="flex items-center justify-center gap-1">
-          <span>{value}</span>
-          <span className="text-xs text-gray-400">[{percentage}%]</span>
-        </div>
-      );
-    },
+    cell: (info) => renderCellWithPercentage(info.getValue(), MAX_VALUES.mediumPerCols),
     sortingFn: "alphanumeric",
   }),
   columnHelper.accessor("large_per_cols", {
     header: "Large % Cols",
-    cell: (info) => {
-      const value = info.getValue();
-      if (!value) return "";
-      const percentage = Math.round((parseInt(value) / MAX_VALUES.largePerCols) * 100);
-      return (
-        <div className="flex items-center justify-center gap-1">
-          <span>{value}</span>
-          <span className="text-xs text-gray-400">[{percentage}%]</span>
-        </div>
-      );
-    },
+    cell: (info) => renderCellWithPercentage(info.getValue(), MAX_VALUES.largePerCols),
     sortingFn: "alphanumeric",
   }),
   columnHelper.accessor("small_per_rows", {
     header: "Small % Rows",
-    cell: (info) => {
-      const value = info.getValue();
-      if (!value) return "";
-      const percentage = Math.round((parseInt(value) / MAX_VALUES.smallPerRows) * 100);
-      return (
-        <div className="flex items-center justify-center gap-1">
-          <span>{value}</span>
-          <span className="text-xs text-gray-400">[{percentage}%]</span>
-        </div>
-      );
-    },
+    cell: (info) => renderCellWithPercentage(info.getValue(), MAX_VALUES.smallPerRows),
     sortingFn: "alphanumeric",
   }),
   columnHelper.accessor("medium_per_rows", {
     header: "Medium % Rows",
-    cell: (info) => {
-      const value = info.getValue();
-      if (!value) return "";
-      const percentage = Math.round((parseInt(value) / MAX_VALUES.mediumPerRows) * 100);
-      return (
-        <div className="flex items-center justify-center gap-1">
-          <span>{value}</span>
-          <span className="text-xs text-gray-400">[{percentage}%]</span>
-        </div>
-      );
-    },
+    cell: (info) => renderCellWithPercentage(info.getValue(), MAX_VALUES.mediumPerRows),
     sortingFn: "alphanumeric",
   }),
   columnHelper.accessor("large_per_rows", {
     header: "Large % Rows",
-    cell: (info) => {
-      const value = info.getValue();
-      if (!value) return "";
-      const percentage = Math.round((parseInt(value) / MAX_VALUES.largePerRows) * 100);
-      return (
-        <div className="flex items-center justify-center gap-1">
-          <span>{value}</span>
-          <span className="text-xs text-gray-400">[{percentage}%]</span>
-        </div>
-      );
-    },
+    cell: (info) => renderCellWithPercentage(info.getValue(), MAX_VALUES.largePerRows),
     sortingFn: "alphanumeric",
   })
 ];
@@ -866,13 +748,16 @@ const data = [
 
 export default function Leaderboard(): JSX.Element {
   const { siteConfig } = useDocusaurusContext();
-  const [sorting, setSorting] = useState<SortingState>([
+  
+  // Memoize initial state
+  const initialSorting = useMemo<SortingState>(() => [
     {
       id: "status",
       desc: false,
     }
-  ]);
-  const [columnVisibility, setColumnVisibility] = useState<Record<string, boolean>>({
+  ], []);
+
+  const initialColumnVisibility = useMemo<Record<string, boolean>>(() => ({
     model: true,
     parameters: true,
     status: true,
@@ -890,8 +775,14 @@ export default function Leaderboard(): JSX.Element {
     small_per_rows: true,
     medium_per_rows: true,
     large_per_rows: true
-  });
+  }), []);
+
+  const [sorting, setSorting] = useState<SortingState>(initialSorting);
+  const [columnVisibility, setColumnVisibility] = useState<Record<string, boolean>>(initialColumnVisibility);
   const [showColumnMenu, setShowColumnMenu] = useState(false);
+
+  // Memoize columns
+  const columns = useMemo(() => createColumns(), []);
 
   const table = useReactTable({
     data,
@@ -905,6 +796,11 @@ export default function Leaderboard(): JSX.Element {
     getCoreRowModel: getCoreRowModel(),
     getSortedRowModel: getSortedRowModel(),
   });
+
+  // Memoize toggle function
+  const toggleColumnMenu = useCallback(() => {
+    setShowColumnMenu(prev => !prev);
+  }, []);
 
   return (
     <Layout title={`${siteConfig.title}`} description="MammoTab, is a dataset composed of 1M Wikipedia tables extracted from over 20M Wikipedia pages and annotated through Wikidata.">
@@ -926,7 +822,7 @@ export default function Leaderboard(): JSX.Element {
             <div className="relative">
               <button 
                 className="px-4 py-2 bg-chocolate text-white rounded-lg hover:bg-opacity-90"
-                onClick={() => setShowColumnMenu(!showColumnMenu)}
+                onClick={toggleColumnMenu}
               >
                 Show/Hide Columns
               </button>
@@ -1013,7 +909,6 @@ export default function Leaderboard(): JSX.Element {
             </div>
           </div>
         </section>
-
       </main>
     </Layout>
   );
