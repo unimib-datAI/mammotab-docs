@@ -24,6 +24,10 @@ The test sample includes:
 - **Domain Distribution**:
   - 435 single-domain tables
   - 435 multi-domain tables
+- **Table Dimensions**:
+  - Rows: min=4, max=253, avg=43.47, median=33.0
+  - Columns: min=1, max=36, avg=6.04, median=4.0
+  - Cells: min=4, max=264
 
 ## Prerequisites
 
