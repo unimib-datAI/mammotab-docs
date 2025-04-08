@@ -302,8 +302,9 @@ const columns = [
   columnHelper.accessor("large_per_cols", {
     header: "Large % Cols",
     cell: (info) => {
-      const value = parseInt(info.getValue());
-      const percentage = Math.round((value / MAX_VALUES.largePerCols) * 100);
+      const value = info.getValue();
+      if (!value) return "";
+      const percentage = Math.round((parseInt(value) / MAX_VALUES.largePerCols) * 100);
       return (
         <div className="flex items-center justify-center gap-1">
           <span>{value}</span>
@@ -316,8 +317,9 @@ const columns = [
   columnHelper.accessor("small_per_rows", {
     header: "Small % Rows",
     cell: (info) => {
-      const value = parseInt(info.getValue());
-      const percentage = Math.round((value / MAX_VALUES.smallPerRows) * 100);
+      const value = info.getValue();
+      if (!value) return "";
+      const percentage = Math.round((parseInt(value) / MAX_VALUES.smallPerRows) * 100);
       return (
         <div className="flex items-center justify-center gap-1">
           <span>{value}</span>
@@ -330,8 +332,9 @@ const columns = [
   columnHelper.accessor("medium_per_rows", {
     header: "Medium % Rows",
     cell: (info) => {
-      const value = parseInt(info.getValue());
-      const percentage = Math.round((value / MAX_VALUES.mediumPerRows) * 100);
+      const value = info.getValue();
+      if (!value) return "";
+      const percentage = Math.round((parseInt(value) / MAX_VALUES.mediumPerRows) * 100);
       return (
         <div className="flex items-center justify-center gap-1">
           <span>{value}</span>
@@ -344,8 +347,9 @@ const columns = [
   columnHelper.accessor("large_per_rows", {
     header: "Large % Rows",
     cell: (info) => {
-      const value = parseInt(info.getValue());
-      const percentage = Math.round((value / MAX_VALUES.largePerRows) * 100);
+      const value = info.getValue();
+      if (!value) return "";
+      const percentage = Math.round((parseInt(value) / MAX_VALUES.largePerRows) * 100);
       return (
         <div className="flex items-center justify-center gap-1">
           <span>{value}</span>
@@ -378,10 +382,10 @@ const data = [
     multiDomain: "",
     small_per_cols: "",
     medium_per_cols: "",
-    large_per_cols: "65",
-    small_per_rows: "80",
-    medium_per_rows: "70",
-    large_per_rows: "60"
+    large_per_cols: "",
+    small_per_rows: "",
+    medium_per_rows: "",
+    large_per_rows: ""
   },
   {
     model: "Gemini-1.5 Pro",
@@ -403,10 +407,10 @@ const data = [
     multiDomain: "",
     small_per_cols: "",
     medium_per_cols: "",
-    large_per_cols: "68",
-    small_per_rows: "82",
-    medium_per_rows: "72",
-    large_per_rows: "62"
+    large_per_cols: "",
+    small_per_rows: "",
+    medium_per_rows: "",
+    large_per_rows: ""
   },
   {
     model: "Gemini-1.5 Flash",
@@ -428,10 +432,10 @@ const data = [
     multiDomain: "",
     small_per_cols: "",
     medium_per_cols: "",
-    large_per_cols: "67",
-    small_per_rows: "80",
-    medium_per_rows: "70",
-    large_per_rows: "60"
+    large_per_cols: "",
+    small_per_rows: "",
+    medium_per_rows: "",
+    large_per_rows: ""
   },
   {
     model: "Gemma",
@@ -453,10 +457,10 @@ const data = [
     multiDomain: "",
     small_per_cols: "",
     medium_per_cols: "",
-    large_per_cols: "64",
-    small_per_rows: "76",
-    medium_per_rows: "66",
-    large_per_rows: "56"
+    large_per_cols: "",
+    small_per_rows: "",
+    medium_per_rows: "",
+    large_per_rows: ""
   },
   {
     model: "Gemma 2",
@@ -478,10 +482,10 @@ const data = [
     multiDomain: "",
     small_per_cols: "",
     medium_per_cols: "",
-    large_per_cols: "66",
-    small_per_rows: "79",
-    medium_per_rows: "69",
-    large_per_rows: "59"
+    large_per_cols: "",
+    small_per_rows: "",
+    medium_per_rows: "",
+    large_per_rows: ""
   },
   {
     model: "Phi-3 Mini",
@@ -503,10 +507,10 @@ const data = [
     multiDomain: "",
     small_per_cols: "",
     medium_per_cols: "",
-    large_per_cols: "63",
-    small_per_rows: "75",
-    medium_per_rows: "65",
-    large_per_rows: "55"
+    large_per_cols: "",
+    small_per_rows: "",
+    medium_per_rows: "",
+    large_per_rows: ""
   },
   {
     model: "Phi-3 Small",
@@ -528,10 +532,10 @@ const data = [
     multiDomain: "",
     small_per_cols: "",
     medium_per_cols: "",
-    large_per_cols: "64",
-    small_per_rows: "76",
-    medium_per_rows: "66",
-    large_per_rows: "56"
+    large_per_cols: "",
+    small_per_rows: "",
+    medium_per_rows: "",
+    large_per_rows: ""
   },
   {
     model: "Phi-3 Medium",
@@ -553,10 +557,10 @@ const data = [
     multiDomain: "",
     small_per_cols: "",
     medium_per_cols: "",
-    large_per_cols: "66",
-    small_per_rows: "79",
-    medium_per_rows: "69",
-    large_per_rows: "59"
+    large_per_cols: "",
+    small_per_rows: "",
+    medium_per_rows: "",
+    large_per_rows: ""
   },
   {
     model: "Phi-3.5 Mini",
@@ -578,10 +582,10 @@ const data = [
     multiDomain: "",
     small_per_cols: "",
     medium_per_cols: "",
-    large_per_cols: "65",
-    small_per_rows: "77",
-    medium_per_rows: "67",
-    large_per_rows: "57"
+    large_per_cols: "",
+    small_per_rows: "",
+    medium_per_rows: "",
+    large_per_rows: ""
   },
   {
     model: "Mixtral",
@@ -603,10 +607,10 @@ const data = [
     multiDomain: "",
     small_per_cols: "",
     medium_per_cols: "",
-    large_per_cols: "69",
-    small_per_rows: "83",
-    medium_per_rows: "73",
-    large_per_rows: "63"
+    large_per_cols: "",
+    small_per_rows: "",
+    medium_per_rows: "",
+    large_per_rows: ""
   },
   {
     model: "Mixtral-Instruct",
@@ -628,10 +632,10 @@ const data = [
     multiDomain: "",
     small_per_cols: "",
     medium_per_cols: "",
-    large_per_cols: "70",
-    small_per_rows: "84",
-    medium_per_rows: "74",
-    large_per_rows: "64"
+    large_per_cols: "",
+    small_per_rows: "",
+    medium_per_rows: "",
+    large_per_rows: ""
   },
   {
     model: "Claude 3 Sonnet",
@@ -653,10 +657,10 @@ const data = [
     multiDomain: "",
     small_per_cols: "",
     medium_per_cols: "",
-    large_per_cols: "71",
-    small_per_rows: "85",
-    medium_per_rows: "75",
-    large_per_rows: "65"
+    large_per_cols: "",
+    small_per_rows: "",
+    medium_per_rows: "",
+    large_per_rows: ""
   },
   {
     model: "Claude 3 Haiku",
@@ -678,10 +682,10 @@ const data = [
     multiDomain: "",
     small_per_cols: "",
     medium_per_cols: "",
-    large_per_cols: "69",
-    small_per_rows: "83",
-    medium_per_rows: "73",
-    large_per_rows: "63"
+    large_per_cols: "",
+    small_per_rows: "",
+    medium_per_rows: "",
+    large_per_rows: ""
   },
   {
     model: "Claude 3.5 Sonnet",
@@ -703,10 +707,10 @@ const data = [
     multiDomain: "",
     small_per_cols: "",
     medium_per_cols: "",
-    large_per_cols: "72",
-    small_per_rows: "86",
-    medium_per_rows: "76",
-    large_per_rows: "66"
+    large_per_cols: "",
+    small_per_rows: "",
+    medium_per_rows: "",
+    large_per_rows: ""
   },
   {
     model: "Llama 3.2",
@@ -728,10 +732,10 @@ const data = [
     multiDomain: "",
     small_per_cols: "",
     medium_per_cols: "",
-    large_per_cols: "68",
-    small_per_rows: "82",
-    medium_per_rows: "72",
-    large_per_rows: "62"
+    large_per_cols: "",
+    small_per_rows: "",
+    medium_per_rows: "",
+    large_per_rows: ""
   },
   {
     model: "Llama 3.1",
@@ -753,10 +757,10 @@ const data = [
     multiDomain: "",
     small_per_cols: "",
     medium_per_cols: "",
-    large_per_cols: "67",
-    small_per_rows: "81",
-    medium_per_rows: "71",
-    large_per_rows: "61"
+    large_per_cols: "",
+    small_per_rows: "",
+    medium_per_rows: "",
+    large_per_rows: ""
   },
   {
     model: "Qwen 2",
@@ -778,10 +782,10 @@ const data = [
     multiDomain: "",
     small_per_cols: "",
     medium_per_cols: "",
-    large_per_cols: "66",
-    small_per_rows: "80",
-    medium_per_rows: "70",
-    large_per_rows: "60"
+    large_per_cols: "",
+    small_per_rows: "",
+    medium_per_rows: "",
+    large_per_rows: ""
   },
   {
     model: "Qwen-2.5",
@@ -803,10 +807,10 @@ const data = [
     multiDomain: "",
     small_per_cols: "",
     medium_per_cols: "",
-    large_per_cols: "68",
-    small_per_rows: "82",
-    medium_per_rows: "72",
-    large_per_rows: "62"
+    large_per_cols: "",
+    small_per_rows: "",
+    medium_per_rows: "",
+    large_per_rows: ""
   },
   {
     model: "Yi-1.5",
@@ -828,10 +832,10 @@ const data = [
     multiDomain: "",
     small_per_cols: "",
     medium_per_cols: "",
-    large_per_cols: "65",
-    small_per_rows: "78",
-    medium_per_rows: "68",
-    large_per_rows: "58"
+    large_per_cols: "",
+    small_per_rows: "",
+    medium_per_rows: "",
+    large_per_rows: ""
   },
   {
     model: "Qwen 2",
@@ -910,7 +914,7 @@ export default function Leaderboard(): JSX.Element {
           className="absolute opacity-10 -top-[45rem]"
         />
 
-        <section id="tanstack-table-container" className="mx-auto relative z-10 p-8 w-full max-w-[95vw]">
+        <section id="tanstack-table-container" className="mx-auto relative z-10 p-8 w-full">
           <div className="mb-8">
             <h1 className="text-4xl font-bold text-dorange dark:text-terracotta">LLM Leaderboard</h1>
             <p className="text-stone-800 dark:text-stone-100 mt-2">Compare the performance of different language models on the MammoTab dataset</p>
@@ -950,12 +954,17 @@ export default function Leaderboard(): JSX.Element {
           </div>
 
           <div className="overflow-x-auto rounded-lg w-full" style={{ 
-            maxWidth: '100vw', 
+            maxWidth: '100%',
             overflowX: 'auto',
-            position: 'relative'
+            position: 'relative',
+            display: 'block'
           }}>
-            <div className="min-w-[1800px] mx-auto">
-              <table className="text-sm w-full rounded-lg overflow-hidden">
+            <div style={{ minWidth: '2500px' }}>
+              <table className="text-sm w-full rounded-lg overflow-hidden" style={{
+                tableLayout: 'fixed',
+                width: '100%',
+                minWidth: '2500px'
+              }}>
                 <thead className="text-xs uppercase dark:bg-rocketmetallic bg-paletaupe">
                   {table.getHeaderGroups().map((headerGroup) => (
                     <tr key={headerGroup.id}>
