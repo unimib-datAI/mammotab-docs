@@ -10,6 +10,7 @@ import {
   ColumnVisibility,
 } from "@tanstack/react-table";
 import { useState, useMemo, useCallback } from "react";
+import { Eye, EyeOff } from "lucide-react";
 
 // Define types for our data
 type ModelData = {
@@ -817,29 +818,48 @@ export default function Leaderboard(): JSX.Element {
             <p className="text-stone-600 dark:text-stone-300 mt-4 text-sm">
               This leaderboard has been <a href="/mammotab-docs/docs/leaderboard-instructions" className="text-dorange dark:text-terracotta hover:underline">generated</a> using the MammoTab sample dataset, which consists of 870 tables containing a total of 85,565 distinct mentions.
             </p>
+            <div className="mt-6 p-4 bg-bronze/10 dark:bg-grizzly/10 rounded-lg border border-bronze/20 dark:border-grizzly/20">
+              <p className="text-stone-800 dark:text-stone-100 font-semibold mb-2">This leaderboard is managed by:</p>
+              <div className="flex flex-wrap gap-2">
+                <span className="text-stone-700 dark:text-stone-300">
+                  <span className="font-medium">Marco Cremaschi</span>,{" "}
+                  <span className="font-medium">Fabio D'adda</span>,{" "}
+                  <span className="font-medium">Federico Belotti</span>
+                  <span className="text-stone-600 dark:text-stone-400"> from the University of Milano-Bicocca</span>
+                </span>
+                <span className="text-stone-700 dark:text-stone-300">
+                  and <span className="font-medium"><a href="https://www.tib.eu/en/research-development/research-groups-and-labs/data-science-and-digital-libraries/staff/jennifer-dsouza">Jennifer D'Souza</a></span>
+                  <span className="text-stone-600 dark:text-stone-400"> from TIB Leibniz Information Centre for Science and Technology</span>
+                </span>
+              </div>
+            </div>
           </div>
           <div className="fixed top-20 right-4 z-50">
             <div className="relative">
               <button 
-                className="px-4 py-2 bg-chocolate text-white rounded-lg hover:bg-opacity-90"
+                className="px-4 py-2 bg-chocolate text-white rounded-lg hover:bg-opacity-90 flex items-center gap-2 transition-all duration-200"
                 onClick={toggleColumnMenu}
               >
+                {showColumnMenu ? <EyeOff size={18} /> : <Eye size={18} />}
                 Show/Hide Columns
               </button>
               {showColumnMenu && (
-                <div className="absolute right-0 mt-2 w-48 bg-white dark:bg-umber rounded-lg shadow-lg py-2 z-50">
+                <div className="absolute right-0 mt-2 w-56 bg-white dark:bg-umber rounded-lg shadow-xl py-2 z-50 max-h-[400px] overflow-y-auto transition-all duration-200 ease-in-out transform opacity-100 scale-100">
+                  <div className="px-4 py-2 border-b border-gray-200 dark:border-gray-700">
+                    <h3 className="text-sm font-semibold text-gray-700 dark:text-gray-300">Visible Columns</h3>
+                  </div>
                   {table.getAllLeafColumns().map((column) => {
                     if (column.id === "model") return null; // Skip model column
                     return (
-                      <div key={column.id} className="px-4 py-2">
+                      <div key={column.id} className="px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-150">
                         <label className="flex items-center space-x-2 cursor-pointer">
                           <input
                             type="checkbox"
                             checked={column.getIsVisible()}
                             onChange={column.getToggleVisibilityHandler()}
-                            className="rounded text-chocolate focus:ring-chocolate"
+                            className="rounded text-chocolate focus:ring-chocolate h-4 w-4"
                           />
-                          <span className="text-sm">{column.columnDef.header as string}</span>
+                          <span className="text-sm text-gray-700 dark:text-gray-300">{column.columnDef.header as string}</span>
                         </label>
                       </div>
                     );

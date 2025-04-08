@@ -6,6 +6,16 @@ sidebar_position: 9
 
 This guide will walk you through the process of testing a model and contributing to the MammoTab Leaderboard.
 
+## Table of Contents
+- [Dataset Characteristics](#dataset-characteristics)
+- [Prerequisites](#prerequisites)
+- [Step 1: Model Selection and Setup](#step-1-model-selection-and-setup)
+- [Step 2: Environment Setup](#step-2-environment-setup)
+- [Step 3: Dataset and Execution](#step-3-dataset-and-execution)
+- [Step 4: Results Submission](#step-4-results-submission)
+- [Troubleshooting](#troubleshooting)
+- [Best Practices](#best-practices)
+
 The testing is performed on a sample of 870 tables, containing a total of 85,565 cells. This sample has been carefully selected to represent the diverse characteristics of the MammoTab dataset and STI key challenges.
 
 ## Dataset Characteristics
@@ -42,13 +52,15 @@ Before starting, ensure you have:
 ### Select Your Model
 1. Access the [Model Spreadsheet](https://docs.google.com/spreadsheets/d/12-hiPkNLePmRdf2fghLUDOM6xrR1qVUeaIOyuAqf5PE/edit?gid=0#gid=0)
 2. Choose a model from the available list in the "Model" sheet
-3. Update the "Group in charge" column with your team's information
-4. Set the model's status to "In Progress" when you begin testing
+3. Search it on HuggingFace, where you can copy the correct name (e.g. "Qwen/Qwen2.5-1.5B", "Qwen/Qwen2.5-0.5B", "microsoft/phi-2")
+4. Update the "Group in charge" column with your affiliation information
+5. Set the model's status to "In Progress" when you begin testing
 
 ## Step 2: Environment Setup
 
 ### Clone the Repository
 ```bash
+# Clone the repository and navigate to it
 git clone git@github.com:unimib-datAI/mammotab_execution.git
 cd mammotab_execution
 ```
@@ -56,6 +68,8 @@ cd mammotab_execution
 ### Configure Environment Variables
 1. Create a `.env` file in the main directory:
 ```bash
+# Navigate to the project directory and create the .env file
+cd mammotab_execution
 nano .env
 ```
 
@@ -85,16 +99,18 @@ HF_TOKEN="your-huggingface-token"
 
 ### Initialize the Dataset
 ```bash
+# Run the initialization script
 ./init.sh
 ```
 
 ### Start the Annotation Process
 ```bash
+# Start the Docker containers
 docker compose up
 ```
 
 :::caution
-The annotation process may take several days to complete, depending on the model size and your hardware specifications.
+The annotation process may take several days to complete, depending on the model size and your hardware specifications. See [Hardware Considerations](#hardware-considerations) for more details.
 :::
 
 ## Step 4: Results Submission
