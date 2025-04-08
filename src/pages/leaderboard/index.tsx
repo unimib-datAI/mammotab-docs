@@ -747,8 +747,12 @@ export default function Leaderboard(): JSX.Element {
             </div>
           </div>
 
-          <div className="overflow-x-auto rounded-lg w-full" style={{ maxWidth: '100vw', overflowX: 'auto' }}>
-            <div className="min-w-[1400px] mx-auto">
+          <div className="overflow-x-auto rounded-lg w-full" style={{ 
+            maxWidth: '100vw', 
+            overflowX: 'auto',
+            position: 'relative'
+          }}>
+            <div className="min-w-[1800px] mx-auto">
               <table className="text-sm w-full rounded-lg overflow-hidden">
                 <thead className="text-xs uppercase dark:bg-rocketmetallic bg-paletaupe">
                   {table.getHeaderGroups().map((headerGroup) => (
@@ -756,13 +760,15 @@ export default function Leaderboard(): JSX.Element {
                       {headerGroup.headers.map((header) => {
                         const isMetricColumn = [
                           'cea', 'nils', 'acronyms', 'aliases', 'typos', 
-                          'genericTypes', 'specificTypes', 'singleDomain', 'multiDomain'
+                          'genericTypes', 'specificTypes', 'singleDomain', 'multiDomain',
+                          'small_per_rows', 'medium_per_rows', 'large_per_rows',
+                          'small_per_cols', 'medium_per_cols', 'large_per_cols'
                         ].includes(header.id);
                         
                         return (
                           <th 
                             key={header.id} 
-                            className={`p-3 ${isMetricColumn ? 'w-[80px]' : header.id === 'model' ? 'min-w-[200px]' : 'min-w-[100px]'} text-center cursor-pointer hover:bg-opacity-80 underline ${header.id === 'model' ? 'text-left' : 'text-center'}`}
+                            className={`p-3 ${isMetricColumn ? 'w-[100px]' : header.id === 'model' ? 'min-w-[200px]' : 'min-w-[100px]'} text-center cursor-pointer hover:bg-opacity-80 underline ${header.id === 'model' ? 'text-left' : 'text-center'}`}
                             onClick={header.column.getToggleSortingHandler()}
                           >
                             <div className="flex items-center justify-center gap-1">
