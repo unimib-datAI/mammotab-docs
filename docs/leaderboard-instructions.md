@@ -6,7 +6,7 @@ sidebar_position: 9
 
 This guide will walk you through the process of testing a model and contributing to the MammoTab Leaderboard.
 
-The testing is performed on a sample of 870 tables, containing a total of 85,565 cells. This sample has been carefully selected to represent the diverse characteristics of the MammoTab dataset and STI key challenges:
+The testing is performed on a sample of 870 tables, containing a total of 85,565 cells. This sample has been carefully selected to represent the diverse characteristics of the MammoTab dataset and STI key challenges.
 
 ## Dataset Characteristics
 
