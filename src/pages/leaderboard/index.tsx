@@ -77,7 +77,12 @@ const columns = [
         </div>
       );
     },
-    sortingFn: "alphanumeric",
+    sortingFn: (rowA, rowB) => {
+      const statusOrder: Record<string, number> = { "Done": 0, "In progress": 1, "To do": 2 };
+      const statusA = rowA.getValue("status") as string;
+      const statusB = rowB.getValue("status") as string;
+      return statusOrder[statusA] - statusOrder[statusB];
+    },
   }),
   columnHelper.accessor("system", {
     header: "System",
@@ -857,7 +862,12 @@ const data = [
 
 export default function Leaderboard(): JSX.Element {
   const { siteConfig } = useDocusaurusContext();
-  const [sorting, setSorting] = useState<SortingState>([]);
+  const [sorting, setSorting] = useState<SortingState>([
+    {
+      id: "status",
+      desc: false,
+    }
+  ]);
   const [columnVisibility, setColumnVisibility] = useState<Record<string, boolean>>({
     model: true,
     parameters: true,
