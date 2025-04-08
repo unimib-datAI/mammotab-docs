@@ -6,16 +6,6 @@ sidebar_position: 9
 
 This guide will walk you through the process of testing a model and contributing to the MammoTab Leaderboard.
 
-## Table of Contents
-- [Dataset Characteristics](#dataset-characteristics)
-- [Prerequisites](#prerequisites)
-- [Step 1: Model Selection and Setup](#step-1-model-selection-and-setup)
-- [Step 2: Environment Setup](#step-2-environment-setup)
-- [Step 3: Dataset and Execution](#step-3-dataset-and-execution)
-- [Step 4: Results Submission](#step-4-results-submission)
-- [Troubleshooting](#troubleshooting)
-- [Best Practices](#best-practices)
-
 The testing is performed on a sample of 870 tables, containing a total of 85,565 cells. This sample has been carefully selected to represent the diverse characteristics of the MammoTab dataset and STI key challenges.
 
 ## Dataset Characteristics
