@@ -83,9 +83,25 @@ const renderSimpleCell = (value: string) => {
 // Helper function for rendering accuracy cells
 const renderAccuracyCell = (value: string) => {
   if (!value) return "";
+  const accuracy = parseFloat(value);
+  let bgColor = "";
+  let textColor = "text-stone-100";
+  
+  if (accuracy >= 0.8) {
+    bgColor = "bg-dorange";
+  } else if (accuracy >= 0.6) {
+    bgColor = "bg-brick";
+  } else if (accuracy >= 0.4) {
+    bgColor = "bg-bronze";
+  } else {
+    bgColor = "bg-grizzly";
+  }
+  
   return (
-    <div className="flex items-center justify-center gap-1">
-      <span>{parseFloat(value).toFixed(2)}</span>
+    <div className="flex items-center justify-center">
+      <span className={`${bgColor} ${textColor} px-3 py-1 rounded-full text-xs font-semibold`}>
+        {accuracy.toFixed(2)}
+      </span>
     </div>
   );
 };
