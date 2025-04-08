@@ -818,32 +818,40 @@ export default function Leaderboard(): JSX.Element {
               This leaderboard has been <a href="/mammotab-docs/docs/leaderboard-instructions" className="text-dorange dark:text-terracotta hover:underline">generated</a> using the MammoTab sample dataset, which consists of 870 tables containing a total of 85,565 distinct mentions.
             </p>
           </div>
-          <div className="mb-4 flex justify-end">
+          <div className="fixed top-20 right-4 z-50">
             <div className="relative">
               <button 
-                className="px-4 py-2 bg-chocolate text-white rounded-lg hover:bg-opacity-90"
+                className="px-4 py-2 bg-chocolate text-white rounded-lg hover:bg-opacity-90 flex items-center gap-2 transition-all duration-200 hover:shadow-lg"
                 onClick={toggleColumnMenu}
               >
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M5 4a1 1 0 00-2 0v7.268a2 2 0 000 3.464V16a1 1 0 102 0v-1.268a2 2 0 000-3.464V4zM11 4a1 1 0 10-2 0v1.268a2 2 0 000 3.464V16a1 1 0 102 0V8.732a2 2 0 000-3.464V4zM16 3a1 1 0 011 1v7.268a2 2 0 010 3.464V16a1 1 0 11-2 0v-1.268a2 2 0 010-3.464V4a1 1 0 011-1z" />
+                </svg>
                 Show/Hide Columns
               </button>
               {showColumnMenu && (
-                <div className="absolute right-0 mt-2 w-48 bg-white dark:bg-umber rounded-lg shadow-lg py-2 z-50">
-                  {table.getAllLeafColumns().map((column) => {
-                    if (column.id === "model") return null; // Skip model column
-                    return (
-                      <div key={column.id} className="px-4 py-2">
-                        <label className="flex items-center space-x-2 cursor-pointer">
-                          <input
-                            type="checkbox"
-                            checked={column.getIsVisible()}
-                            onChange={column.getToggleVisibilityHandler()}
-                            className="rounded text-chocolate focus:ring-chocolate"
-                          />
-                          <span className="text-sm">{column.columnDef.header as string}</span>
-                        </label>
-                      </div>
-                    );
-                  })}
+                <div className="absolute right-0 mt-2 w-64 bg-white dark:bg-umber rounded-lg shadow-xl py-2 z-50 transform transition-all duration-200 ease-in-out">
+                  <div className="px-4 py-2 border-b border-gray-200 dark:border-gray-700">
+                    <h3 className="text-sm font-semibold text-gray-700 dark:text-gray-300">Select columns to display</h3>
+                  </div>
+                  <div className="max-h-96 overflow-y-auto">
+                    {table.getAllLeafColumns().map((column) => {
+                      if (column.id === "model") return null; // Skip model column
+                      return (
+                        <div key={column.id} className="px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-150">
+                          <label className="flex items-center space-x-3 cursor-pointer">
+                            <input
+                              type="checkbox"
+                              checked={column.getIsVisible()}
+                              onChange={column.getToggleVisibilityHandler()}
+                              className="rounded text-chocolate focus:ring-chocolate h-4 w-4"
+                            />
+                            <span className="text-sm text-gray-700 dark:text-gray-300">{column.columnDef.header as string}</span>
+                          </label>
+                        </div>
+                      );
+                    })}
+                  </div>
                 </div>
               )}
             </div>
