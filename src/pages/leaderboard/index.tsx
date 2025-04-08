@@ -13,10 +13,6 @@ import { useState } from "react";
 
 // Maximum values for percentage calculation
 const MAX_VALUES = {
-  accuracy: 1.0,
-  annotatedCells: 1500,
-  neColumns: 60,
-  lColumns: 45,
   nils: 100,
   acronyms: 70,
   aliases: 100,
@@ -30,7 +26,8 @@ const MAX_VALUES = {
   largePerCols: 100,
   smallPerRows: 100,
   mediumPerRows: 100,
-  largePerRows: 100
+  largePerRows: 100,
+  annotatedCells: 1500
 };
 
 const columnHelper = createColumnHelper<any>();
@@ -82,11 +79,64 @@ const columns = [
     },
     sortingFn: "alphanumeric",
   }),
+  columnHelper.accessor("system", {
+    header: "System",
+    cell: (info) => {
+      const value = info.getValue();
+      return (
+        <div className="flex items-center justify-center gap-1">
+          <span>{value}</span>
+        </div>
+      );
+    },
+    sortingFn: "alphanumeric",
+  }),
+  columnHelper.accessor("total_time", {
+    header: "Total Time",
+    cell: (info) => {
+      const value = info.getValue();
+      return (
+        <div className="flex items-center justify-center gap-1">
+          <span>{value}</span>
+        </div>
+      );
+    },
+    sortingFn: "alphanumeric",
+  }),
+  columnHelper.accessor("accuracy", {
+    header: "Accuracy",
+    cell: (info) => {
+      const value = info.getValue();
+      if (!value) return "";
+      return (
+        <div className="flex items-center justify-center gap-1">
+          <span>{parseFloat(value).toFixed(2)}</span>
+        </div>
+      );
+    },
+    sortingFn: "alphanumeric",
+  }),
+  columnHelper.accessor("ne_cells", {
+    header: "NE Cells",
+    cell: (info) => {
+      const value = info.getValue();
+      if (!value) return "";
+      const percentage = Math.round((parseInt(value) / MAX_VALUES.annotatedCells) * 100);
+      return (
+        <div className="flex items-center justify-center gap-1">
+          <span>{value}</span>
+          <span className="text-xs text-gray-400">[{percentage}%]</span>
+        </div>
+      );
+    },
+    sortingFn: "alphanumeric",
+  }),
   columnHelper.accessor("nils", {
     header: "NILs",
     cell: (info) => {
-      const value = parseInt(info.getValue());
-      const percentage = Math.round((value / MAX_VALUES.nils) * 100);
+      const value = info.getValue();
+      if (!value) return "";
+      const percentage = Math.round((parseInt(value) / MAX_VALUES.nils) * 100);
       return (
         <div className="flex items-center justify-center gap-1">
           <span>{value}</span>
@@ -99,8 +149,9 @@ const columns = [
   columnHelper.accessor("acronyms", {
     header: "Acronyms",
     cell: (info) => {
-      const value = parseInt(info.getValue());
-      const percentage = Math.round((value / MAX_VALUES.acronyms) * 100);
+      const value = info.getValue();
+      if (!value) return "";
+      const percentage = Math.round((parseInt(value) / MAX_VALUES.acronyms) * 100);
       return (
         <div className="flex items-center justify-center gap-1">
           <span>{value}</span>
@@ -113,8 +164,9 @@ const columns = [
   columnHelper.accessor("typos", {
     header: "Typos",
     cell: (info) => {
-      const value = parseInt(info.getValue());
-      const percentage = Math.round((value / MAX_VALUES.typos) * 100);
+      const value = info.getValue();
+      if (!value) return "";
+      const percentage = Math.round((parseInt(value) / MAX_VALUES.typos) * 100);
       return (
         <div className="flex items-center justify-center gap-1">
           <span>{value}</span>
@@ -127,8 +179,9 @@ const columns = [
   columnHelper.accessor("aliases", {
     header: "Aliases",
     cell: (info) => {
-      const value = parseInt(info.getValue());
-      const percentage = Math.round((value / MAX_VALUES.aliases) * 100);
+      const value = info.getValue();
+      if (!value) return "";
+      const percentage = Math.round((parseInt(value) / MAX_VALUES.aliases) * 100);
       return (
         <div className="flex items-center justify-center gap-1">
           <span>{value}</span>
@@ -141,8 +194,9 @@ const columns = [
   columnHelper.accessor("genericTypes", {
     header: "Generic Types",
     cell: (info) => {
-      const value = parseInt(info.getValue());
-      const percentage = Math.round((value / MAX_VALUES.genericTypes) * 100);
+      const value = info.getValue();
+      if (!value) return "";
+      const percentage = Math.round((parseInt(value) / MAX_VALUES.genericTypes) * 100);
       return (
         <div className="flex items-center justify-center gap-1">
           <span>{value}</span>
@@ -155,8 +209,9 @@ const columns = [
   columnHelper.accessor("specificTypes", {
     header: "Specific Types",
     cell: (info) => {
-      const value = parseInt(info.getValue());
-      const percentage = Math.round((value / MAX_VALUES.specificTypes) * 100);
+      const value = info.getValue();
+      if (!value) return "";
+      const percentage = Math.round((parseInt(value) / MAX_VALUES.specificTypes) * 100);
       return (
         <div className="flex items-center justify-center gap-1">
           <span>{value}</span>
@@ -169,8 +224,9 @@ const columns = [
   columnHelper.accessor("singleDomain", {
     header: "Single Domain",
     cell: (info) => {
-      const value = parseInt(info.getValue());
-      const percentage = Math.round((value / MAX_VALUES.singleDomain) * 100);
+      const value = info.getValue();
+      if (!value) return "";
+      const percentage = Math.round((parseInt(value) / MAX_VALUES.singleDomain) * 100);
       return (
         <div className="flex items-center justify-center gap-1">
           <span>{value}</span>
@@ -183,8 +239,9 @@ const columns = [
   columnHelper.accessor("multiDomain", {
     header: "Multi Domain",
     cell: (info) => {
-      const value = parseInt(info.getValue());
-      const percentage = Math.round((value / MAX_VALUES.multiDomain) * 100);
+      const value = info.getValue();
+      if (!value) return "";
+      const percentage = Math.round((parseInt(value) / MAX_VALUES.multiDomain) * 100);
       return (
         <div className="flex items-center justify-center gap-1">
           <span>{value}</span>
@@ -197,8 +254,9 @@ const columns = [
   columnHelper.accessor("small_per_cols", {
     header: "Small % Cols",
     cell: (info) => {
-      const value = parseInt(info.getValue());
-      const percentage = Math.round((value / MAX_VALUES.smallPerCols) * 100);
+      const value = info.getValue();
+      if (!value) return "";
+      const percentage = Math.round((parseInt(value) / MAX_VALUES.smallPerCols) * 100);
       return (
         <div className="flex items-center justify-center gap-1">
           <span>{value}</span>
@@ -211,8 +269,9 @@ const columns = [
   columnHelper.accessor("medium_per_cols", {
     header: "Medium % Cols",
     cell: (info) => {
-      const value = parseInt(info.getValue());
-      const percentage = Math.round((value / MAX_VALUES.mediumPerCols) * 100);
+      const value = info.getValue();
+      if (!value) return "";
+      const percentage = Math.round((parseInt(value) / MAX_VALUES.mediumPerCols) * 100);
       return (
         <div className="flex items-center justify-center gap-1">
           <span>{value}</span>
@@ -285,17 +344,21 @@ const data = [
     model: "Gemini-1.0 Pro",
     parameters: "1.8B",
     status: "To do",
-    cea: "0.85",
-    nils: "78",
-    acronyms: "56",
-    aliases: "89",
-    typos: "23",
-    genericTypes: "45",
-    specificTypes: "42",
-    singleDomain: "85",
-    multiDomain: "75",
-    small_per_cols: "85",
-    medium_per_cols: "75",
+    system: "",
+    total_time: "",
+    accuracy: "",
+    ne_cells: "",
+    cea: "",
+    nils: "",
+    acronyms: "",
+    aliases: "",
+    typos: "",
+    genericTypes: "",
+    specificTypes: "",
+    singleDomain: "",
+    multiDomain: "",
+    small_per_cols: "",
+    medium_per_cols: "",
     large_per_cols: "65",
     small_per_rows: "80",
     medium_per_rows: "70",
@@ -304,18 +367,22 @@ const data = [
   {
     model: "Gemini-1.5 Pro",
     parameters: "3.2B",
-    status: "In progress",
-    cea: "0.88",
-    nils: "82",
-    acronyms: "59",
-    aliases: "92",
-    typos: "25",
-    genericTypes: "48",
-    specificTypes: "45",
-    singleDomain: "88",
-    multiDomain: "78",
-    small_per_cols: "88",
-    medium_per_cols: "78",
+    status: "To do",
+    system: "",
+    total_time: "",
+    accuracy: "",
+    ne_cells: "",
+    cea: "",
+    nils: "",
+    acronyms: "",
+    aliases: "",
+    typos: "",
+    genericTypes: "",
+    specificTypes: "",
+    singleDomain: "",
+    multiDomain: "",
+    small_per_cols: "",
+    medium_per_cols: "",
     large_per_cols: "68",
     small_per_rows: "82",
     medium_per_rows: "72",
@@ -324,18 +391,22 @@ const data = [
   {
     model: "Gemini-1.5 Flash",
     parameters: "2.5B",
-    status: "Done",
-    cea: "0.87",
-    nils: "80",
-    acronyms: "58",
-    aliases: "91",
-    typos: "24",
-    genericTypes: "47",
-    specificTypes: "44",
-    singleDomain: "87",
-    multiDomain: "77",
-    small_per_cols: "87",
-    medium_per_cols: "77",
+    status: "To do",
+    system: "",
+    total_time: "",
+    accuracy: "",
+    ne_cells: "",
+    cea: "",
+    nils: "",
+    acronyms: "",
+    aliases: "",
+    typos: "",
+    genericTypes: "",
+    specificTypes: "",
+    singleDomain: "",
+    multiDomain: "",
+    small_per_cols: "",
+    medium_per_cols: "",
     large_per_cols: "67",
     small_per_rows: "80",
     medium_per_rows: "70",
@@ -345,17 +416,21 @@ const data = [
     model: "Gemma",
     parameters: "2B",
     status: "To do",
-    cea: "0.84",
-    nils: "76",
-    acronyms: "55",
-    aliases: "88",
-    typos: "22",
-    genericTypes: "44",
-    specificTypes: "41",
-    singleDomain: "84",
-    multiDomain: "74",
-    small_per_cols: "84",
-    medium_per_cols: "74",
+    system: "",
+    total_time: "",
+    accuracy: "",
+    ne_cells: "",
+    cea: "",
+    nils: "",
+    acronyms: "",
+    aliases: "",
+    typos: "",
+    genericTypes: "",
+    specificTypes: "",
+    singleDomain: "",
+    multiDomain: "",
+    small_per_cols: "",
+    medium_per_cols: "",
     large_per_cols: "64",
     small_per_rows: "76",
     medium_per_rows: "66",
@@ -364,18 +439,22 @@ const data = [
   {
     model: "Gemma 2",
     parameters: "7B",
-    status: "In progress",
-    cea: "0.86",
-    nils: "79",
-    acronyms: "57",
-    aliases: "90",
-    typos: "23",
-    genericTypes: "46",
-    specificTypes: "43",
-    singleDomain: "86",
-    multiDomain: "76",
-    small_per_cols: "86",
-    medium_per_cols: "76",
+    status: "To do",
+    system: "",
+    total_time: "",
+    accuracy: "",
+    ne_cells: "",
+    cea: "",
+    nils: "",
+    acronyms: "",
+    aliases: "",
+    typos: "",
+    genericTypes: "",
+    specificTypes: "",
+    singleDomain: "",
+    multiDomain: "",
+    small_per_cols: "",
+    medium_per_cols: "",
     large_per_cols: "66",
     small_per_rows: "79",
     medium_per_rows: "69",
@@ -385,17 +464,21 @@ const data = [
     model: "Phi-3 Mini",
     parameters: "3.8B",
     status: "To do",
-    cea: "0.83",
-    nils: "75",
-    acronyms: "54",
-    aliases: "87",
-    typos: "21",
-    genericTypes: "43",
-    specificTypes: "40",
-    singleDomain: "83",
-    multiDomain: "73",
-    small_per_cols: "83",
-    medium_per_cols: "73",
+    system: "",
+    total_time: "",
+    accuracy: "",
+    ne_cells: "",
+    cea: "",
+    nils: "",
+    acronyms: "",
+    aliases: "",
+    typos: "",
+    genericTypes: "",
+    specificTypes: "",
+    singleDomain: "",
+    multiDomain: "",
+    small_per_cols: "",
+    medium_per_cols: "",
     large_per_cols: "63",
     small_per_rows: "75",
     medium_per_rows: "65",
@@ -404,18 +487,22 @@ const data = [
   {
     model: "Phi-3 Small",
     parameters: "7B",
-    status: "In progress",
-    cea: "0.85",
-    nils: "76",
-    acronyms: "55",
-    aliases: "88",
-    typos: "22",
-    genericTypes: "44",
-    specificTypes: "41",
-    singleDomain: "84",
-    multiDomain: "74",
-    small_per_cols: "84",
-    medium_per_cols: "74",
+    status: "To do",
+    system: "",
+    total_time: "",
+    accuracy: "",
+    ne_cells: "",
+    cea: "",
+    nils: "",
+    acronyms: "",
+    aliases: "",
+    typos: "",
+    genericTypes: "",
+    specificTypes: "",
+    singleDomain: "",
+    multiDomain: "",
+    small_per_cols: "",
+    medium_per_cols: "",
     large_per_cols: "64",
     small_per_rows: "76",
     medium_per_rows: "66",
@@ -424,18 +511,22 @@ const data = [
   {
     model: "Phi-3 Medium",
     parameters: "14B",
-    status: "Done",
-    cea: "0.87",
-    nils: "79",
-    acronyms: "57",
-    aliases: "90",
-    typos: "23",
-    genericTypes: "46",
-    specificTypes: "43",
-    singleDomain: "86",
-    multiDomain: "76",
-    small_per_cols: "86",
-    medium_per_cols: "76",
+    status: "To do",
+    system: "",
+    total_time: "",
+    accuracy: "",
+    ne_cells: "",
+    cea: "",
+    nils: "",
+    acronyms: "",
+    aliases: "",
+    typos: "",
+    genericTypes: "",
+    specificTypes: "",
+    singleDomain: "",
+    multiDomain: "",
+    small_per_cols: "",
+    medium_per_cols: "",
     large_per_cols: "66",
     small_per_rows: "79",
     medium_per_rows: "69",
@@ -445,17 +536,21 @@ const data = [
     model: "Phi-3.5 Mini",
     parameters: "4.2B",
     status: "To do",
-    cea: "0.84",
-    nils: "77",
-    acronyms: "56",
-    aliases: "89",
-    typos: "22",
-    genericTypes: "45",
-    specificTypes: "42",
-    singleDomain: "85",
-    multiDomain: "75",
-    small_per_cols: "85",
-    medium_per_cols: "75",
+    system: "",
+    total_time: "",
+    accuracy: "",
+    ne_cells: "",
+    cea: "",
+    nils: "",
+    acronyms: "",
+    aliases: "",
+    typos: "",
+    genericTypes: "",
+    specificTypes: "",
+    singleDomain: "",
+    multiDomain: "",
+    small_per_cols: "",
+    medium_per_cols: "",
     large_per_cols: "65",
     small_per_rows: "77",
     medium_per_rows: "67",
@@ -464,18 +559,22 @@ const data = [
   {
     model: "Mixtral",
     parameters: "7B",
-    status: "In progress",
-    cea: "0.89",
-    nils: "83",
-    acronyms: "60",
-    aliases: "93",
-    typos: "26",
-    genericTypes: "49",
-    specificTypes: "46",
-    singleDomain: "89",
-    multiDomain: "79",
-    small_per_cols: "89",
-    medium_per_cols: "79",
+    status: "To do",
+    system: "",
+    total_time: "",
+    accuracy: "",
+    ne_cells: "",
+    cea: "",
+    nils: "",
+    acronyms: "",
+    aliases: "",
+    typos: "",
+    genericTypes: "",
+    specificTypes: "",
+    singleDomain: "",
+    multiDomain: "",
+    small_per_cols: "",
+    medium_per_cols: "",
     large_per_cols: "69",
     small_per_rows: "83",
     medium_per_rows: "73",
@@ -484,18 +583,22 @@ const data = [
   {
     model: "Mixtral-Instruct",
     parameters: "8B",
-    status: "Done",
-    cea: "0.90",
-    nils: "84",
-    acronyms: "61",
-    aliases: "94",
-    typos: "27",
-    genericTypes: "50",
-    specificTypes: "47",
-    singleDomain: "90",
-    multiDomain: "80",
-    small_per_cols: "90",
-    medium_per_cols: "80",
+    status: "To do",
+    system: "",
+    total_time: "",
+    accuracy: "",
+    ne_cells: "",
+    cea: "",
+    nils: "",
+    acronyms: "",
+    aliases: "",
+    typos: "",
+    genericTypes: "",
+    specificTypes: "",
+    singleDomain: "",
+    multiDomain: "",
+    small_per_cols: "",
+    medium_per_cols: "",
     large_per_cols: "70",
     small_per_rows: "84",
     medium_per_rows: "74",
@@ -504,18 +607,22 @@ const data = [
   {
     model: "Claude 3 Sonnet",
     parameters: "7B",
-    status: "In progress",
-    cea: "0.91",
-    nils: "85",
-    acronyms: "62",
-    aliases: "95",
-    typos: "28",
-    genericTypes: "51",
-    specificTypes: "48",
-    singleDomain: "91",
-    multiDomain: "81",
-    small_per_cols: "91",
-    medium_per_cols: "81",
+    status: "To do",
+    system: "",
+    total_time: "",
+    accuracy: "",
+    ne_cells: "",
+    cea: "",
+    nils: "",
+    acronyms: "",
+    aliases: "",
+    typos: "",
+    genericTypes: "",
+    specificTypes: "",
+    singleDomain: "",
+    multiDomain: "",
+    small_per_cols: "",
+    medium_per_cols: "",
     large_per_cols: "71",
     small_per_rows: "85",
     medium_per_rows: "75",
@@ -525,17 +632,21 @@ const data = [
     model: "Claude 3 Haiku",
     parameters: "3.5B",
     status: "To do",
-    cea: "0.89",
-    nils: "83",
-    acronyms: "60",
-    aliases: "93",
-    typos: "26",
-    genericTypes: "49",
-    specificTypes: "46",
-    singleDomain: "89",
-    multiDomain: "79",
-    small_per_cols: "89",
-    medium_per_cols: "79",
+    system: "",
+    total_time: "",
+    accuracy: "",
+    ne_cells: "",
+    cea: "",
+    nils: "",
+    acronyms: "",
+    aliases: "",
+    typos: "",
+    genericTypes: "",
+    specificTypes: "",
+    singleDomain: "",
+    multiDomain: "",
+    small_per_cols: "",
+    medium_per_cols: "",
     large_per_cols: "69",
     small_per_rows: "83",
     medium_per_rows: "73",
@@ -544,18 +655,22 @@ const data = [
   {
     model: "Claude 3.5 Sonnet",
     parameters: "8.5B",
-    status: "Done",
-    cea: "0.92",
-    nils: "86",
-    acronyms: "63",
-    aliases: "96",
-    typos: "29",
-    genericTypes: "52",
-    specificTypes: "49",
-    singleDomain: "92",
-    multiDomain: "82",
-    small_per_cols: "92",
-    medium_per_cols: "82",
+    status: "To do",
+    system: "",
+    total_time: "",
+    accuracy: "",
+    ne_cells: "",
+    cea: "",
+    nils: "",
+    acronyms: "",
+    aliases: "",
+    typos: "",
+    genericTypes: "",
+    specificTypes: "",
+    singleDomain: "",
+    multiDomain: "",
+    small_per_cols: "",
+    medium_per_cols: "",
     large_per_cols: "72",
     small_per_rows: "86",
     medium_per_rows: "76",
@@ -564,18 +679,22 @@ const data = [
   {
     model: "Llama 3.2",
     parameters: "7B",
-    status: "In progress",
-    cea: "0.88",
-    nils: "82",
-    acronyms: "59",
-    aliases: "92",
-    typos: "25",
-    genericTypes: "48",
-    specificTypes: "45",
-    singleDomain: "88",
-    multiDomain: "78",
-    small_per_cols: "88",
-    medium_per_cols: "78",
+    status: "To do",
+    system: "",
+    total_time: "",
+    accuracy: "",
+    ne_cells: "",
+    cea: "",
+    nils: "",
+    acronyms: "",
+    aliases: "",
+    typos: "",
+    genericTypes: "",
+    specificTypes: "",
+    singleDomain: "",
+    multiDomain: "",
+    small_per_cols: "",
+    medium_per_cols: "",
     large_per_cols: "68",
     small_per_rows: "82",
     medium_per_rows: "72",
@@ -585,17 +704,21 @@ const data = [
     model: "Llama 3.1",
     parameters: "6.5B",
     status: "To do",
-    cea: "0.87",
-    nils: "81",
-    acronyms: "58",
-    aliases: "91",
-    typos: "24",
-    genericTypes: "47",
-    specificTypes: "44",
-    singleDomain: "87",
-    multiDomain: "77",
-    small_per_cols: "87",
-    medium_per_cols: "77",
+    system: "",
+    total_time: "",
+    accuracy: "",
+    ne_cells: "",
+    cea: "",
+    nils: "",
+    acronyms: "",
+    aliases: "",
+    typos: "",
+    genericTypes: "",
+    specificTypes: "",
+    singleDomain: "",
+    multiDomain: "",
+    small_per_cols: "",
+    medium_per_cols: "",
     large_per_cols: "67",
     small_per_rows: "81",
     medium_per_rows: "71",
@@ -604,18 +727,22 @@ const data = [
   {
     model: "Qwen 2",
     parameters: "7B",
-    status: "In progress",
-    cea: "0.86",
-    nils: "80",
-    acronyms: "57",
-    aliases: "90",
-    typos: "23",
-    genericTypes: "46",
-    specificTypes: "43",
-    singleDomain: "86",
-    multiDomain: "76",
-    small_per_cols: "86",
-    medium_per_cols: "76",
+    status: "To do",
+    system: "",
+    total_time: "",
+    accuracy: "",
+    ne_cells: "",
+    cea: "",
+    nils: "",
+    acronyms: "",
+    aliases: "",
+    typos: "",
+    genericTypes: "",
+    specificTypes: "",
+    singleDomain: "",
+    multiDomain: "",
+    small_per_cols: "",
+    medium_per_cols: "",
     large_per_cols: "66",
     small_per_rows: "80",
     medium_per_rows: "70",
@@ -624,18 +751,22 @@ const data = [
   {
     model: "Qwen-2.5",
     parameters: "8B",
-    status: "Done",
-    cea: "0.88",
-    nils: "82",
-    acronyms: "59",
-    aliases: "92",
-    typos: "25",
-    genericTypes: "48",
-    specificTypes: "45",
-    singleDomain: "88",
-    multiDomain: "78",
-    small_per_cols: "88",
-    medium_per_cols: "78",
+    status: "To do",
+    system: "",
+    total_time: "",
+    accuracy: "",
+    ne_cells: "",
+    cea: "",
+    nils: "",
+    acronyms: "",
+    aliases: "",
+    typos: "",
+    genericTypes: "",
+    specificTypes: "",
+    singleDomain: "",
+    multiDomain: "",
+    small_per_cols: "",
+    medium_per_cols: "",
     large_per_cols: "68",
     small_per_rows: "82",
     medium_per_rows: "72",
@@ -645,21 +776,49 @@ const data = [
     model: "Yi-1.5",
     parameters: "6B",
     status: "To do",
-    cea: "0.85",
-    nils: "78",
-    acronyms: "56",
-    aliases: "89",
-    typos: "23",
-    genericTypes: "45",
-    specificTypes: "42",
-    singleDomain: "85",
-    multiDomain: "75",
-    small_per_cols: "85",
-    medium_per_cols: "75",
+    system: "",
+    total_time: "",
+    accuracy: "",
+    ne_cells: "",
+    cea: "",
+    nils: "",
+    acronyms: "",
+    aliases: "",
+    typos: "",
+    genericTypes: "",
+    specificTypes: "",
+    singleDomain: "",
+    multiDomain: "",
+    small_per_cols: "",
+    medium_per_cols: "",
     large_per_cols: "65",
     small_per_rows: "78",
     medium_per_rows: "68",
     large_per_rows: "58"
+  },
+  {
+    model: "Qwen 2",
+    parameters: "0.5B",
+    status: "To do",
+    system: "",
+    total_time: "",
+    accuracy: "",
+    ne_cells: "",
+    cea: "",
+    nils: "",
+    acronyms: "",
+    aliases: "",
+    typos: "",
+    genericTypes: "",
+    specificTypes: "",
+    singleDomain: "",
+    multiDomain: "",
+    small_per_cols: "",
+    medium_per_cols: "",
+    large_per_cols: "62",
+    small_per_rows: "74",
+    medium_per_rows: "64",
+    large_per_rows: "54"
   }
 ];
 
