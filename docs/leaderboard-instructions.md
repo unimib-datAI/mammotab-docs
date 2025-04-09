@@ -6,7 +6,7 @@ sidebar_position: 9
 
 This guide will walk you through the process of testing a model and contributing to the MammoTab Leaderboard.
 
-The testing is performed on a sample of 870 tables, containing a total of 85,565 cells. This sample has been carefully selected to represent the diverse characteristics of the MammoTab dataset and STI key challenges.
+The testing is performed on a sample of 870 tables, containing a total of 84,907 cells. This sample has been carefully selected to represent the diverse characteristics of the MammoTab dataset and STI key challenges.
 
 ## Dataset Characteristics
 
@@ -25,9 +25,11 @@ The test sample includes:
   - 435 single-domain tables
   - 435 multi-domain tables
 - **Table Dimensions**:
-  - Rows: min=4, max=253, avg=43.47, median=33.0
-  - Columns: min=1, max=36, avg=6.04, median=4.0
-  - Cells: min=4, max=264
+  - Total Columns: 5,252
+  - Total Rows: 37,820
+  - Rows per table: min=4, max=253, avg=43.47, median=33.0
+  - Columns per table: min=1, max=36, avg=6.04, median=4.0
+  - Cells per table: min=4, max=264
 
 ## Prerequisites
 

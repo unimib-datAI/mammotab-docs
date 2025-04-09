@@ -183,11 +183,6 @@ const createColumns = () => [
     cell: (info) => renderSimpleCell(info.getValue()),
     sortingFn: "alphanumeric",
   }),
-  columnHelper.accessor("ne_cells", {
-    header: "NE Cells",
-    cell: (info) => renderCellWithPercentage(info.getValue(), MAX_VALUES.annotatedCells),
-    sortingFn: "alphanumeric",
-  }),
   columnHelper.accessor("nils", {
     header: "NILs",
     cell: (info) => renderCellWithPercentage(info.getValue(), MAX_VALUES.nils),
@@ -832,7 +827,7 @@ export default function Leaderboard(): JSX.Element {
             <h1 className="text-4xl font-bold text-dorange dark:text-terracotta">LLM Leaderboard</h1>
             <p className="text-stone-800 dark:text-stone-100 mt-2">Compare the performance of different language models on the MammoTab dataset</p>
             <p className="text-stone-600 dark:text-stone-300 mt-4 text-sm">
-              This leaderboard has been <a href="/mammotab-docs/docs/leaderboard-instructions" className="text-dorange dark:text-terracotta hover:underline">generated</a> using the MammoTab sample dataset, which consists of 870 tables containing a total of 85,565 distinct mentions.
+              This leaderboard has been <a href="/mammotab-docs/docs/leaderboard-instructions" className="text-dorange dark:text-terracotta hover:underline">generated</a> using the MammoTab sample dataset, which consists of 870 tables containing a total of 84,907 distinct mentions.
             </p>
             <div className="mt-6 p-4 bg-bronze/10 dark:bg-grizzly/10 rounded-lg border border-bronze/20 dark:border-grizzly/20">
               <p className="text-stone-800 dark:text-stone-100 font-semibold mb-2">This leaderboard is managed by:</p>
