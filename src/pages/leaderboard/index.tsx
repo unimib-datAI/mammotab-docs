@@ -100,7 +100,7 @@ const renderAccuracyCell = (value: string) => {
   return (
     <div className="flex items-center justify-center">
       <span className={`${bgColor} ${textColor} px-3 py-1 rounded-full text-xs font-semibold`}>
-        {accuracy.toFixed(2)}
+        {accuracy.toFixed(3)}
       </span>
     </div>
   );
@@ -138,7 +138,34 @@ const columnHelper = createColumnHelper<ModelData>();
 const createColumns = () => [
   columnHelper.accessor("model", {
     header: "Model",
-    cell: (info) => <span className="font-bold">{info.getValue()}</span>,
+    cell: (info) => {
+      const modelName = info.getValue();
+      if (modelName === "Qwen/Qwen2-0.5B") {
+        return (
+          <a 
+            href="https://huggingface.co/Qwen/Qwen2-0.5B" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="font-bold text-dorange dark:text-terracotta hover:underline"
+          >
+            {modelName}
+          </a>
+        );
+      }
+      if (modelName === "microsoft/Phi-3-mini-4k-instruct") {
+        return (
+          <a 
+            href="https://huggingface.co/microsoft/Phi-3-mini-4k-instruct" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="font-bold text-dorange dark:text-terracotta hover:underline"
+          >
+            {modelName}
+          </a>
+        );
+      }
+      return <span className="font-bold">{modelName}</span>;
+    },
     sortingFn: "alphanumeric",
   }),
   columnHelper.accessor("parameters", {
@@ -264,8 +291,6 @@ const data = [
     total_time: "",
     accuracy: "",
     total_correct: "",
-    ne_cells: "",
-    cea: "",
     nils: "",
     acronyms: "",
     aliases: "",
@@ -280,6 +305,29 @@ const data = [
     small_per_rows: "",
     medium_per_rows: "",
     large_per_rows: ""
+  },
+  {
+    model: "microsoft/Phi-3-mini-4k-instruct",
+    parameters: "3.8B",
+    status: "Done",
+    system: "NVIDIA RTX A6000",
+    total_time: "369925.491",
+    accuracy: "0.281",
+    total_correct: "23881",
+    nils: "7045",
+    acronyms: "2085",
+    aliases: "3660",
+    typos: "6871",
+    genericTypes: "37",
+    specificTypes: "482",
+    singleDomain: "207",
+    multiDomain: "312",
+    small_per_cols: "58",
+    medium_per_cols: "318",
+    large_per_cols: "143",
+    small_per_rows: "208",
+    medium_per_rows: "166",
+    large_per_rows: "145"
   },
   {
     model: "Gemini-1.5 Pro",
@@ -732,15 +780,13 @@ const data = [
     large_per_rows: ""
   },
   {
-    model: "Qwen 2",
+    model: "Qwen/Qwen2-0.5B",
     parameters: "0.5B",
     status: "Done",
     system: "NVIDIA RTX A6000",
     total_time: "52659.894",
     accuracy: "0.044",
     total_correct: "3741",
-    ne_cells: "84907",
-    cea: "",
     nils: "1103",
     acronyms: "6",
     aliases: "3",
