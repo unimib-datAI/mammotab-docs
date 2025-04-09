@@ -880,7 +880,6 @@ export default function Leaderboard(): JSX.Element {
               <div className="flex flex-wrap gap-2">
                 <span className="text-stone-700 dark:text-stone-300">
                   <span className="font-medium">Marco Cremaschi</span>,{" "}
-                  <span className="font-medium">Fabio D'adda</span>,{" "}
                   <span className="font-medium">Federico Belotti</span>,{" "}
                   <span className="font-medium">Matteo Palmonari</span>
                   <span className="text-stone-600 dark:text-stone-400"> from the University of Milano-Bicocca</span>
