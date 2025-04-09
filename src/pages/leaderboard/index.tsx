@@ -41,21 +41,21 @@ type ModelData = {
 
 // Maximum values for percentage calculation
 const MAX_VALUES = {
-  nils: 100,
-  acronyms: 70,
-  aliases: 100,
-  typos: 35,
-  genericTypes: 50,
-  specificTypes: 50,
-  singleDomain: 100,
-  multiDomain: 100,
-  smallPerCols: 100,
-  mediumPerCols: 100,
-  largePerCols: 100,
-  smallPerRows: 100,
-  mediumPerRows: 100,
-  largePerRows: 100,
-  annotatedCells: 1500
+  nils: 14856,
+  acronyms: 3518,
+  aliases: 7117,
+  typos: 12135,
+  genericTypes: 96,
+  specificTypes: 774,
+  singleDomain: 435,
+  multiDomain: 435,
+  smallPerCols: 152,
+  mediumPerCols: 465,
+  largePerCols: 253,
+  smallPerRows: 394,
+  mediumPerRows: 232,
+  largePerRows: 244,
+  annotatedCells: 84907
 } as const;
 
 // Helper function for rendering cells with percentage
@@ -337,7 +337,7 @@ const data = [
     large_per_rows: ""
   },
   {
-    model: "Gemma",
+    model: "Gemma 2",
     parameters: "2B",
     status: "To do",
     system: "",
@@ -363,7 +363,7 @@ const data = [
   },
   {
     model: "Gemma 2",
-    parameters: "7B",
+    parameters: "9B",
     status: "To do",
     system: "",
     total_time: "",
