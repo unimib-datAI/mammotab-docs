@@ -801,6 +801,29 @@ const data = [
     small_per_rows: "17",
     medium_per_rows: "1",
     large_per_rows: "1"
+  },
+  {
+    model: "Qwen/Qwen2-1.5B",
+    parameters: "1.5B",
+    status: "Done",
+    system: "NVIDIA RTX A6000",
+    total_time: "98496.646",
+    accuracy: "0.166",
+    total_correct: "14124",
+    nils: "4491",
+    acronyms: "1429",
+    aliases: "1691",
+    typos: "4468",
+    genericTypes: "23",
+    specificTypes: "285",
+    singleDomain: "147",
+    multiDomain: "161",
+    small_per_cols: "42",
+    medium_per_cols: "209",
+    large_per_cols: "57",
+    small_per_rows: "90",
+    medium_per_rows: "110",
+    large_per_rows: "108"
   }
 ];
 
