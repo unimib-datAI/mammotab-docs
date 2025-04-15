@@ -213,7 +213,7 @@ export default function Home(): JSX.Element {
                   </thead>
                   <tbody className="text-foreground">
                     <tr className="dark:even:bg-darksilver even:bg-darkvanilla dark:odd:bg-umber odd:bg-desertsand">
-                      <th
+                      <td
                         scope="row"
                         className="p-3 min-w-40 font-medium whitespace-nowrap"
                       >
@@ -223,11 +223,11 @@ export default function Home(): JSX.Element {
                         >
                           Zang 2023
                         </a>
-                      </th>
+                      </td>
                       <td className="p-3 min-w-24">0.86</td>
                     </tr>
                     <tr className="dark:even:bg-darksilver even:bg-darkvanilla dark:odd:bg-umber odd:bg-desertsand">
-                      <th
+                      <td
                         scope="row"
                         className="p-3 min-w-40 font-medium whitespace-nowrap"
                       >
@@ -237,11 +237,11 @@ export default function Home(): JSX.Element {
                         >
                           Deng 2022
                         </a>
-                      </th>
+                      </td>
                       <td className="p-3 min-w-24">0.31</td>
                     </tr>
                     <tr className="dark:even:bg-darksilver even:bg-darkvanilla  dark:odd:bg-umber odd:bg-desertsand">
-                      <th
+                      <td
                         scope="row"
                         className="p-3 min-w-40 font-medium whitespace-nowrap"
                       >
@@ -251,7 +251,7 @@ export default function Home(): JSX.Element {
                         >
                           Avogadro 2023
                         </a>
-                      </th>
+                      </td>
                       <td className="p-3 min-w-24">0.62</td>
                     </tr>
                   </tbody>
@@ -414,7 +414,7 @@ export default function Home(): JSX.Element {
                   </thead>
                   <tbody className="text-foreground">
                     <tr className="dark:even:bg-darksilver even:bg-darkvanilla dark:odd:bg-umber odd:bg-desertsand">
-                      <th
+                      <td
                         scope="row"
                         className="p-3 min-w-40 font-medium whitespace-nowrap"
                       >
@@ -424,11 +424,11 @@ export default function Home(): JSX.Element {
                         >
                           Zang 2023
                         </a>
-                      </th>
+                      </td>
                       <td className="p-3 min-w-24">0.86</td>
                     </tr>
                     <tr className="dark:even:bg-darksilver even:bg-darkvanilla dark:odd:bg-umber odd:bg-desertsand">
-                      <th
+                      <td
                         scope="row"
                         className="p-3 min-w-40 font-medium whitespace-nowrap"
                       >
@@ -438,11 +438,11 @@ export default function Home(): JSX.Element {
                         >
                           Deng 2022
                         </a>
-                      </th>
+                      </td>
                       <td className="p-3 min-w-24">0.31</td>
                     </tr>
                     <tr className="dark:even:bg-darksilver even:bg-darkvanilla  dark:odd:bg-umber odd:bg-desertsand">
-                      <th
+                      <td
                         scope="row"
                         className="p-3 min-w-40 font-medium whitespace-nowrap"
                       >
@@ -452,7 +452,7 @@ export default function Home(): JSX.Element {
                         >
                           Avogadro 2023
                         </a>
-                      </th>
+                      </td>
                       <td className="p-3 min-w-24">0.62</td>
                     </tr>
                   </tbody>
