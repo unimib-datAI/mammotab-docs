@@ -88,7 +88,7 @@ export default function Home(): JSX.Element {
                       <span className="font-semibold text-2xl dark:text-stone-100 text-stone-100">
                         888.372
                       </span>
-                      <span className="font-semibold dark:text-stone-200 text-stone-700">
+                      <span className="font-semibold dark:text-stone-200 text-stone-200">
                         N. of tables
                       </span>
                     </div>
@@ -98,7 +98,7 @@ export default function Home(): JSX.Element {
                       <span className="font-semibold text-2xl dark:text-stone-100 text-stone-100">
                         40.702.248
                       </span>
-                      <span className="font-semibold dark:text-stone-200 text-stone-700">
+                      <span className="font-semibold dark:text-stone-200 text-stone-200">
                         Entities
                       </span>
                     </div>
@@ -108,7 +108,7 @@ export default function Home(): JSX.Element {
                       <span className="font-semibold text-2xl dark:text-stone-100 text-stone-100">
                         4.937.828
                       </span>
-                      <span className="font-semibold dark:text-stone-200 text-stone-700">
+                      <span className="font-semibold dark:text-stone-200 text-stone-200">
                         Classes
                       </span>
                     </div>
@@ -118,7 +118,7 @@ export default function Home(): JSX.Element {
                       <span className="font-semibold text-2xl dark:text-stone-100 text-stone-100">
                         24.193
                       </span>
-                      <span className="font-semibold dark:text-stone-200 text-stone-700">
+                      <span className="font-semibold dark:text-stone-200 text-stone-200">
                         Properties
                       </span>
                     </div>
@@ -128,7 +128,7 @@ export default function Home(): JSX.Element {
                       <span className="font-semibold text-2xl dark:text-stone-100 text-stone-100">
                         4.121.995
                       </span>
-                      <span className="font-semibold dark:text-stone-200 text-stone-700">
+                      <span className="font-semibold dark:text-stone-200 text-stone-200">
                         NIL
                       </span>
                     </div>
@@ -140,7 +140,7 @@ export default function Home(): JSX.Element {
                       <span className="font-semibold text-xl dark:text-stone-100 text-stone-100">
                         21.731.092
                       </span>
-                      <span className="font-semibold dark:text-stone-200 text-stone-700">
+                      <span className="font-semibold dark:text-stone-200 text-stone-200">
                         Total rows
                       </span>
                     </div>
@@ -148,7 +148,7 @@ export default function Home(): JSX.Element {
                       <span className="font-semibold text-xl dark:text-stone-100 text-stone-100">
                         4
                       </span>
-                      <span className="font-semibold dark:text-stone-200 text-stone-700">
+                      <span className="font-semibold dark:text-stone-200 text-stone-200">
                         Min rows
                       </span>
                     </div>
@@ -156,7 +156,7 @@ export default function Home(): JSX.Element {
                       <span className="font-semibold text-xl dark:text-stone-100 text-stone-100">
                         24.193
                       </span>
-                      <span className="font-semibold dark:text-stone-200 text-stone-700">
+                      <span className="font-semibold dark:text-stone-200 text-stone-200">
                         Max rows
                       </span>
                     </div>
@@ -164,7 +164,7 @@ export default function Home(): JSX.Element {
                       <span className="font-semibold text-xl dark:text-stone-100 text-stone-100">
                         5.030.655
                       </span>
-                      <span className="font-semibold dark:text-stone-200 text-stone-700">
+                      <span className="font-semibold dark:text-stone-200 text-stone-200">
                         Total cols
                       </span>
                     </div>
@@ -172,7 +172,7 @@ export default function Home(): JSX.Element {
                       <span className="font-semibold text-xl dark:text-stone-100 text-stone-100">
                         1
                       </span>
-                      <span className="font-semibold dark:text-stone-200 text-stone-700">
+                      <span className="font-semibold dark:text-stone-200 text-stone-200">
                         Min cols
                       </span>
                     </div>
@@ -180,7 +180,7 @@ export default function Home(): JSX.Element {
                       <span className="font-semibold text-xl dark:text-stone-100 text-stone-100">
                         1.000
                       </span>
-                      <span className="font-semibold dark:text-stone-200 text-stone-700">
+                      <span className="font-semibold dark:text-stone-200 text-stone-200">
                         Max cols
                       </span>
                     </div>
@@ -517,7 +517,7 @@ export default function Home(): JSX.Element {
               <p className=" mb-1 text-lg uppercase leading-none text-stone-500 dark:text-stone-400">
                 Mammotab 2022
               </p>
-              <h3 className="text-3xl font-semibold dark:text-terracotta">
+              <h3 className="text-3xl font-semibold text-primary dark:text-primary-light">
                 V1
               </h3>
               <p className="mb-4 text-base font-normal text-stone-800 dark:text-stone-100">
@@ -539,10 +539,10 @@ export default function Home(): JSX.Element {
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
                   <div className="items-center bg-primary-light dark:bg-primary-darkest py-10 rounded-lg">
                     <div className="flex flex-col items-center">
-                      <span className="font-semibold text-xl dark:text-stone-100 text-stone-800">
+                      <span className="font-semibold text-xl dark:text-stone-100 text-stone-100">
                         980.254
                       </span>
-                      <span className="font-semibold dark:text-stone-200 text-stone-700">
+                      <span className="font-semibold dark:text-stone-200 text-stone-200">
                         N. of tables
                       </span>
                     </div>
@@ -552,7 +552,7 @@ export default function Home(): JSX.Element {
                       <span className="font-semibold text-xl dark:text-stone-100 text-stone-100">
                         43.661.125
                       </span>
-                      <span className="font-semibold dark:text-stone-200 text-stone-700">
+                      <span className="font-semibold dark:text-stone-200 text-stone-200">
                         Entities
                       </span>
                     </div>
@@ -562,7 +562,7 @@ export default function Home(): JSX.Element {
                       <span className="font-semibold text-xl dark:text-stone-100 text-stone-100">
                         5.541.283{" "}
                       </span>
-                      <span className="font-semibold dark:text-stone-200 text-stone-700">
+                      <span className="font-semibold dark:text-stone-200 text-stone-200">
                         Classes
                       </span>
                     </div>
@@ -574,7 +574,7 @@ export default function Home(): JSX.Element {
                       <span className="font-semibold text-xl dark:text-stone-100 text-stone-100">
                         23.229.899
                       </span>
-                      <span className="font-semibold dark:text-stone-200 text-stone-700">
+                      <span className="font-semibold dark:text-stone-200 text-stone-200">
                         Total rows
                       </span>
                     </div>
@@ -582,7 +582,7 @@ export default function Home(): JSX.Element {
                       <span className="font-semibold text-xl dark:text-stone-100 text-stone-100">
                         4
                       </span>
-                      <span className="font-semibold dark:text-stone-200 text-stone-700">
+                      <span className="font-semibold dark:text-stone-200 text-stone-200">
                         Min rows
                       </span>
                     </div>
@@ -590,7 +590,7 @@ export default function Home(): JSX.Element {
                       <span className="font-semibold text-xl dark:text-stone-100 text-stone-100">
                         14.436
                       </span>
-                      <span className="font-semibold dark:text-stone-200 text-stone-700">
+                      <span className="font-semibold dark:text-stone-200 text-stone-200">
                         Max rows
                       </span>
                     </div>
@@ -598,7 +598,7 @@ export default function Home(): JSX.Element {
                       <span className="font-semibold text-xl dark:text-stone-100 text-stone-100">
                         5.638.191
                       </span>
-                      <span className="font-semibold dark:text-stone-200 text-stone-700">
+                      <span className="font-semibold dark:text-stone-200 text-stone-200">
                         Total cols
                       </span>
                     </div>
@@ -606,7 +606,7 @@ export default function Home(): JSX.Element {
                       <span className="font-semibold text-xl dark:text-stone-100 text-stone-100">
                         1
                       </span>
-                      <span className="font-semibold dark:text-stone-200 text-stone-700">
+                      <span className="font-semibold dark:text-stone-200 text-stone-200">
                         Min cols
                       </span>
                     </div>
@@ -614,7 +614,7 @@ export default function Home(): JSX.Element {
                       <span className="font-semibold text-xl dark:text-stone-100 text-stone-100">
                         1.0100.012
                       </span>
-                      <span className="font-semibold dark:text-stone-200 text-stone-700">
+                      <span className="font-semibold dark:text-stone-200 text-stone-200">
                         Max cols
                       </span>
                     </div>
@@ -654,56 +654,56 @@ export default function Home(): JSX.Element {
                     </thead>
                     <tbody className="text-foreground">
                       <tr className="dark:even:bg-darksilver even:bg-darkvanilla dark:odd:bg-umber odd:bg-desertsand">
-                        <th
+                        <td
                           scope="row"
                           className="p-3 min-w-40 font-medium whitespace-nowrap"
                         >
                           Semtab2019 R4
-                        </th>
+                        </td>
                         <td className="p-3 min-w-24"> 0.983 </td>
                         <td className="p-3 min-w-24"> - </td>
                         <td className="p-3 min-w-24"> 0.832 </td>
                       </tr>
                       <tr className="dark:even:bg-darksilver even:bg-darkvanilla dark:odd:bg-umber odd:bg-desertsand">
-                        <th
+                        <td
                           scope="row"
                           className="p-3 min-w-40 font-medium whitespace-nowrap"
                         >
                           Semtab2020 R4
-                        </th>
+                        </td>
                         <td className="p-3 min-w-24"> 0.907 </td>
                         <td className="p-3 min-w-24"> 0.993 </td>
                         <td className="p-3 min-w-24"> 0.997 </td>
                       </tr>
                       <tr className="dark:even:bg-darksilver even:bg-darkvanilla dark:odd:bg-umber odd:bg-desertsand">
-                        <th
+                        <td
                           scope="row"
                           className="p-3 min-w-40 font-medium whitespace-nowrap"
                         >
                           Semtab2020 2T
-                        </th>
+                        </td>
                         <td className="p-3 min-w-24"> 0.907 </td>
                         <td className="p-3 min-w-24"> 0.728 </td>
                         <td className="p-3 min-w-24"> - </td>
                       </tr>
                       <tr className="dark:even:bg-darksilver even:bg-darkvanilla dark:odd:bg-umber odd:bg-desertsand">
-                        <th
+                        <td
                           scope="row"
                           className="p-3 min-w-40 font-medium whitespace-nowrap"
                         >
                           Semtab2021 R3
-                        </th>
+                        </td>
                         <td className="p-3 min-w-24"> 0.968 </td>
                         <td className="p-3 min-w-24"> 0.984 </td>
                         <td className="p-3 min-w-24"> 0.993 </td>
                       </tr>
                       <tr className="dark:even:bg-darksilver even:bg-darkvanilla dark:odd:bg-umber odd:bg-desertsand">
-                        <th
+                        <td
                           scope="row"
                           className="p-3 min-w-40 font-medium whitespace-nowrap"
                         >
                           MammoTab 22
-                        </th>
+                        </td>
                         <td className="p-3 min-w-24"> 0.853 </td>
                         <td className="p-3 min-w-24"> 0.659 </td>
                         <td className="p-3 min-w-24"> - </td>

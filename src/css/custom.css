@@ -10,24 +10,56 @@
 
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #78350f;
-  --ifm-color-primary-dark: #6c300e;
-  --ifm-color-primary-darker: #662d0d;
-  --ifm-color-primary-darkest: #54250b;
-  --ifm-color-primary-light: #843a10;
-  --ifm-color-primary-lighter: #8a3d11;
-  --ifm-color-primary-lightest: #9c4514;
+  /* Primary color and its variations */
+  --ifm-color-primary: #552D05;
+  --ifm-color-primary-dark: #4C2804;
+  --ifm-color-primary-darker: #472504;
+  --ifm-color-primary-darkest: #3A1E03;
+  --ifm-color-primary-light: #5E3206;
+  --ifm-color-primary-lighter: #633506;
+  --ifm-color-primary-lightest: #703D07;
+  
+  /* Background colors with good contrast */
+  --ifm-background-color: #FFFFFF;
+  --ifm-background-surface-color: #F8F8F8;
+  
+  /* Text colors with WCAG-compliant contrast */
+  --ifm-color-content: #1C1C1C;  /* Darker black for better contrast */
+  --ifm-color-content-secondary: #404040;  /* Darker gray for better contrast */
+  
+  /* Table specific colors */
+  --table-header-bg: #F0F0F0;
+  --table-header-text: #1C1C1C;
+  --table-row-bg: #FFFFFF;
+  --table-row-alt-bg: #F8F8F8;
+  --table-hover-bg: #F5F5F5;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  --ifm-color-primary: #78350f;
-  --ifm-color-primary-dark: #6c300e;
-  --ifm-color-primary-darker: #662d0d;
-  --ifm-color-primary-darkest: #54250b;
-  --ifm-color-primary-light: #843a10;
-  --ifm-color-primary-lighter: #8a3d11;
-  --ifm-color-primary-lightest: #9c4514;
+  /* Primary color and its variations - starting from #905103 */
+  --ifm-color-primary: #905103;  /* Base color */
+  --ifm-color-primary-dark: #804702;
+  --ifm-color-primary-darker: #703D02;
+  --ifm-color-primary-darkest: #603302;
+  --ifm-color-primary-light: #A05B04;
+  --ifm-color-primary-lighter: #B06505;
+  --ifm-color-primary-lightest: #C06F06;
+  
+  /* Background colors with good contrast */
+  --ifm-background-color: #121212;  /* Darker background for better contrast */
+  --ifm-background-surface-color: #1E1E1E;
+  
+  /* Text colors with WCAG-compliant contrast */
+  --ifm-color-content: #FFFFFF;
+  --ifm-color-content-secondary: #E0E0E0;  /* Lighter gray for better contrast */
+  
+  /* Table specific colors */
+  --table-header-bg: #1E1E1E;
+  --table-header-text: #FFFFFF;
+  --table-row-bg: #121212;
+  --table-row-alt-bg: #1A1A1A;
+  --table-hover-bg: #2D2D2D;
 }
 
 /* Table styles */

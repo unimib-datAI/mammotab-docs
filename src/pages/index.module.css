@@ -25,10 +25,10 @@
 .gradientText {
   background: linear-gradient(
     45deg,
-    #DF8849,
-    #88512D,
-    #3F3533,
-    #504843
+    #905103,  /* Base color */
+    #A05B04,  /* Light variant */
+    #B06505,  /* Lighter variant */
+    #C06F06   /* Lightest variant */
   );
   background-size: 300% 300%;
   -webkit-background-clip: text;
