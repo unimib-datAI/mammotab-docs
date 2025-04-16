@@ -15,6 +15,7 @@ import { Eye, EyeOff } from "lucide-react";
 // Define types for our data
 type ModelData = {
   model: string;
+  link: string;
   parameters: string;
   status: "To do" | "In progress" | "Done";
   system: string;
@@ -88,13 +89,13 @@ const renderAccuracyCell = (value: string) => {
   let textColor = "text-stone-100";
   
   if (accuracy >= 0.8) {
-    bgColor = "bg-dorange";
+    bgColor = "bg-primary";
   } else if (accuracy >= 0.6) {
-    bgColor = "bg-brick";
+    bgColor = "bg-primary-dark";
   } else if (accuracy >= 0.4) {
-    bgColor = "bg-bronze";
+    bgColor = "bg-primary-light";
   } else {
-    bgColor = "bg-grizzly";
+    bgColor = "bg-primary-darker";
   }
   
   return (
@@ -113,13 +114,13 @@ const renderStatusCell = (status: ModelData["status"]) => {
   
   switch (status) {
     case "To do":
-      bgColor = "bg-brick";
+      bgColor = "bg-primary";
       break;
     case "In progress":
-      bgColor = "bg-dorange";
+      bgColor = "bg-primary-dark";
       break;
     case "Done":
-      bgColor = "bg-chocolate";
+      bgColor = "bg-primary-darkest";
       break;
   }
   
@@ -140,25 +141,14 @@ const createColumns = () => [
     header: "Model",
     cell: (info) => {
       const modelName = info.getValue();
-      if (modelName === "Qwen/Qwen2-0.5B") {
+      const link = info.row.original.link;
+      if (link) {
         return (
           <a 
-            href="https://huggingface.co/Qwen/Qwen2-0.5B" 
+            href={link} 
             target="_blank" 
             rel="noopener noreferrer"
-            className="font-bold text-dorange dark:text-terracotta hover:underline"
-          >
-            {modelName}
-          </a>
-        );
-      }
-      if (modelName === "microsoft/Phi-3-mini-4k-instruct") {
-        return (
-          <a 
-            href="https://huggingface.co/microsoft/Phi-3-mini-4k-instruct" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="font-bold text-dorange dark:text-terracotta hover:underline"
+            className="font-bold text-primary dark:text-primary-light hover:underline"
           >
             {modelName}
           </a>
@@ -282,38 +272,18 @@ const createColumns = () => [
   })
 ];
 
-const data = [
-  {
-    model: "Gemini-1.0 Pro",
-    parameters: "1.8B",
-    status: "To do",
-    system: "",
-    total_time: "",
-    accuracy: "",
-    total_correct: "",
-    nils: "",
-    acronyms: "",
-    aliases: "",
-    typos: "",
-    genericTypes: "",
-    specificTypes: "",
-    singleDomain: "",
-    multiDomain: "",
-    small_per_cols: "",
-    medium_per_cols: "",
-    large_per_cols: "",
-    small_per_rows: "",
-    medium_per_rows: "",
-    large_per_rows: ""
-  },
+const data: ModelData[] = [
   {
     model: "microsoft/Phi-3-mini-4k-instruct",
+    link: "https://huggingface.co/microsoft/Phi-3-mini-4k-instruct",
     parameters: "3.8B",
-    status: "Done",
+    status: "Done" as const,
     system: "NVIDIA RTX A6000",
     total_time: "369925.491",
     accuracy: "0.281",
     total_correct: "23881",
+    ne_cells: "",
+    cea: "",
     nils: "7045",
     acronyms: "2085",
     aliases: "3660",
@@ -330,438 +300,16 @@ const data = [
     large_per_rows: "145"
   },
   {
-    model: "Gemini-1.5 Pro",
-    parameters: "3.2B",
-    status: "To do",
-    system: "",
-    total_time: "",
-    accuracy: "",
-    total_correct: "",
-    ne_cells: "",
-    cea: "",
-    nils: "",
-    acronyms: "",
-    aliases: "",
-    typos: "",
-    genericTypes: "",
-    specificTypes: "",
-    singleDomain: "",
-    multiDomain: "",
-    small_per_cols: "",
-    medium_per_cols: "",
-    large_per_cols: "",
-    small_per_rows: "",
-    medium_per_rows: "",
-    large_per_rows: ""
-  },
-  {
-    model: "Gemini-1.5 Flash",
-    parameters: "2.5B",
-    status: "To do",
-    system: "",
-    total_time: "",
-    accuracy: "",
-    total_correct: "",
-    ne_cells: "",
-    cea: "",
-    nils: "",
-    acronyms: "",
-    aliases: "",
-    typos: "",
-    genericTypes: "",
-    specificTypes: "",
-    singleDomain: "",
-    multiDomain: "",
-    small_per_cols: "",
-    medium_per_cols: "",
-    large_per_cols: "",
-    small_per_rows: "",
-    medium_per_rows: "",
-    large_per_rows: ""
-  },
-  {
-    model: "Gemma 2",
-    parameters: "2B",
-    status: "To do",
-    system: "",
-    total_time: "",
-    accuracy: "",
-    total_correct: "",
-    ne_cells: "",
-    cea: "",
-    nils: "",
-    acronyms: "",
-    aliases: "",
-    typos: "",
-    genericTypes: "",
-    specificTypes: "",
-    singleDomain: "",
-    multiDomain: "",
-    small_per_cols: "",
-    medium_per_cols: "",
-    large_per_cols: "",
-    small_per_rows: "",
-    medium_per_rows: "",
-    large_per_rows: ""
-  },
-  {
-    model: "Gemma 2",
-    parameters: "9B",
-    status: "To do",
-    system: "",
-    total_time: "",
-    accuracy: "",
-    total_correct: "",
-    ne_cells: "",
-    cea: "",
-    nils: "",
-    acronyms: "",
-    aliases: "",
-    typos: "",
-    genericTypes: "",
-    specificTypes: "",
-    singleDomain: "",
-    multiDomain: "",
-    small_per_cols: "",
-    medium_per_cols: "",
-    large_per_cols: "",
-    small_per_rows: "",
-    medium_per_rows: "",
-    large_per_rows: ""
-  },
-  {
-    model: "Phi-3 Mini",
-    parameters: "3.8B",
-    status: "To do",
-    system: "",
-    total_time: "",
-    accuracy: "",
-    total_correct: "",
-    ne_cells: "",
-    cea: "",
-    nils: "",
-    acronyms: "",
-    aliases: "",
-    typos: "",
-    genericTypes: "",
-    specificTypes: "",
-    singleDomain: "",
-    multiDomain: "",
-    small_per_cols: "",
-    medium_per_cols: "",
-    large_per_cols: "",
-    small_per_rows: "",
-    medium_per_rows: "",
-    large_per_rows: ""
-  },
-  {
-    model: "Phi-3 Small",
-    parameters: "7B",
-    status: "To do",
-    system: "",
-    total_time: "",
-    accuracy: "",
-    total_correct: "",
-    ne_cells: "",
-    cea: "",
-    nils: "",
-    acronyms: "",
-    aliases: "",
-    typos: "",
-    genericTypes: "",
-    specificTypes: "",
-    singleDomain: "",
-    multiDomain: "",
-    small_per_cols: "",
-    medium_per_cols: "",
-    large_per_cols: "",
-    small_per_rows: "",
-    medium_per_rows: "",
-    large_per_rows: ""
-  },
-  {
-    model: "Phi-3 Medium",
-    parameters: "14B",
-    status: "To do",
-    system: "",
-    total_time: "",
-    accuracy: "",
-    total_correct: "",
-    ne_cells: "",
-    cea: "",
-    nils: "",
-    acronyms: "",
-    aliases: "",
-    typos: "",
-    genericTypes: "",
-    specificTypes: "",
-    singleDomain: "",
-    multiDomain: "",
-    small_per_cols: "",
-    medium_per_cols: "",
-    large_per_cols: "",
-    small_per_rows: "",
-    medium_per_rows: "",
-    large_per_rows: ""
-  },
-  {
-    model: "Phi-3.5 Mini",
-    parameters: "4.2B",
-    status: "To do",
-    system: "",
-    total_time: "",
-    accuracy: "",
-    total_correct: "",
-    ne_cells: "",
-    cea: "",
-    nils: "",
-    acronyms: "",
-    aliases: "",
-    typos: "",
-    genericTypes: "",
-    specificTypes: "",
-    singleDomain: "",
-    multiDomain: "",
-    small_per_cols: "",
-    medium_per_cols: "",
-    large_per_cols: "",
-    small_per_rows: "",
-    medium_per_rows: "",
-    large_per_rows: ""
-  },
-  {
-    model: "Mixtral",
-    parameters: "7B",
-    status: "To do",
-    system: "",
-    total_time: "",
-    accuracy: "",
-    total_correct: "",
-    ne_cells: "",
-    cea: "",
-    nils: "",
-    acronyms: "",
-    aliases: "",
-    typos: "",
-    genericTypes: "",
-    specificTypes: "",
-    singleDomain: "",
-    multiDomain: "",
-    small_per_cols: "",
-    medium_per_cols: "",
-    large_per_cols: "",
-    small_per_rows: "",
-    medium_per_rows: "",
-    large_per_rows: ""
-  },
-  {
-    model: "Mixtral-Instruct",
-    parameters: "8B",
-    status: "To do",
-    system: "",
-    total_time: "",
-    accuracy: "",
-    total_correct: "",
-    ne_cells: "",
-    cea: "",
-    nils: "",
-    acronyms: "",
-    aliases: "",
-    typos: "",
-    genericTypes: "",
-    specificTypes: "",
-    singleDomain: "",
-    multiDomain: "",
-    small_per_cols: "",
-    medium_per_cols: "",
-    large_per_cols: "",
-    small_per_rows: "",
-    medium_per_rows: "",
-    large_per_rows: ""
-  },
-  {
-    model: "Claude 3 Sonnet",
-    parameters: "7B",
-    status: "To do",
-    system: "",
-    total_time: "",
-    accuracy: "",
-    total_correct: "",
-    ne_cells: "",
-    cea: "",
-    nils: "",
-    acronyms: "",
-    aliases: "",
-    typos: "",
-    genericTypes: "",
-    specificTypes: "",
-    singleDomain: "",
-    multiDomain: "",
-    small_per_cols: "",
-    medium_per_cols: "",
-    large_per_cols: "",
-    small_per_rows: "",
-    medium_per_rows: "",
-    large_per_rows: ""
-  },
-  {
-    model: "Claude 3 Haiku",
-    parameters: "3.5B",
-    status: "To do",
-    system: "",
-    total_time: "",
-    accuracy: "",
-    total_correct: "",
-    ne_cells: "",
-    cea: "",
-    nils: "",
-    acronyms: "",
-    aliases: "",
-    typos: "",
-    genericTypes: "",
-    specificTypes: "",
-    singleDomain: "",
-    multiDomain: "",
-    small_per_cols: "",
-    medium_per_cols: "",
-    large_per_cols: "",
-    small_per_rows: "",
-    medium_per_rows: "",
-    large_per_rows: ""
-  },
-  {
-    model: "Claude 3.5 Sonnet",
-    parameters: "8.5B",
-    status: "To do",
-    system: "",
-    total_time: "",
-    accuracy: "",
-    total_correct: "",
-    ne_cells: "",
-    cea: "",
-    nils: "",
-    acronyms: "",
-    aliases: "",
-    typos: "",
-    genericTypes: "",
-    specificTypes: "",
-    singleDomain: "",
-    multiDomain: "",
-    small_per_cols: "",
-    medium_per_cols: "",
-    large_per_cols: "",
-    small_per_rows: "",
-    medium_per_rows: "",
-    large_per_rows: ""
-  },
-  {
-    model: "Llama 3.2",
-    parameters: "7B",
-    status: "To do",
-    system: "",
-    total_time: "",
-    accuracy: "",
-    total_correct: "",
-    ne_cells: "",
-    cea: "",
-    nils: "",
-    acronyms: "",
-    aliases: "",
-    typos: "",
-    genericTypes: "",
-    specificTypes: "",
-    singleDomain: "",
-    multiDomain: "",
-    small_per_cols: "",
-    medium_per_cols: "",
-    large_per_cols: "",
-    small_per_rows: "",
-    medium_per_rows: "",
-    large_per_rows: ""
-  },
-  {
-    model: "Llama 3.1",
-    parameters: "6.5B",
-    status: "To do",
-    system: "",
-    total_time: "",
-    accuracy: "",
-    total_correct: "",
-    ne_cells: "",
-    cea: "",
-    nils: "",
-    acronyms: "",
-    aliases: "",
-    typos: "",
-    genericTypes: "",
-    specificTypes: "",
-    singleDomain: "",
-    multiDomain: "",
-    small_per_cols: "",
-    medium_per_cols: "",
-    large_per_cols: "",
-    small_per_rows: "",
-    medium_per_rows: "",
-    large_per_rows: ""
-  },
-  {
-    model: "Qwen 2",
-    parameters: "7B",
-    status: "To do",
-    system: "",
-    total_time: "",
-    accuracy: "",
-    total_correct: "",
-    ne_cells: "",
-    cea: "",
-    nils: "",
-    acronyms: "",
-    aliases: "",
-    typos: "",
-    genericTypes: "",
-    specificTypes: "",
-    singleDomain: "",
-    multiDomain: "",
-    small_per_cols: "",
-    medium_per_cols: "",
-    large_per_cols: "",
-    small_per_rows: "",
-    medium_per_rows: "",
-    large_per_rows: ""
-  },
-  {
-    model: "Qwen-2.5",
-    parameters: "8B",
-    status: "To do",
-    system: "",
-    total_time: "",
-    accuracy: "",
-    total_correct: "",
-    ne_cells: "",
-    cea: "",
-    nils: "",
-    acronyms: "",
-    aliases: "",
-    typos: "",
-    genericTypes: "",
-    specificTypes: "",
-    singleDomain: "",
-    multiDomain: "",
-    small_per_cols: "",
-    medium_per_cols: "",
-    large_per_cols: "",
-    small_per_rows: "",
-    medium_per_rows: "",
-    large_per_rows: ""
-  },
-  {
     model: "01-ai/Yi-1.5-6B",
+    link: "https://huggingface.co/01-ai/Yi-1.5-6B",
     parameters: "6B",
-    status: "Done",
+    status: "Done" as const,
     system: "NVIDIA RTX A6000",
     total_time: "187070.847",
     accuracy: "0.068",
     total_correct: "5832",
+    ne_cells: "",
+    cea: "",
     nils: "1626",
     acronyms: "545",
     aliases: "370",
@@ -779,12 +327,15 @@ const data = [
   },
   {
     model: "Qwen/Qwen2-0.5B",
+    link: "https://huggingface.co/Qwen/Qwen2-0.5B",
     parameters: "0.5B",
-    status: "Done",
+    status: "Done" as const,
     system: "NVIDIA RTX A6000",
     total_time: "52659.894",
     accuracy: "0.044",
     total_correct: "3741",
+    ne_cells: "",
+    cea: "",
     nils: "1103",
     acronyms: "6",
     aliases: "3",
@@ -802,12 +353,15 @@ const data = [
   },
   {
     model: "Qwen/Qwen2-1.5B",
+    link: "https://huggingface.co/Qwen/Qwen2-1.5B",
     parameters: "1.5B",
-    status: "Done",
+    status: "Done" as const,
     system: "NVIDIA RTX A6000",
     total_time: "98496.646",
     accuracy: "0.166",
     total_correct: "14124",
+    ne_cells: "",
+    cea: "",
     nils: "4491",
     acronyms: "1429",
     aliases: "1691",
@@ -825,12 +379,15 @@ const data = [
   },
   {
     model: "google/gemma-2-2b-it",
+    link: "https://huggingface.co/google/gemma-2-2b-it",
     parameters: "2B",
-    status: "Done",
+    status: "Done" as const,
     system: "NVIDIA RTX A6000",
     total_time: "250822.537",
     accuracy: "0.407",
     total_correct: "34608",
+    ne_cells: "",
+    cea: "",
     nils: "9545",
     acronyms: "2323",
     aliases: "4957",
@@ -845,6 +402,32 @@ const data = [
     small_per_rows: "234",
     medium_per_rows: "185",
     large_per_rows: "168"
+  },
+  {
+    model: "meta-llama/Llama-3.2-1B",
+    link: "https://huggingface.co/meta-llama/Llama-3.2-1B",
+    parameters: "1B",
+    status: "Done" as const,
+    system: "NVIDIA RTX A6000",
+    total_time: "83214.818",
+    accuracy: "0.048",
+    total_correct: "4142",
+    ne_cells: "",
+    cea: "",
+    nils: "1625",
+    acronyms: "30",
+    aliases: "60",
+    typos: "98",
+    genericTypes: "4",
+    specificTypes: "18",
+    singleDomain: "7",
+    multiDomain: "15",
+    small_per_cols: "1",
+    medium_per_cols: "13",
+    large_per_cols: "8",
+    small_per_rows: "17",
+    medium_per_rows: "2",
+    large_per_rows: "3"
   }
 ];
 
@@ -886,7 +469,7 @@ export default function Leaderboard(): JSX.Element {
   // Memoize columns
   const columns = useMemo(() => createColumns(), []);
 
-  const table = useReactTable({
+  const table = useReactTable<ModelData>({
     data,
     columns,
     state: {
@@ -914,12 +497,12 @@ export default function Leaderboard(): JSX.Element {
 
         <section id="tanstack-table-container" className="mx-auto relative z-10 p-8 w-full">
           <div className="mb-8">
-            <h1 className="text-4xl font-bold text-dorange dark:text-terracotta">LLM Leaderboard</h1>
+            <h1 className="text-4xl font-bold text-primary dark:text-primary-light">LLM Leaderboard</h1>
             <p className="text-stone-800 dark:text-stone-100 mt-2">Compare the performance of different language models on the MammoTab dataset</p>
             <p className="text-stone-600 dark:text-stone-300 mt-4 text-sm">
-              This leaderboard has been <a href="/mammotab-docs/docs/leaderboard-instructions" className="text-dorange dark:text-terracotta hover:underline">generated</a> using the MammoTab sample dataset, which consists of 870 tables containing a total of 84,907 distinct mentions.
+              This leaderboard has been <a href="/mammotab-docs/docs/leaderboard-instructions" className="text-primary dark:text-primary-light hover:underline">generated</a> using the MammoTab sample dataset, which consists of 870 tables containing a total of 84,907 distinct mentions.
             </p>
-            <div className="mt-6 p-4 bg-bronze/10 dark:bg-grizzly/10 rounded-lg border border-bronze/20 dark:border-grizzly/20">
+            <div className="mt-6 p-4 bg-primary-light/10 dark:bg-primary-darker/10 rounded-lg border border-primary-light/20 dark:border-primary-darker/20">
               <p className="text-stone-800 dark:text-stone-100 font-semibold mb-2">This leaderboard is managed by:</p>
               <div className="flex flex-wrap gap-2">
                 <span className="text-stone-700 dark:text-stone-300">
@@ -938,27 +521,27 @@ export default function Leaderboard(): JSX.Element {
           <div className="fixed top-20 right-4 z-50">
             <div className="relative">
               <button 
-                className="px-4 py-2 bg-chocolate text-white rounded-lg hover:bg-opacity-90 flex items-center gap-2 transition-all duration-200"
+                className="px-4 py-2 bg-primary-darkest text-white rounded-lg hover:bg-opacity-90 flex items-center gap-2 transition-all duration-200"
                 onClick={toggleColumnMenu}
               >
                 {showColumnMenu ? <EyeOff size={18} /> : <Eye size={18} />}
                 Show/Hide Columns
               </button>
               {showColumnMenu && (
-                <div className="absolute right-0 mt-2 w-56 bg-white dark:bg-umber rounded-lg shadow-xl py-2 z-50 max-h-[400px] overflow-y-auto transition-all duration-200 ease-in-out transform opacity-100 scale-100">
+                <div className="absolute right-0 mt-2 w-56 bg-white dark:bg-umber rounded-lg shadow-xl py-2 z-50 max-h-[400px] overflow-y-auto">
                   <div className="px-4 py-2 border-b border-gray-200 dark:border-gray-700">
                     <h3 className="text-sm font-semibold text-gray-700 dark:text-gray-300">Visible Columns</h3>
                   </div>
                   {table.getAllLeafColumns().map((column) => {
-                    if (column.id === "model") return null; // Skip model column
+                    if (column.id === "model") return null;
                     return (
-                      <div key={column.id} className="px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-150">
+                      <div key={column.id} className="px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700">
                         <label className="flex items-center space-x-2 cursor-pointer">
                           <input
                             type="checkbox"
                             checked={column.getIsVisible()}
                             onChange={column.getToggleVisibilityHandler()}
-                            className="rounded text-chocolate focus:ring-chocolate h-4 w-4"
+                            className="rounded text-primary-darkest focus:ring-primary-darkest h-4 w-4"
                           />
                           <span className="text-sm text-gray-700 dark:text-gray-300">{column.columnDef.header as string}</span>
                         </label>
@@ -970,12 +553,7 @@ export default function Leaderboard(): JSX.Element {
             </div>
           </div>
 
-          <div className="overflow-x-auto rounded-lg w-full" style={{ 
-            maxWidth: '100%',
-            overflowX: 'auto',
-            position: 'relative',
-            display: 'block'
-          }}>
+          <div className="overflow-x-auto rounded-lg w-full">
             <div style={{ minWidth: '2500px' }}>
               <table className="text-sm w-full rounded-lg overflow-hidden" style={{
                 tableLayout: 'fixed',
@@ -996,7 +574,7 @@ export default function Leaderboard(): JSX.Element {
                         return (
                           <th 
                             key={header.id} 
-                            className={`p-3 ${isMetricColumn ? 'w-[100px]' : header.id === 'model' ? 'min-w-[200px]' : 'min-w-[100px]'} text-center cursor-pointer hover:bg-opacity-80 underline ${header.id === 'model' ? 'text-left' : 'text-center'}`}
+                            className={`p-3 ${isMetricColumn ? 'w-[100px]' : header.id === 'model' ? 'min-w-[200px]' : 'min-w-[100px]'} text-center cursor-pointer hover:bg-opacity-80 ${header.id === 'model' ? 'text-left' : 'text-center'}`}
                             onClick={header.column.getToggleSortingHandler()}
                           >
                             <div className="flex items-center justify-center gap-1">

@@ -41,7 +41,7 @@ export default function Home(): JSX.Element {
                 </p>
                 <a
                   href="/mammotab-docs/docs/introduction"
-                  className="text-center inline-flex items-center border-none dark:bg-brick bg-chocolate hover:text-stone-100 text-stone-100 font-sm rounded-lg text-sm px-5 py-2.5 me-2 mb-2 font-semibold"
+                  className="text-center inline-flex items-center border-none dark:bg-primary-dark bg-primary-darkest hover:text-stone-100 text-stone-100 font-sm rounded-lg text-sm px-5 py-2.5 me-2 mb-2 font-semibold"
                 >
                   Learn more <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
@@ -57,14 +57,14 @@ export default function Home(): JSX.Element {
 
         <section className="mx-auto max-w-6xl">
           <ul className="relative border-s border-stone-900 dark:border-stone-200 max-w-screen-lg mx-12 list-none">
-            <div className="absolute top-0 left-0 w-[1px] h-full bg-dorange dark:bg-brick"></div>
+            <div className="absolute top-0 left-0 w-[1px] h-full bg-primary dark:bg-primary-dark"></div>
 
             <li className="mb-10 ms-6">
-              <span className="absolute flex items-center justify-center w-6 h-6 bg-dorange rounded-full -start-3 dark:bg-brick"></span>
+              <span className="absolute flex items-center justify-center w-6 h-6 bg-primary rounded-full -start-3 dark:bg-primary-dark"></span>
               <p className="pt-1.5 mb-1 text-lg uppercase leading-none text-stone-500 dark:text-stone-400">
                 Mammotab 2025
               </p>
-              <h3 className="text-3xl font-semibold text-dorange dark:text-terracotta">
+              <h3 className="text-3xl font-semibold text-primary dark:text-primary-light">
                 V2
               </h3>
               <p className="mb-4 text-base font-normal text-stone-800 dark:text-stone-100">
@@ -83,9 +83,9 @@ export default function Home(): JSX.Element {
 
               <div className="space-y-4 mt-8">
                 <div className="grid grid-cols-1 lg:grid-cols-5 gap-5">
-                  <div className="items-center bg-bronze dark:bg-grizzly py-10 rounded-lg">
+                  <div className="items-center bg-primary-light dark:bg-primary-darkest py-10 rounded-lg">
                     <div className="flex flex-col items-center">
-                      <span className="font-semibold text-2xl dark:text-stone-100 text-stone-800">
+                      <span className="font-semibold text-2xl dark:text-stone-100 text-stone-100">
                         888.372
                       </span>
                       <span className="font-semibold dark:text-stone-200 text-stone-700">
@@ -93,9 +93,9 @@ export default function Home(): JSX.Element {
                       </span>
                     </div>
                   </div>
-                  <div className="items-center bg-bronze dark:bg-grizzly py-10 rounded-lg">
+                  <div className="items-center bg-primary-light dark:bg-primary-darkest py-10 rounded-lg">
                     <div className="flex flex-col items-center">
-                      <span className="font-semibold text-2xl dark:text-stone-100 text-stone-800">
+                      <span className="font-semibold text-2xl dark:text-stone-100 text-stone-100">
                         40.702.248
                       </span>
                       <span className="font-semibold dark:text-stone-200 text-stone-700">
@@ -103,9 +103,9 @@ export default function Home(): JSX.Element {
                       </span>
                     </div>
                   </div>
-                  <div className="items-center bg-bronze dark:bg-grizzly  py-10 rounded-lg">
+                  <div className="items-center bg-primary-light dark:bg-primary-darkest py-10 rounded-lg">
                     <div className="flex flex-col items-center">
-                      <span className="font-semibold text-2xl dark:text-stone-100 text-stone-800">
+                      <span className="font-semibold text-2xl dark:text-stone-100 text-stone-100">
                         4.937.828
                       </span>
                       <span className="font-semibold dark:text-stone-200 text-stone-700">
@@ -113,9 +113,9 @@ export default function Home(): JSX.Element {
                       </span>
                     </div>
                   </div>
-                  <div className="items-center bg-bronze dark:bg-grizzly py-10 rounded-lg">
+                  <div className="items-center bg-primary-light dark:bg-primary-darkest py-10 rounded-lg">
                     <div className="flex flex-col items-center">
-                      <span className="font-semibold text-2xl dark:text-stone-100 text-stone-800">
+                      <span className="font-semibold text-2xl dark:text-stone-100 text-stone-100">
                         24.193
                       </span>
                       <span className="font-semibold dark:text-stone-200 text-stone-700">
@@ -123,9 +123,9 @@ export default function Home(): JSX.Element {
                       </span>
                     </div>
                   </div>
-                  <div className="items-center bg-bronze dark:bg-grizzly py-10 rounded-lg">
+                  <div className="items-center bg-primary-light dark:bg-primary-darkest py-10 rounded-lg">
                     <div className="flex flex-col items-center">
-                      <span className="font-semibold text-2xl dark:text-stone-100 text-stone-800">
+                      <span className="font-semibold text-2xl dark:text-stone-100 text-stone-100">
                         4.121.995
                       </span>
                       <span className="font-semibold dark:text-stone-200 text-stone-700">
@@ -134,10 +134,10 @@ export default function Home(): JSX.Element {
                     </div>
                   </div>
                 </div>
-                <div className="items-center bg-bronze dark:bg-grizzly py-10 rounded-lg">
+                <div className="items-center bg-primary-light dark:bg-primary-darkest py-10 rounded-lg">
                   <div className="grid grid-cols-2 lg:grid-cols-6 gap-4">
                     <div className="flex flex-col items-center">
-                      <span className="font-semibold text-xl dark:text-stone-100 text-stone-800">
+                      <span className="font-semibold text-xl dark:text-stone-100 text-stone-100">
                         21.731.092
                       </span>
                       <span className="font-semibold dark:text-stone-200 text-stone-700">
@@ -145,7 +145,7 @@ export default function Home(): JSX.Element {
                       </span>
                     </div>
                     <div className="flex flex-col items-center">
-                      <span className="font-semibold text-xl dark:text-stone-100 text-stone-800">
+                      <span className="font-semibold text-xl dark:text-stone-100 text-stone-100">
                         4
                       </span>
                       <span className="font-semibold dark:text-stone-200 text-stone-700">
@@ -153,7 +153,7 @@ export default function Home(): JSX.Element {
                       </span>
                     </div>
                     <div className="flex flex-col items-center">
-                      <span className="font-semibold text-xl dark:text-stone-100 text-stone-800">
+                      <span className="font-semibold text-xl dark:text-stone-100 text-stone-100">
                         24.193
                       </span>
                       <span className="font-semibold dark:text-stone-200 text-stone-700">
@@ -161,7 +161,7 @@ export default function Home(): JSX.Element {
                       </span>
                     </div>
                     <div className="flex flex-col items-center">
-                      <span className="font-semibold text-xl dark:text-stone-100 text-stone-800">
+                      <span className="font-semibold text-xl dark:text-stone-100 text-stone-100">
                         5.030.655
                       </span>
                       <span className="font-semibold dark:text-stone-200 text-stone-700">
@@ -169,7 +169,7 @@ export default function Home(): JSX.Element {
                       </span>
                     </div>
                     <div className="flex flex-col items-center">
-                      <span className="font-semibold text-xl dark:text-stone-100 text-stone-800">
+                      <span className="font-semibold text-xl dark:text-stone-100 text-stone-100">
                         1
                       </span>
                       <span className="font-semibold dark:text-stone-200 text-stone-700">
@@ -177,7 +177,7 @@ export default function Home(): JSX.Element {
                       </span>
                     </div>
                     <div className="flex flex-col items-center">
-                      <span className="font-semibold text-xl dark:text-stone-100 text-stone-800">
+                      <span className="font-semibold text-xl dark:text-stone-100 text-stone-100">
                         1.000
                       </span>
                       <span className="font-semibold dark:text-stone-200 text-stone-700">
@@ -283,7 +283,7 @@ export default function Home(): JSX.Element {
             </li>
 
             <li className="mb-10 ms-6">
-              <span className="absolute flex items-center justify-center w-6 h-6 bg-dorange rounded-full -start-3 dark:bg-brick"></span>
+              <span className="absolute flex items-center justify-center w-6 h-6 bg-primary rounded-full -start-3 dark:bg-primary-dark"></span>
               <p className="mb-1 text-lg uppercase leading-none text-stone-500 dark:text-stone-400">
                 Upgrades
               </p>
@@ -352,11 +352,11 @@ export default function Home(): JSX.Element {
             </li>
 
             <li className="mb-10 ms-6">
-              <span className="absolute flex items-center justify-center w-6 h-6 bg-dorange rounded-full -start-3 dark:bg-brick"></span>
+              <span className="absolute flex items-center justify-center w-6 h-6 bg-primary rounded-full -start-3 dark:bg-primary-dark"></span>
               <p className="pt-1.5 mb-1 text-lg uppercase leading-none text-stone-500 dark:text-stone-400">
                 Mammotab 2024
               </p>
-              <h3 className="text-3xl font-semibold text-dorange dark:text-terracotta">
+              <h3 className="text-3xl font-semibold text-primary dark:text-primary-light">
                 V2-alpha (SemTab)
               </h3>
               <p className="mb-4 text-base font-normal text-stone-800 dark:text-stone-100">
@@ -484,7 +484,7 @@ export default function Home(): JSX.Element {
             </li>
 
             <li className="mb-10 ms-6">
-              <span className="absolute flex items-center justify-center w-6 h-6 bg-dorange rounded-full -start-3 dark:bg-brick"></span>
+              <span className="absolute flex items-center justify-center w-6 h-6 bg-primary rounded-full -start-3 dark:bg-primary-dark"></span>
               <p className="mb-1 text-lg uppercase leading-none text-stone-500 dark:text-stone-400">
                 Upgrades
               </p>
@@ -513,7 +513,7 @@ export default function Home(): JSX.Element {
             </li>
 
             <li className="mb-10 ms-6">
-              <span className="absolute flex items-center justify-center w-6 h-6 bg-dorange rounded-full -start-3 dark:bg-brick"></span>
+              <span className="absolute flex items-center justify-center w-6 h-6 bg-primary rounded-full -start-3 dark:bg-primary-dark"></span>
               <p className=" mb-1 text-lg uppercase leading-none text-stone-500 dark:text-stone-400">
                 Mammotab 2022
               </p>
@@ -537,7 +537,7 @@ export default function Home(): JSX.Element {
 
               <div className="space-y-4 mt-8">
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
-                  <div className="items-center bg-bronze dark:bg-grizzly  py-10 rounded-lg">
+                  <div className="items-center bg-primary-light dark:bg-primary-darkest py-10 rounded-lg">
                     <div className="flex flex-col items-center">
                       <span className="font-semibold text-xl dark:text-stone-100 text-stone-800">
                         980.254
@@ -547,9 +547,9 @@ export default function Home(): JSX.Element {
                       </span>
                     </div>
                   </div>
-                  <div className="items-center bg-bronze dark:bg-grizzly  py-10 rounded-lg">
+                  <div className="items-center bg-primary-light dark:bg-primary-darkest py-10 rounded-lg">
                     <div className="flex flex-col items-center">
-                      <span className="font-semibold text-xl dark:text-stone-100 text-stone-800">
+                      <span className="font-semibold text-xl dark:text-stone-100 text-stone-100">
                         43.661.125
                       </span>
                       <span className="font-semibold dark:text-stone-200 text-stone-700">
@@ -557,9 +557,9 @@ export default function Home(): JSX.Element {
                       </span>
                     </div>
                   </div>
-                  <div className="items-center bg-bronze dark:bg-grizzly  py-10 rounded-lg">
+                  <div className="items-center bg-primary-light dark:bg-primary-darkest py-10 rounded-lg">
                     <div className="flex flex-col items-center">
-                      <span className="font-semibold text-xl dark:text-stone-100 text-stone-800">
+                      <span className="font-semibold text-xl dark:text-stone-100 text-stone-100">
                         5.541.283{" "}
                       </span>
                       <span className="font-semibold dark:text-stone-200 text-stone-700">
@@ -568,10 +568,10 @@ export default function Home(): JSX.Element {
                     </div>
                   </div>
                 </div>
-                <div className="items-center bg-bronze dark:bg-grizzly  py-10 rounded-lg">
+                <div className="items-center bg-primary-light dark:bg-primary-darkest py-10 rounded-lg">
                   <div className="grid grid-cols-2 lg:grid-cols-6 gap-4">
                     <div className="flex flex-col items-center">
-                      <span className="font-semibold text-xl dark:text-stone-100 text-stone-800">
+                      <span className="font-semibold text-xl dark:text-stone-100 text-stone-100">
                         23.229.899
                       </span>
                       <span className="font-semibold dark:text-stone-200 text-stone-700">
@@ -579,7 +579,7 @@ export default function Home(): JSX.Element {
                       </span>
                     </div>
                     <div className="flex flex-col items-center">
-                      <span className="font-semibold text-xl dark:text-stone-100 text-stone-800">
+                      <span className="font-semibold text-xl dark:text-stone-100 text-stone-100">
                         4
                       </span>
                       <span className="font-semibold dark:text-stone-200 text-stone-700">
@@ -587,7 +587,7 @@ export default function Home(): JSX.Element {
                       </span>
                     </div>
                     <div className="flex flex-col items-center">
-                      <span className="font-semibold text-xl dark:text-stone-100 text-stone-800">
+                      <span className="font-semibold text-xl dark:text-stone-100 text-stone-100">
                         14.436
                       </span>
                       <span className="font-semibold dark:text-stone-200 text-stone-700">
@@ -595,7 +595,7 @@ export default function Home(): JSX.Element {
                       </span>
                     </div>
                     <div className="flex flex-col items-center">
-                      <span className="font-semibold text-xl dark:text-stone-100 text-stone-800">
+                      <span className="font-semibold text-xl dark:text-stone-100 text-stone-100">
                         5.638.191
                       </span>
                       <span className="font-semibold dark:text-stone-200 text-stone-700">
@@ -603,7 +603,7 @@ export default function Home(): JSX.Element {
                       </span>
                     </div>
                     <div className="flex flex-col items-center">
-                      <span className="font-semibold text-xl dark:text-stone-100 text-stone-800">
+                      <span className="font-semibold text-xl dark:text-stone-100 text-stone-100">
                         1
                       </span>
                       <span className="font-semibold dark:text-stone-200 text-stone-700">
@@ -611,7 +611,7 @@ export default function Home(): JSX.Element {
                       </span>
                     </div>
                     <div className="flex flex-col items-center">
-                      <span className="font-semibold text-xl dark:text-stone-100 text-stone-800">
+                      <span className="font-semibold text-xl dark:text-stone-100 text-stone-100">
                         1.0100.012
                       </span>
                       <span className="font-semibold dark:text-stone-200 text-stone-700">
