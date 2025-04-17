@@ -274,110 +274,6 @@ const createColumns = () => [
 
 const data: ModelData[] = [
   {
-    model: "microsoft/Phi-3-mini-4k-instruct",
-    link: "https://huggingface.co/microsoft/Phi-3-mini-4k-instruct",
-    parameters: "3.8B",
-    status: "Done" as const,
-    system: "NVIDIA RTX A6000",
-    total_time: "369925.491",
-    accuracy: "0.281",
-    total_correct: "23881",
-    ne_cells: "",
-    cea: "",
-    nils: "7045",
-    acronyms: "2085",
-    aliases: "3660",
-    typos: "6871",
-    genericTypes: "37",
-    specificTypes: "482",
-    singleDomain: "207",
-    multiDomain: "312",
-    small_per_cols: "58",
-    medium_per_cols: "318",
-    large_per_cols: "143",
-    small_per_rows: "208",
-    medium_per_rows: "166",
-    large_per_rows: "145"
-  },
-  {
-    model: "01-ai/Yi-1.5-6B",
-    link: "https://huggingface.co/01-ai/Yi-1.5-6B",
-    parameters: "6B",
-    status: "Done" as const,
-    system: "NVIDIA RTX A6000",
-    total_time: "187070.847",
-    accuracy: "0.068",
-    total_correct: "5832",
-    ne_cells: "",
-    cea: "",
-    nils: "1626",
-    acronyms: "545",
-    aliases: "370",
-    typos: "756",
-    genericTypes: "6",
-    specificTypes: "71",
-    singleDomain: "31",
-    multiDomain: "46",
-    small_per_cols: "1",
-    medium_per_cols: "51",
-    large_per_cols: "25",
-    small_per_rows: "39",
-    medium_per_rows: "24",
-    large_per_rows: "14"
-  },
-  {
-    model: "Qwen/Qwen2-0.5B",
-    link: "https://huggingface.co/Qwen/Qwen2-0.5B",
-    parameters: "0.5B",
-    status: "Done" as const,
-    system: "NVIDIA RTX A6000",
-    total_time: "52659.894",
-    accuracy: "0.044",
-    total_correct: "3741",
-    ne_cells: "",
-    cea: "",
-    nils: "1103",
-    acronyms: "6",
-    aliases: "3",
-    typos: "5",
-    genericTypes: "2",
-    specificTypes: "17",
-    singleDomain: "5",
-    multiDomain: "14",
-    small_per_cols: "0",
-    medium_per_cols: "15",
-    large_per_cols: "4",
-    small_per_rows: "17",
-    medium_per_rows: "1",
-    large_per_rows: "1"
-  },
-  {
-    model: "Qwen/Qwen2-1.5B",
-    link: "https://huggingface.co/Qwen/Qwen2-1.5B",
-    parameters: "1.5B",
-    status: "Done" as const,
-    system: "NVIDIA RTX A6000",
-    total_time: "98496.646",
-    accuracy: "0.166",
-    total_correct: "14124",
-    ne_cells: "",
-    cea: "",
-    nils: "4491",
-    acronyms: "1429",
-    aliases: "1691",
-    typos: "4468",
-    genericTypes: "23",
-    specificTypes: "285",
-    singleDomain: "147",
-    multiDomain: "161",
-    small_per_cols: "42",
-    medium_per_cols: "209",
-    large_per_cols: "57",
-    small_per_rows: "90",
-    medium_per_rows: "110",
-    large_per_rows: "108"
-  },
-  {
     model: "google/gemma-2-2b-it",
     link: "https://huggingface.co/google/gemma-2-2b-it",
     parameters: "2B",
@@ -386,7 +282,7 @@ const data: ModelData[] = [
     total_time: "250822.537",
     accuracy: "0.407",
     total_correct: "34608",
-    ne_cells: "",
+    ne_cells: "84907",
     cea: "",
     nils: "9545",
     acronyms: "2323",
@@ -412,7 +308,7 @@ const data: ModelData[] = [
     total_time: "83214.818",
     accuracy: "0.048",
     total_correct: "4142",
-    ne_cells: "",
+    ne_cells: "84907",
     cea: "",
     nils: "1625",
     acronyms: "30",
@@ -428,6 +324,136 @@ const data: ModelData[] = [
     small_per_rows: "17",
     medium_per_rows: "2",
     large_per_rows: "3"
+  },
+  {
+    model: "meta-llama/Llama-3.2-3B",
+    link: "https://huggingface.co/meta-llama/Llama-3.2-3B",
+    parameters: "3B",
+    status: "Done" as const,
+    system: "NVIDIA RTX A6000",
+    total_time: "211444.595",
+    accuracy: "0.303",
+    total_correct: "25771",
+    ne_cells: "84907",
+    cea: "",
+    nils: "7599",
+    acronyms: "2171",
+    aliases: "3692",
+    typos: "7144",
+    genericTypes: "43",
+    specificTypes: "461",
+    singleDomain: "205",
+    multiDomain: "299",
+    small_per_cols: "64",
+    medium_per_cols: "317",
+    large_per_cols: "123",
+    small_per_rows: "177",
+    medium_per_rows: "169",
+    large_per_rows: "158"
+  },
+  {
+    model: "microsoft/Phi-3-mini-4k-instruct",
+    link: "https://huggingface.co/microsoft/Phi-3-mini-4k-instruct",
+    parameters: "3.8B",
+    status: "Done" as const,
+    system: "NVIDIA RTX A6000",
+    total_time: "369925.491",
+    accuracy: "0.281",
+    total_correct: "23881",
+    ne_cells: "84907",
+    cea: "",
+    nils: "7045",
+    acronyms: "2085",
+    aliases: "3660",
+    typos: "6871",
+    genericTypes: "37",
+    specificTypes: "482",
+    singleDomain: "207",
+    multiDomain: "312",
+    small_per_cols: "58",
+    medium_per_cols: "318",
+    large_per_cols: "143",
+    small_per_rows: "208",
+    medium_per_rows: "166",
+    large_per_rows: "145"
+  },
+  {
+    model: "Qwen/Qwen2-0.5B",
+    link: "https://huggingface.co/Qwen/Qwen2-0.5B",
+    parameters: "0.5B",
+    status: "Done" as const,
+    system: "NVIDIA RTX A6000",
+    total_time: "52659.894",
+    accuracy: "0.044",
+    total_correct: "3741",
+    ne_cells: "84907",
+    cea: "",
+    nils: "1103",
+    acronyms: "6",
+    aliases: "3",
+    typos: "5",
+    genericTypes: "2",
+    specificTypes: "17",
+    singleDomain: "5",
+    multiDomain: "14",
+    small_per_cols: "0",
+    medium_per_cols: "15",
+    large_per_cols: "4",
+    small_per_rows: "17",
+    medium_per_rows: "1",
+    large_per_rows: "1"
+  },
+  {
+    model: "Qwen/Qwen2-1.5B",
+    link: "https://huggingface.co/Qwen/Qwen2-1.5B",
+    parameters: "1.5B",
+    status: "Done" as const,
+    system: "NVIDIA RTX A6000",
+    total_time: "98496.646",
+    accuracy: "0.166",
+    total_correct: "14124",
+    ne_cells: "84907",
+    cea: "",
+    nils: "4491",
+    acronyms: "1429",
+    aliases: "1691",
+    typos: "4468",
+    genericTypes: "23",
+    specificTypes: "285",
+    singleDomain: "147",
+    multiDomain: "161",
+    small_per_cols: "42",
+    medium_per_cols: "209",
+    large_per_cols: "57",
+    small_per_rows: "90",
+    medium_per_rows: "110",
+    large_per_rows: "108"
+  },
+  {
+    model: "01-ai/Yi-1.5-6B",
+    link: "https://huggingface.co/01-ai/Yi-1.5-6B",
+    parameters: "6B",
+    status: "Done" as const,
+    system: "NVIDIA RTX A6000",
+    total_time: "187070.847",
+    accuracy: "0.068",
+    total_correct: "5832",
+    ne_cells: "84907",
+    cea: "",
+    nils: "1626",
+    acronyms: "545",
+    aliases: "370",
+    typos: "756",
+    genericTypes: "6",
+    specificTypes: "71",
+    singleDomain: "31",
+    multiDomain: "46",
+    small_per_cols: "1",
+    medium_per_cols: "51",
+    large_per_cols: "25",
+    small_per_rows: "39",
+    medium_per_rows: "24",
+    large_per_rows: "14"
   }
 ];
 
@@ -489,13 +515,13 @@ export default function Leaderboard(): JSX.Element {
 
   return (
     <Layout title={`${siteConfig.title}`} description="MammoTab, is a dataset composed of 1M Wikipedia tables extracted from over 20M Wikipedia pages and annotated through Wikidata.">
-      <main>
+      <main className="flex flex-col min-h-[calc(100vh-4rem)]">
         <img
           src="/mammotab-docs/img/bblurrymam.svg"
           className="absolute opacity-10 -top-[45rem]"
         />
 
-        <section id="tanstack-table-container" className="mx-auto relative z-10 p-8 w-full">
+        <section id="tanstack-table-container" className="mx-auto relative z-10 p-8 w-full flex-1">
           <div className="mb-8">
             <h1 className="text-4xl font-bold text-primary dark:text-primary-light">LLM Leaderboard</h1>
             <p className="text-stone-800 dark:text-stone-100 mt-2">Compare the performance of different language models on the MammoTab dataset</p>
@@ -553,14 +579,10 @@ export default function Leaderboard(): JSX.Element {
             </div>
           </div>
 
-          <div className="overflow-x-auto rounded-lg w-full">
-            <div style={{ minWidth: '2500px' }}>
-              <table className="text-sm w-full rounded-lg overflow-hidden" style={{
-                tableLayout: 'fixed',
-                width: '100%',
-                minWidth: '2500px'
-              }}>
-                <thead className="text-xs uppercase dark:bg-rocketmetallic bg-paletaupe">
+          <div className="overflow-x-auto rounded-lg w-full border border-gray-200 dark:border-gray-700">
+            <div className="min-w-[2500px]">
+              <table className="text-sm w-full rounded-lg overflow-hidden">
+                <thead className="text-xs uppercase dark:bg-rocketmetallic bg-paletaupe sticky top-0 z-10">
                   {table.getHeaderGroups().map((headerGroup) => (
                     <tr key={headerGroup.id}>
                       {headerGroup.headers.map((header) => {
