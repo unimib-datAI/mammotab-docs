@@ -1,0 +1,79 @@
+[
+  {
+    "model": "google/gemma-2-2b",
+    "max_context": 8192,
+    "total_prompts": 84907,
+    "out_of_context_prompts": 142,
+    "annotable_prompts": 84765
+  },
+  {
+    "model": "microsoft/Phi-3-mini-4k-instruct",
+    "max_context": 4096,
+    "total_prompts": 84907,
+    "out_of_context_prompts": 3944,
+    "annotable_prompts": 80963
+  },
+  {
+    "model": "microsoft/Phi-3-mini-128k-instruct",
+    "max_context": 131072,
+    "total_prompts": 84907,
+    "out_of_context_prompts": 0,
+    "annotable_prompts": 84907
+  },
+  {
+    "model": "meta-llama/Llama-3.2-1B",
+    "max_context": 131072,
+    "total_prompts": 84907,
+    "out_of_context_prompts": 0,
+    "annotable_prompts": 84907
+  },
+  {
+    "model": "meta-llama/Llama-3.2-3B",
+    "max_context": 131072,
+    "total_prompts": 84907,
+    "out_of_context_prompts": 0,
+    "annotable_prompts": 84907
+  },
+  {
+    "model": "Qwen/Qwen2-0.5B",
+    "max_context": 131072,
+    "total_prompts": 84907,
+    "out_of_context_prompts": 0,
+    "annotable_prompts": 84907
+  },
+  {
+    "model": "Qwen/Qwen2-1.5B",
+    "max_context": 131072,
+    "total_prompts": 84907,
+    "out_of_context_prompts": 0,
+    "annotable_prompts": 84907
+  },
+  {
+    "model": "Qwen/Qwen2.5-0.5B",
+    "max_context": 32768,
+    "total_prompts": 84907,
+    "out_of_context_prompts": 0,
+    "annotable_prompts": 84907
+  },
+  {
+    "model": "Qwen/Qwen2.5-1.5B",
+    "max_context": 131072,
+    "total_prompts": 84907,
+    "out_of_context_prompts": 0,
+    "annotable_prompts": 84907
+  },
+  {
+    "model": "Qwen/Qwen2.5-7B",
+    "max_context": 131072,
+    "total_prompts": 84907,
+    "out_of_context_prompts": 0,
+    "annotable_prompts": 84907
+  },
+  {
+    "model": "01-ai/Yi-1.5-6B",
+    "max_context": 4096,
+    "total_prompts": 84907,
+    "out_of_context_prompts": 3543,
+    "annotable_prompts": 81364
+  }
+]

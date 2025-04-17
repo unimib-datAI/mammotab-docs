@@ -17,6 +17,7 @@ type ModelData = {
   model: string;
   link: string;
   parameters: string;
+  max_context: string;
   status: "To do" | "In progress" | "Done";
   system: string;
   total_time: string;
@@ -163,6 +164,11 @@ const createColumns = () => [
     cell: (info) => renderSimpleCell(info.getValue()),
     sortingFn: "alphanumeric",
   }),
+  columnHelper.accessor("max_context", {
+    header: "Max Context",
+    cell: (info) => renderSimpleCell(info.getValue()),
+    sortingFn: "alphanumeric",
+  }),
   columnHelper.accessor("status", {
     header: "Status",
     cell: (info) => renderStatusCell(info.getValue()),
@@ -274,9 +280,10 @@ const createColumns = () => [
 
 const data: ModelData[] = [
   {
-    model: "google/gemma-2-2b-it",
-    link: "https://huggingface.co/google/gemma-2-2b-it",
+    model: "google/gemma-2-2b",
+    link: "https://huggingface.co/google/gemma-2b",
     parameters: "2B",
+    max_context: "8192",
     status: "Done" as const,
     system: "NVIDIA RTX A6000",
     total_time: "250822.537",
@@ -303,6 +310,7 @@ const data: ModelData[] = [
     model: "meta-llama/Llama-3.2-1B",
     link: "https://huggingface.co/meta-llama/Llama-3.2-1B",
     parameters: "1B",
+    max_context: "131072",
     status: "Done" as const,
     system: "NVIDIA RTX A6000",
     total_time: "83214.818",
@@ -329,6 +337,7 @@ const data: ModelData[] = [
     model: "meta-llama/Llama-3.2-3B",
     link: "https://huggingface.co/meta-llama/Llama-3.2-3B",
     parameters: "3B",
+    max_context: "131072",
     status: "Done" as const,
     system: "NVIDIA RTX A6000",
     total_time: "211444.595",
@@ -355,6 +364,7 @@ const data: ModelData[] = [
     model: "microsoft/Phi-3-mini-4k-instruct",
     link: "https://huggingface.co/microsoft/Phi-3-mini-4k-instruct",
     parameters: "3.8B",
+    max_context: "4096",
     status: "Done" as const,
     system: "NVIDIA RTX A6000",
     total_time: "369925.491",
@@ -381,6 +391,7 @@ const data: ModelData[] = [
     model: "Qwen/Qwen2-0.5B",
     link: "https://huggingface.co/Qwen/Qwen2-0.5B",
     parameters: "0.5B",
+    max_context: "131072",
     status: "Done" as const,
     system: "NVIDIA RTX A6000",
     total_time: "52659.894",
@@ -407,6 +418,7 @@ const data: ModelData[] = [
     model: "Qwen/Qwen2-1.5B",
     link: "https://huggingface.co/Qwen/Qwen2-1.5B",
     parameters: "1.5B",
+    max_context: "131072",
     status: "Done" as const,
     system: "NVIDIA RTX A6000",
     total_time: "98496.646",
@@ -433,6 +445,7 @@ const data: ModelData[] = [
     model: "01-ai/Yi-1.5-6B",
     link: "https://huggingface.co/01-ai/Yi-1.5-6B",
     parameters: "6B",
+    max_context: "4096",
     status: "Done" as const,
     system: "NVIDIA RTX A6000",
     total_time: "187070.847",
