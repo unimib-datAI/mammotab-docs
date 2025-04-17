@@ -23,7 +23,7 @@ type ModelData = {
   total_time: string;
   accuracy: string;
   total_correct: string;
-  in_context_prompt: string;
+  out_context_prompt: string;
   ne_cells: string;
   cea: string;
   nils: string;
@@ -207,8 +207,8 @@ const createColumns = () => [
     cell: (info) => renderSimpleCell(info.getValue()),
     sortingFn: "alphanumeric",
   }),
-  columnHelper.accessor("in_context_prompt", {
-    header: "In Context Prompt",
+  columnHelper.accessor("out_context_prompt", {
+    header: "Out Context Prompt",
     cell: (info) => renderSimpleCell(info.getValue()),
     sortingFn: "alphanumeric",
   }),
@@ -286,8 +286,8 @@ const createColumns = () => [
 
 const data: ModelData[] = [
   {
-    model: "google/gemma-2-2b",
-    link: "https://huggingface.co/google/gemma-2b",
+    model: "google/gemma-2-2b-it",
+    link: "https://huggingface.co/google/gemma-2-2b-it",
     parameters: "2B",
     max_context: "8192",
     status: "Done" as const,
@@ -295,7 +295,7 @@ const data: ModelData[] = [
     total_time: "250822.537",
     accuracy: "0.407",
     total_correct: "34608",
-    in_context_prompt: "84765",
+    out_context_prompt: "142",
     ne_cells: "84907",
     cea: "",
     nils: "9545",
@@ -323,7 +323,7 @@ const data: ModelData[] = [
     total_time: "83214.818",
     accuracy: "0.048",
     total_correct: "4142",
-    in_context_prompt: "84907",
+    out_context_prompt: "0",
     ne_cells: "84907",
     cea: "",
     nils: "1625",
@@ -351,7 +351,7 @@ const data: ModelData[] = [
     total_time: "211444.595",
     accuracy: "0.303",
     total_correct: "25771",
-    in_context_prompt: "84907",
+    out_context_prompt: "0",
     ne_cells: "84907",
     cea: "",
     nils: "7599",
@@ -379,7 +379,7 @@ const data: ModelData[] = [
     total_time: "369925.491",
     accuracy: "0.281",
     total_correct: "23881",
-    in_context_prompt: "80963",
+    out_context_prompt: "3944",
     ne_cells: "84907",
     cea: "",
     nils: "7045",
@@ -407,7 +407,7 @@ const data: ModelData[] = [
     total_time: "52659.894",
     accuracy: "0.044",
     total_correct: "3741",
-    in_context_prompt: "84907",
+    out_context_prompt: "0",
     ne_cells: "84907",
     cea: "",
     nils: "1103",
@@ -435,7 +435,7 @@ const data: ModelData[] = [
     total_time: "98496.646",
     accuracy: "0.166",
     total_correct: "14124",
-    in_context_prompt: "84907",
+    out_context_prompt: "0",
     ne_cells: "84907",
     cea: "",
     nils: "4491",
@@ -463,7 +463,7 @@ const data: ModelData[] = [
     total_time: "187070.847",
     accuracy: "0.068",
     total_correct: "5832",
-    in_context_prompt: "81364",
+    out_context_prompt: "3543",
     ne_cells: "84907",
     cea: "",
     nils: "1626",
