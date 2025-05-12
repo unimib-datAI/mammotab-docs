@@ -1,0 +1,43 @@
+{
+    "system": "Linux",
+    "machine": "x86_64",
+    "processor": "x86_64",
+    "cuda": "NVIDIA RTX A6000",
+    "model_name": "microsoft/Phi-3-mini-128k-instruct",
+    "ne_cells": 84907,
+    "total_time": 401400.957,
+    "accuracy": 0.285,
+    "total_correct": 24247,
+    "stats": {
+        "nils": 7094,
+        "acronyms": 2199,
+        "typos": 7285,
+        "alias": 3725,
+        "generic_types": 41,
+        "specific_types": 507,
+        "single_domain": 221,
+        "multi_domain": 327,
+        "small_per_cols": 63,
+        "medium_per_cols": 343,
+        "large_per_cols": 142,
+        "small_per_rows": 208,
+        "medium_per_rows": 178,
+        "large_per_rows": 162
+    },
+    "final_stats": {
+        "nils": "47.7%",
+        "acronyms": "62.5%",
+        "typos": "60.0%",
+        "alias": "52.3%",
+        "generic_types": "42.7%",
+        "specific_types": "65.5%",
+        "single_domain": "50.8%",
+        "multi_domain": "75.1%",
+        "small_per_cols": "41.4%",
+        "medium_per_cols": "73.7%",
+        "large_per_cols": "56.1%",
+        "small_per_rows": "52.7%",
+        "medium_per_rows": "76.7%",
+        "large_per_rows": "66.3%"
+    }
+}

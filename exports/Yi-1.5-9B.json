@@ -1,0 +1,43 @@
+{
+    "system": "Linux",
+    "machine": "x86_64",
+    "processor": "x86_64",
+    "cuda": "NVIDIA RTX A6000",
+    "model_name": "01-ai/Yi-1.5-9B",
+    "ne_cells": 84907,
+    "total_time": 277928.323,
+    "accuracy": 0.177,
+    "total_correct": 15080,
+    "stats": {
+        "nils": 4268,
+        "acronyms": 1769,
+        "typos": 4967,
+        "alias": 2034,
+        "generic_types": 16,
+        "specific_types": 296,
+        "single_domain": 153,
+        "multi_domain": 159,
+        "small_per_cols": 38,
+        "medium_per_cols": 207,
+        "large_per_cols": 67,
+        "small_per_rows": 86,
+        "medium_per_rows": 119,
+        "large_per_rows": 107
+    },
+    "final_stats": {
+        "nils": "28.7%",
+        "acronyms": "50.2%",
+        "typos": "40.9%",
+        "alias": "28.5%",
+        "generic_types": "16.6%",
+        "specific_types": "38.2%",
+        "single_domain": "35.1%",
+        "multi_domain": "36.5%",
+        "small_per_cols": "25.0%",
+        "medium_per_cols": "44.5%",
+        "large_per_cols": "26.4%",
+        "small_per_rows": "21.8%",
+        "medium_per_rows": "51.2%",
+        "large_per_rows": "43.8%"
+    }
+}
