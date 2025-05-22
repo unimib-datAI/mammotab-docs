@@ -769,22 +769,22 @@ export default function Leaderboard(): JSX.Element {
                 Show/Hide Columns
               </button>
               {showColumnMenu && (
-                <div className="absolute right-0 mt-2 w-56 bg-white dark:bg-umber rounded-lg shadow-xl py-2 z-50 max-h-[400px] overflow-y-auto">
+                <div className="absolute right-0 mt-2 w-56 bg-white dark:bg-[#1b1b1d] rounded-lg shadow-xl py-2 z-50 max-h-[400px] overflow-y-auto border border-gray-200 dark:border-gray-700">
                   <div className="px-4 py-2 border-b border-gray-200 dark:border-gray-700">
-                    <h3 className="text-sm font-semibold text-gray-700 dark:text-gray-300">Visible Columns</h3>
+                    <h3 className="text-sm font-semibold text-gray-800 dark:text-gray-100">Visible Columns</h3>
                   </div>
                   {table.getAllLeafColumns().map((column) => {
                     if (column.id === "model") return null;
                     return (
-                      <div key={column.id} className="px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700">
+                      <div key={column.id} className="px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800/50 transition-colors duration-150">
                         <label className="flex items-center space-x-2 cursor-pointer">
                           <input
                             type="checkbox"
                             checked={column.getIsVisible()}
                             onChange={column.getToggleVisibilityHandler()}
-                            className="rounded text-primary-darkest focus:ring-primary-darkest h-4 w-4"
+                            className="rounded text-primary-darkest focus:ring-primary-darkest h-4 w-4 bg-white dark:bg-[#1b1b1d] border-gray-300 dark:border-gray-600"
                           />
-                          <span className="text-sm text-gray-700 dark:text-gray-300">{column.columnDef.header as string}</span>
+                          <span className="text-sm text-gray-800 dark:text-gray-100">{column.columnDef.header as string}</span>
                         </label>
                       </div>
                     );
