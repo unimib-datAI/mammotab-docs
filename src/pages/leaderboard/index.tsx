@@ -185,77 +185,137 @@ const createColumns = () => [
         </div>
       );
     },
-    sortingFn: "alphanumeric",
+    sortingFn: (rowA, rowB) => {
+      const a = parseFloat(rowA.getValue("total_time"));
+      const b = parseFloat(rowB.getValue("total_time"));
+      return a - b;
+    },
   }),
   columnHelper.accessor("accuracy", {
     header: "Accuracy",
     cell: (info) => renderAccuracyCell(info.getValue()),
-    sortingFn: "alphanumeric",
+    sortingFn: (rowA, rowB) => {
+      const a = parseFloat(rowA.getValue("accuracy"));
+      const b = parseFloat(rowB.getValue("accuracy"));
+      return a - b;
+    },
   }),
   columnHelper.accessor("total_correct", {
     header: "Total Correct",
     cell: (info) => renderSimpleCell(info.getValue()),
-    sortingFn: "alphanumeric",
+    sortingFn: (rowA, rowB) => {
+      const a = parseInt(rowA.getValue("total_correct"));
+      const b = parseInt(rowB.getValue("total_correct"));
+      return a - b;
+    },
   }),
   columnHelper.accessor("nils", {
     header: "NILs",
     cell: (info) => renderCellWithPercentage(info.getValue(), MAX_VALUES.nils),
-    sortingFn: "alphanumeric",
+    sortingFn: (rowA, rowB) => {
+      const a = parseInt(rowA.getValue("nils"));
+      const b = parseInt(rowB.getValue("nils"));
+      return a - b;
+    },
   }),
   columnHelper.accessor("acronyms", {
     header: "Acronyms",
     cell: (info) => renderCellWithPercentage(info.getValue(), MAX_VALUES.acronyms),
-    sortingFn: "alphanumeric",
+    sortingFn: (rowA, rowB) => {
+      const a = parseInt(rowA.getValue("acronyms"));
+      const b = parseInt(rowB.getValue("acronyms"));
+      return a - b;
+    },
   }),
   columnHelper.accessor("genericTypes", {
     header: "Generic Types",
     cell: (info) => renderCellWithPercentage(info.getValue(), MAX_VALUES.genericTypes),
-    sortingFn: "alphanumeric",
+    sortingFn: (rowA, rowB) => {
+      const a = parseInt(rowA.getValue("genericTypes"));
+      const b = parseInt(rowB.getValue("genericTypes"));
+      return a - b;
+    },
   }),
   columnHelper.accessor("specificTypes", {
     header: "Specific Types",
     cell: (info) => renderCellWithPercentage(info.getValue(), MAX_VALUES.specificTypes),
-    sortingFn: "alphanumeric",
+    sortingFn: (rowA, rowB) => {
+      const a = parseInt(rowA.getValue("specificTypes"));
+      const b = parseInt(rowB.getValue("specificTypes"));
+      return a - b;
+    },
   }),
   columnHelper.accessor("singleDomain", {
     header: "Single Domain",
     cell: (info) => renderCellWithPercentage(info.getValue(), MAX_VALUES.singleDomain),
-    sortingFn: "alphanumeric",
+    sortingFn: (rowA, rowB) => {
+      const a = parseInt(rowA.getValue("singleDomain"));
+      const b = parseInt(rowB.getValue("singleDomain"));
+      return a - b;
+    },
   }),
   columnHelper.accessor("multiDomain", {
     header: "Multi Domain",
     cell: (info) => renderCellWithPercentage(info.getValue(), MAX_VALUES.multiDomain),
-    sortingFn: "alphanumeric",
+    sortingFn: (rowA, rowB) => {
+      const a = parseInt(rowA.getValue("multiDomain"));
+      const b = parseInt(rowB.getValue("multiDomain"));
+      return a - b;
+    },
   }),
   columnHelper.accessor("small_per_cols", {
     header: "Small % Cols",
     cell: (info) => renderCellWithPercentage(info.getValue(), MAX_VALUES.smallPerCols),
-    sortingFn: "alphanumeric",
+    sortingFn: (rowA, rowB) => {
+      const a = parseInt(rowA.getValue("small_per_cols"));
+      const b = parseInt(rowB.getValue("small_per_cols"));
+      return a - b;
+    },
   }),
   columnHelper.accessor("medium_per_cols", {
     header: "Medium % Cols",
     cell: (info) => renderCellWithPercentage(info.getValue(), MAX_VALUES.mediumPerCols),
-    sortingFn: "alphanumeric",
+    sortingFn: (rowA, rowB) => {
+      const a = parseInt(rowA.getValue("medium_per_cols"));
+      const b = parseInt(rowB.getValue("medium_per_cols"));
+      return a - b;
+    },
   }),
   columnHelper.accessor("large_per_cols", {
     header: "Large % Cols",
     cell: (info) => renderCellWithPercentage(info.getValue(), MAX_VALUES.largePerCols),
-    sortingFn: "alphanumeric",
+    sortingFn: (rowA, rowB) => {
+      const a = parseInt(rowA.getValue("large_per_cols"));
+      const b = parseInt(rowB.getValue("large_per_cols"));
+      return a - b;
+    },
   }),
   columnHelper.accessor("small_per_rows", {
     header: "Small % Rows",
     cell: (info) => renderCellWithPercentage(info.getValue(), MAX_VALUES.smallPerRows),
-    sortingFn: "alphanumeric",
+    sortingFn: (rowA, rowB) => {
+      const a = parseInt(rowA.getValue("small_per_rows"));
+      const b = parseInt(rowB.getValue("small_per_rows"));
+      return a - b;
+    },
   }),
   columnHelper.accessor("medium_per_rows", {
     header: "Medium % Rows",
     cell: (info) => renderCellWithPercentage(info.getValue(), MAX_VALUES.mediumPerRows),
-    sortingFn: "alphanumeric",
+    sortingFn: (rowA, rowB) => {
+      const a = parseInt(rowA.getValue("medium_per_rows"));
+      const b = parseInt(rowB.getValue("medium_per_rows"));
+      return a - b;
+    },
   }),
   columnHelper.accessor("large_per_rows", {
     header: "Large % Rows",
     cell: (info) => renderCellWithPercentage(info.getValue(), MAX_VALUES.largePerRows),
-    sortingFn: "alphanumeric",
+    sortingFn: (rowA, rowB) => {
+      const a = parseInt(rowA.getValue("large_per_rows"));
+      const b = parseInt(rowB.getValue("large_per_rows"));
+      return a - b;
+    },
   })
 ];
 
