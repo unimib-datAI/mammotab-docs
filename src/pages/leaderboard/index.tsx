@@ -444,7 +444,7 @@ const data: ModelData[] = [
     large_per_rows: "158"
   },
   {
-    model: "llama-3.3-70b-instruct",
+    model: "meta-llama/Llama-3.3-70B-Instruct",
     link: "https://huggingface.co/meta-llama/Llama-3.3-70B-Instruct",
     parameters: "70B",
     status: "Done",
@@ -467,7 +467,7 @@ const data: ModelData[] = [
     large_per_rows: "200"
   },
   {
-    model: "meta-llama-3.1-8b-instruct",
+    model: "meta-llama/Llama-3.1-8B-Instruct",
     link: "https://huggingface.co/meta-llama/Llama-3.1-8B-Instruct",
     parameters: "8B",
     status: "Done",
@@ -490,8 +490,8 @@ const data: ModelData[] = [
     large_per_rows: "159"
   },
   {
-    model: "mistral-large-instruct",
-    link: "https://huggingface.co/mistralai/mistral-large-instruct",
+    model: "mistralai/Mistral-Large-Instruct",
+    link: "https://huggingface.co/mistralai/Mistral-Large-Instruct",
     parameters: "123B",
     status: "Done",
     system: "NVIDIA L40S",
@@ -764,6 +764,29 @@ const data: ModelData[] = [
     small_per_rows: "283",
     medium_per_rows: "184",
     large_per_rows: "176"
+  },
+  {
+    model: "Qwen/Qwen3-235B-A22B",
+    link: "https://huggingface.co/Qwen/Qwen3-235B-A22B",
+    parameters: "235B",
+    status: "In progress",
+    system: "NVIDIA A40",
+    total_time: "",
+    accuracy: "",
+    total_correct: "",
+    ne_cells: "84907",
+    nils: "",
+    acronyms: "",
+    genericTypes: "",
+    specificTypes: "",
+    singleDomain: "",
+    multiDomain: "",
+    small_per_cols: "",
+    medium_per_cols: "",
+    large_per_cols: "",
+    small_per_rows: "",
+    medium_per_rows: "",
+    large_per_rows: ""
   }
 ];
 
