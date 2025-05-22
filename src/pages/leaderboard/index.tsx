@@ -85,14 +85,22 @@ const renderAccuracyCell = (value: string) => {
   let bgColor = "";
   let textColor = "text-stone-100";
   
-  if (accuracy >= 0.8) {
-    bgColor = "bg-primary";
+  if (accuracy >= 0.7) {
+    bgColor = "bg-green-600"; // Eccellente
   } else if (accuracy >= 0.6) {
-    bgColor = "bg-primary-dark";
+    bgColor = "bg-green-500"; // Molto buono
+  } else if (accuracy >= 0.5) {
+    bgColor = "bg-yellow-500"; // Buono
   } else if (accuracy >= 0.4) {
-    bgColor = "bg-primary-light";
+    bgColor = "bg-yellow-400"; // Medio
+  } else if (accuracy >= 0.3) {
+    bgColor = "bg-orange-500"; // Sufficiente
+  } else if (accuracy >= 0.2) {
+    bgColor = "bg-orange-600"; // Scarso
+  } else if (accuracy >= 0.1) {
+    bgColor = "bg-red-500"; // Molto scarso
   } else {
-    bgColor = "bg-primary-darker";
+    bgColor = "bg-red-600"; // Insufficiente
   }
   
   return (
