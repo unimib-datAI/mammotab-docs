@@ -1,1 +1,43 @@
-{"system": "Linux", "machine": "x86_64", "processor": "x86_64", "cuda": "NVIDIA RTX A6000", "model_name": "meta-llama/Llama-3.2-3B", "ne_cells": 84907, "total_time": 211444.595, "accuracy": 0.303, "total_correct": 25771, "stats": {"nils": 610, "acronyms": 2171, "typos": 7144, "alias": 3692, "generic_types": 43, "specific_types": 461, "single_domain": 205, "multi_domain": 299, "small_per_cols": 64, "medium_per_cols": 317, "large_per_cols": 123, "small_per_rows": 177, "medium_per_rows": 169, "large_per_rows": 158}, "final_stats": {"nils": "4.1%", "acronyms": "61.7%", "typos": "58.8%", "alias": "51.8%", "generic_types": "44.7%", "specific_types": "59.5%", "single_domain": "47.1%", "multi_domain": "68.7%", "small_per_cols": "42.1%", "medium_per_cols": "68.1%", "large_per_cols": "48.6%", "small_per_rows": "44.9%", "medium_per_rows": "72.8%", "large_per_rows": "64.7%"}}
+{
+    "system": "Linux",
+    "machine": "x86_64",
+    "processor": "x86_64",
+    "cuda": "NVIDIA RTX A6000",
+    "model_name": "meta-llama/Llama-3.2-3B",
+    "ne_cells": 84907,
+    "total_time": 211444.595,
+    "accuracy": 0.303,
+    "total_correct": 25771,
+    "stats": {
+        "nils": 610,
+        "acronyms": 2171,
+        "typos": 7144,
+        "alias": 3692,
+        "generic_types": 43,
+        "specific_types": 461,
+        "single_domain": 205,
+        "multi_domain": 299,
+        "small_per_cols": 64,
+        "medium_per_cols": 317,
+        "large_per_cols": 123,
+        "small_per_rows": 177,
+        "medium_per_rows": 169,
+        "large_per_rows": 158
+    },
+    "final_stats": {
+        "nils": "4.1%",
+        "acronyms": "61.7%",
+        "typos": "58.8%",
+        "alias": "51.8%",
+        "generic_types": "44.7%",
+        "specific_types": "59.5%",
+        "single_domain": "47.1%",
+        "multi_domain": "68.7%",
+        "small_per_cols": "42.1%",
+        "medium_per_cols": "68.1%",
+        "large_per_cols": "48.6%",
+        "small_per_rows": "44.9%",
+        "medium_per_rows": "72.8%",
+        "large_per_rows": "64.7%"
+    }
+}

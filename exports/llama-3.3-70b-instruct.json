@@ -1,1 +1,44 @@
-{"system": "Linux", "machine": "x86_64", "processor": "x86_64", "cuda": "OpenAI API", "model_name": "llama-3.3-70b-instruct", "ne_cells": 84907, "total_time": 848361.459, "accuracy": 0.629, "total_correct": 53473, "stats": {"nils": 1700, "acronyms": 2570, "typos": 9555, "alias": 6098, "generic_types": 71, "specific_types": 644, "single_domain": 303, "multi_domain": 412, "small_per_cols": 92, "medium_per_cols": 402, "large_per_cols": 221, "small_per_rows": 309, "medium_per_rows": 206, "large_per_rows": 200}, "final_stats": {"nils": "11.4%", "acronyms": "73.0%", "typos": "78.7%", "alias": "85.6%", "generic_types": "73.9%", "specific_types": "83.2%", "single_domain": "69.6%", "multi_domain": "94.7%", "small_per_cols": "60.5%", "medium_per_cols": "86.4%", "large_per_cols": "87.3%", "small_per_rows": "78.4%", "medium_per_rows": "88.7%", "large_per_rows": "81.9%"}, "errors": 20416}
+{
+    "system": "Linux",
+    "machine": "x86_64",
+    "processor": "x86_64",
+    "cuda": "OpenAI API",
+    "model_name": "llama-3.3-70b-instruct",
+    "ne_cells": 84907,
+    "total_time": 848361.459,
+    "accuracy": 0.629,
+    "total_correct": 53473,
+    "stats": {
+        "nils": 1700,
+        "acronyms": 2570,
+        "typos": 9555,
+        "alias": 6098,
+        "generic_types": 71,
+        "specific_types": 644,
+        "single_domain": 303,
+        "multi_domain": 412,
+        "small_per_cols": 92,
+        "medium_per_cols": 402,
+        "large_per_cols": 221,
+        "small_per_rows": 309,
+        "medium_per_rows": 206,
+        "large_per_rows": 200
+    },
+    "final_stats": {
+        "nils": "11.4%",
+        "acronyms": "73.0%",
+        "typos": "78.7%",
+        "alias": "85.6%",
+        "generic_types": "73.9%",
+        "specific_types": "83.2%",
+        "single_domain": "69.6%",
+        "multi_domain": "94.7%",
+        "small_per_cols": "60.5%",
+        "medium_per_cols": "86.4%",
+        "large_per_cols": "87.3%",
+        "small_per_rows": "78.4%",
+        "medium_per_rows": "88.7%",
+        "large_per_rows": "81.9%"
+    },
+    "errors": 20416
+}
