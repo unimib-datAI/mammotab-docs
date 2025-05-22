@@ -515,7 +515,7 @@ const data: ModelData[] = [
   {
     model: "microsoft/Phi-3-mini-4k-instruct",
     link: "https://huggingface.co/microsoft/Phi-3-mini-4k-instruct",
-    parameters: "4K",
+    parameters: "3.8B",
     status: "Done",
     system: "NVIDIA A6000",
     total_time: "369925.491",
@@ -538,7 +538,7 @@ const data: ModelData[] = [
   {
     model: "microsoft/Phi-3-mini-128k-instruct",
     link: "https://huggingface.co/microsoft/Phi-3-mini-128k-instruct",
-    parameters: "128K",
+    parameters: "3.8B",
     status: "Done",
     system: "NVIDIA A6000",
     total_time: "401400.957",
@@ -745,7 +745,7 @@ const data: ModelData[] = [
   {
     model: "microsoft/Phi-3-small-8k-instruct",
     link: "https://huggingface.co/microsoft/Phi-3-small-8k-instruct",
-    parameters: "8K",
+    parameters: "7B",
     status: "Done",
     system: "NVIDIA A6000",
     total_time: "1008260.181",
@@ -888,7 +888,7 @@ export default function Leaderboard(): JSX.Element {
           </div>
 
           <div className="overflow-x-auto rounded-lg w-full border border-gray-200 dark:border-gray-700">
-            <div className="min-w-[2500px]">
+            <div className="min-w-[1800px]">
               <table className="text-sm w-full rounded-lg overflow-hidden">
                 <thead className="text-xs uppercase dark:bg-rocketmetallic bg-paletaupe sticky top-0 z-10">
                   {table.getHeaderGroups().map((headerGroup) => (
@@ -904,7 +904,7 @@ export default function Leaderboard(): JSX.Element {
                         return (
                           <th 
                             key={header.id} 
-                            className={`p-3 ${isMetricColumn ? 'w-[100px]' : header.id === 'model' ? 'min-w-[200px]' : 'min-w-[100px]'} text-center cursor-pointer hover:bg-opacity-80 ${header.id === 'model' ? 'text-left' : 'text-center'}`}
+                            className={`p-2 ${isMetricColumn ? 'w-[80px]' : header.id === 'model' ? 'min-w-[180px]' : 'min-w-[80px]'} text-center cursor-pointer hover:bg-opacity-80 ${header.id === 'model' ? 'text-left' : 'text-center'}`}
                             onClick={header.column.getToggleSortingHandler()}
                           >
                             <div className="flex items-center justify-center gap-1">
@@ -927,7 +927,7 @@ export default function Leaderboard(): JSX.Element {
                   {table.getRowModel().rows.map((row) => (
                     <tr key={row.id} className="dark:even:bg-darksilver even:bg-darkvanilla dark:odd:bg-umber odd:bg-desertsand">
                       {row.getVisibleCells().map((cell) => (
-                        <td key={cell.id} className={`p-3 min-w-24 ${cell.column.id === 'model' ? 'text-left' : 'text-center'}`}>
+                        <td key={cell.id} className={`p-2 min-w-20 ${cell.column.id === 'model' ? 'text-left' : 'text-center'}`}>
                           {flexRender(cell.column.columnDef.cell, cell.getContext())}
                         </td>
                       ))}
