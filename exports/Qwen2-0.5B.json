@@ -1,1 +1,43 @@
-{"system": "Linux", "machine": "x86_64", "processor": "x86_64", "cuda": "NVIDIA RTX A6000", "model_name": "Qwen/Qwen2-0.5B", "ne_cells": 84907, "total_time": 52659.894, "accuracy": 0.044, "total_correct": 3741, "stats": {"nils": 1103, "acronyms": 6, "typos": 5, "alias": 3, "generic_types": 2, "specific_types": 17, "single_domain": 5, "multi_domain": 14, "small_per_cols": 0, "medium_per_cols": 15, "large_per_cols": 4, "small_per_rows": 17, "medium_per_rows": 1, "large_per_rows": 1}, "final_stats": {"nils": "7.4%", "acronyms": "0.1%", "typos": "0.0%", "alias": "0.0%", "generic_types": "2.0%", "specific_types": "2.1%", "single_domain": "1.1%", "multi_domain": "3.2%", "small_per_cols": "0.0%", "medium_per_cols": "3.2%", "large_per_cols": "1.5%", "small_per_rows": "4.3%", "medium_per_rows": "0.4%", "large_per_rows": "0.4%"}}
+{
+    "system": "Linux",
+    "machine": "x86_64",
+    "processor": "x86_64",
+    "cuda": "NVIDIA RTX A6000",
+    "model_name": "Qwen/Qwen2-0.5B",
+    "ne_cells": 84907,
+    "total_time": 52659.894,
+    "accuracy": 0.044,
+    "total_correct": 3741,
+    "stats": {
+        "nils": 1103,
+        "acronyms": 6,
+        "typos": 5,
+        "alias": 3,
+        "generic_types": 2,
+        "specific_types": 17,
+        "single_domain": 5,
+        "multi_domain": 14,
+        "small_per_cols": 0,
+        "medium_per_cols": 15,
+        "large_per_cols": 4,
+        "small_per_rows": 17,
+        "medium_per_rows": 1,
+        "large_per_rows": 1
+    },
+    "final_stats": {
+        "nils": "7.4%",
+        "acronyms": "0.1%",
+        "typos": "0.0%",
+        "alias": "0.0%",
+        "generic_types": "2.0%",
+        "specific_types": "2.1%",
+        "single_domain": "1.1%",
+        "multi_domain": "3.2%",
+        "small_per_cols": "0.0%",
+        "medium_per_cols": "3.2%",
+        "large_per_cols": "1.5%",
+        "small_per_rows": "4.3%",
+        "medium_per_rows": "0.4%",
+        "large_per_rows": "0.4%"
+    }
+}
