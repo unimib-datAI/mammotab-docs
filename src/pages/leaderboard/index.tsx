@@ -673,6 +673,29 @@ const data: ModelData[] = [
     small_per_rows: "86",
     medium_per_rows: "119",
     large_per_rows: "107"
+  },
+  {
+    model: "microsoft/Phi-3-small-8k-instruct",
+    link: "https://huggingface.co/microsoft/Phi-3-small-8k-instruct",
+    parameters: "8K",
+    status: "Done",
+    system: "NVIDIA A6000",
+    total_time: "1008260.181",
+    accuracy: "0.392",
+    total_correct: "33332",
+    ne_cells: "84907",
+    nils: "205",
+    acronyms: "2376",
+    genericTypes: "63",
+    specificTypes: "580",
+    singleDomain: "249",
+    multiDomain: "394",
+    small_per_cols: "74",
+    medium_per_cols: "370",
+    large_per_cols: "199",
+    small_per_rows: "283",
+    medium_per_rows: "184",
+    large_per_rows: "176"
   }
 ];
 
