@@ -1,0 +1,43 @@
+{
+    "system": "Linux",
+    "machine": "x86_64",
+    "processor": "x86_64",
+    "cuda": "NVIDIA RTX A6000",
+    "model_name": "mistralai/Mistral-7B-Instruct-v0.3",
+    "ne_cells": 84907,
+    "total_time": 351452.635,
+    "accuracy": 0.533,
+    "total_correct": 45265,
+    "stats": {
+        "nils": 729,
+        "acronyms": 2517,
+        "typos": 9148,
+        "alias": 5907,
+        "generic_types": 68,
+        "specific_types": 610,
+        "single_domain": 270,
+        "multi_domain": 408,
+        "small_per_cols": 78,
+        "medium_per_cols": 387,
+        "large_per_cols": 213,
+        "small_per_rows": 295,
+        "medium_per_rows": 199,
+        "large_per_rows": 184
+    },
+    "final_stats": {
+        "nils": "4.9%",
+        "acronyms": "71.5%",
+        "typos": "75.3%",
+        "alias": "82.9%",
+        "generic_types": "70.8%",
+        "specific_types": "78.8%",
+        "single_domain": "62.0%",
+        "multi_domain": "93.7%",
+        "small_per_cols": "51.3%",
+        "medium_per_cols": "83.2%",
+        "large_per_cols": "84.1%",
+        "small_per_rows": "74.8%",
+        "medium_per_rows": "85.7%",
+        "large_per_rows": "75.4%"
+    }
+}
