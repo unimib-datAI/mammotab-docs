@@ -17,7 +17,7 @@ type ModelData = {
   model: string;
   link: string;
   parameters: string;
-  status: "To do" | "In progress" | "Done";
+  status: "To do" | "In progress" | "Done" | "Unusable results";
   system: string;
   total_time: string;
   accuracy: string;
@@ -792,7 +792,30 @@ const data: ModelData[] = [
     model: "Qwen/Qwen3-235B-A22B",
     link: "https://huggingface.co/Qwen/Qwen3-235B-A22B",
     parameters: "235B",
-    status: "In progress",
+    status: "UNUSABLE RESULTS",
+    system: "NVIDIA A40",
+    total_time: "",
+    accuracy: "",
+    total_correct: "",
+    ne_cells: "84907",
+    nils: "",
+    acronyms: "",
+    genericTypes: "",
+    specificTypes: "",
+    singleDomain: "",
+    multiDomain: "",
+    small_per_cols: "",
+    medium_per_cols: "",
+    large_per_cols: "",
+    small_per_rows: "",
+    medium_per_rows: "",
+    large_per_rows: ""
+  },
+  {
+    model: "deepseek-ai/DeepSeek-R1",
+    link: "https://huggingface.co/deepseek-ai/DeepSeek-R1",
+    parameters: "651B",
+    status: "UNUSABLE RESULTS",
     system: "NVIDIA A40",
     total_time: "",
     accuracy: "",
