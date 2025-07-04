@@ -9,7 +9,7 @@ import {
   SortingState,
   ColumnVisibility,
 } from "@tanstack/react-table";
-import { useState, useMemo, useCallback } from "react";
+import { useState, useMemo, useCallback, useEffect } from "react";
 import { Eye, EyeOff } from "lucide-react";
 
 // Define types for our data
@@ -913,6 +913,19 @@ export default function Leaderboard(): JSX.Element {
     setShowColumnMenu(prev => !prev);
   }, []);
 
+  // Count models with usable results
+  const usableModelsCount = useMemo(() => {
+    return data.filter(model => model.status !== "Unusable results").length;
+  }, []);
+
+  // Update the span element with the count
+  useEffect(() => {
+    const spanElement = document.getElementById('llm-models');
+    if (spanElement) {
+      spanElement.textContent = usableModelsCount.toString();
+    }
+  }, [usableModelsCount]);
+
   return (
     <Layout title={`${siteConfig.title}`} description="MammoTab, is a dataset composed of 1M Wikipedia tables extracted from over 20M Wikipedia pages and annotated through Wikidata.">
       <main className="flex flex-col min-h-[calc(100vh-4rem)]">
@@ -924,7 +937,7 @@ export default function Leaderboard(): JSX.Element {
         <section id="tanstack-table-container" className="mx-auto relative z-10 p-8 w-full flex-1">
           <div className="mb-8">
             <h1 className="text-4xl font-bold text-primary dark:text-primary-light">LLM Leaderboard</h1>
-            <p className="text-stone-800 dark:text-stone-100 mt-2">Compare the performance of different language models on the MammoTab dataset</p>
+            <p className="text-stone-800 dark:text-stone-100 mt-2">Compare the performance of different <span id="llm-models"></span> language models on the MammoTab dataset</p>
             <p className="text-stone-600 dark:text-stone-300 mt-4 text-sm">
               This leaderboard has been <a href="/mammotab-docs/docs/leaderboard-instructions" className="text-primary dark:text-primary-light hover:underline">generated</a> using the MammoTab sample dataset, which consists of 870 tables containing a total of 84,907 distinct mentions.
             </p>
