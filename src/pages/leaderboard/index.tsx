@@ -172,7 +172,7 @@ const createColumns = () => [
     header: "Status",
     cell: (info) => renderStatusCell(info.getValue()),
     sortingFn: (rowA, rowB) => {
-      const statusOrder: Record<ModelData["status"], number> = { "Done": 0, "In progress": 1, "To do": 2 };
+      const statusOrder: Record<ModelData["status"], number> = { "Done": 0, "In progress": 1, "To do": 2, "Unusable results": 3 };
       return statusOrder[rowA.getValue("status")] - statusOrder[rowB.getValue("status")];
     },
   }),
@@ -810,6 +810,29 @@ const data: ModelData[] = [
     small_per_rows: "",
     medium_per_rows: "",
     large_per_rows: ""
+  },
+  {
+    model: "google/gemma-3-27b-it",
+    link: "https://huggingface.co/google/gemma-3-27b-it",
+    parameters: "27B",
+    status: "Done",
+    system: "NVIDIA A40",
+    total_time: "316222.677",
+    accuracy: "0.377",
+    total_correct: "32037",
+    ne_cells: "84907",
+    nils: "2859",
+    acronyms: "2248",
+    genericTypes: "59",
+    specificTypes: "523",
+    singleDomain: "252",
+    multiDomain: "330",
+    small_per_cols: "85",
+    medium_per_cols: "323",
+    large_per_cols: "174",
+    small_per_rows: "230",
+    medium_per_rows: "182",
+    large_per_rows: "170"
   },
   {
     model: "deepseek-ai/DeepSeek-R1",
