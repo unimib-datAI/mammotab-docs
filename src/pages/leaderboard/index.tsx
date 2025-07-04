@@ -937,7 +937,7 @@ export default function Leaderboard(): JSX.Element {
         <section id="tanstack-table-container" className="mx-auto relative z-10 p-8 w-full flex-1">
           <div className="mb-8">
             <h1 className="text-4xl font-bold text-primary dark:text-primary-light">LLM Leaderboard</h1>
-            <p className="text-stone-800 dark:text-stone-100 mt-2">Compare the performance of different <span id="llm-models"></span> language models on the MammoTab dataset</p>
+            <p className="text-stone-800 dark:text-stone-100 mt-2">Compare the performance of <span id="llm-models"></span> language models (continuously updated) on the MammoTab dataset</p>
             <p className="text-stone-600 dark:text-stone-300 mt-4 text-sm">
               This leaderboard has been <a href="/mammotab-docs/docs/leaderboard-instructions" className="text-primary dark:text-primary-light hover:underline">generated</a> using the MammoTab sample dataset, which consists of 870 tables containing a total of 84,907 distinct mentions.
             </p>
