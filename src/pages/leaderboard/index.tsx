@@ -53,7 +53,7 @@ const MAX_VALUES = {
   smallPerRows: 394,
   mediumPerRows: 232,
   largePerRows: 244,
-  annotatedCells: 84907
+  annotatedCells: 84907,
 } as const;
 
 // Helper function for rendering cells with percentage
@@ -84,7 +84,7 @@ const renderAccuracyCell = (value: string) => {
   const accuracy = parseFloat(value);
   let bgColor = "";
   let textColor = "text-stone-100";
-  
+
   if (accuracy >= 0.7) {
     bgColor = "bg-green-600"; // Eccellente
   } else if (accuracy >= 0.6) {
@@ -102,10 +102,12 @@ const renderAccuracyCell = (value: string) => {
   } else {
     bgColor = "bg-red-600"; // Insufficiente
   }
-  
+
   return (
     <div className="flex items-center justify-center">
-      <span className={`${bgColor} ${textColor} px-3 py-1 rounded-full text-xs font-semibold`}>
+      <span
+        className={`${bgColor} ${textColor} px-3 py-1 rounded-full text-xs font-semibold`}
+      >
         {accuracy.toFixed(3)}
       </span>
     </div>
@@ -116,7 +118,7 @@ const renderAccuracyCell = (value: string) => {
 const renderStatusCell = (status: ModelData["status"]) => {
   let bgColor = "";
   let textColor = "text-stone-100";
-  
+
   switch (status) {
     case "To do":
       bgColor = "bg-primary";
@@ -128,10 +130,12 @@ const renderStatusCell = (status: ModelData["status"]) => {
       bgColor = "bg-primary-darkest";
       break;
   }
-  
+
   return (
     <div className="flex justify-center items-center">
-      <span className={`${bgColor} ${textColor} px-3 py-1 rounded-full text-xs font-semibold w-24 text-center`}>
+      <span
+        className={`${bgColor} ${textColor} px-3 py-1 rounded-full text-xs font-semibold w-24 text-center`}
+      >
         {status}
       </span>
     </div>
@@ -149,9 +153,9 @@ const createColumns = () => [
       const link = info.row.original.link;
       if (link) {
         return (
-          <a 
-            href={link} 
-            target="_blank" 
+          <a
+            href={link}
+            target="_blank"
             rel="noopener noreferrer"
             className="font-bold text-primary dark:text-primary-light hover:underline"
           >
@@ -172,8 +176,16 @@ const createColumns = () => [
     header: "Status",
     cell: (info) => renderStatusCell(info.getValue()),
     sortingFn: (rowA, rowB) => {
-      const statusOrder: Record<ModelData["status"], number> = { "Done": 0, "In progress": 1, "To do": 2, "Unusable results": 3 };
-      return statusOrder[rowA.getValue("status")] - statusOrder[rowB.getValue("status")];
+      const statusOrder: Record<ModelData["status"], number> = {
+        Done: 0,
+        "In progress": 1,
+        "To do": 2,
+        "Unusable results": 3,
+      };
+      return (
+        statusOrder[rowA.getValue("status")] -
+        statusOrder[rowB.getValue("status")]
+      );
     },
   }),
   columnHelper.accessor("system", {
@@ -228,7 +240,8 @@ const createColumns = () => [
   }),
   columnHelper.accessor("acronyms", {
     header: "Acronyms",
-    cell: (info) => renderCellWithPercentage(info.getValue(), MAX_VALUES.acronyms),
+    cell: (info) =>
+      renderCellWithPercentage(info.getValue(), MAX_VALUES.acronyms),
     sortingFn: (rowA, rowB) => {
       const a = parseInt(rowA.getValue("acronyms"));
       const b = parseInt(rowB.getValue("acronyms"));
@@ -237,7 +250,8 @@ const createColumns = () => [
   }),
   columnHelper.accessor("genericTypes", {
     header: "Generic Types",
-    cell: (info) => renderCellWithPercentage(info.getValue(), MAX_VALUES.genericTypes),
+    cell: (info) =>
+      renderCellWithPercentage(info.getValue(), MAX_VALUES.genericTypes),
     sortingFn: (rowA, rowB) => {
       const a = parseInt(rowA.getValue("genericTypes"));
       const b = parseInt(rowB.getValue("genericTypes"));
@@ -246,7 +260,8 @@ const createColumns = () => [
   }),
   columnHelper.accessor("specificTypes", {
     header: "Specific Types",
-    cell: (info) => renderCellWithPercentage(info.getValue(), MAX_VALUES.specificTypes),
+    cell: (info) =>
+      renderCellWithPercentage(info.getValue(), MAX_VALUES.specificTypes),
     sortingFn: (rowA, rowB) => {
       const a = parseInt(rowA.getValue("specificTypes"));
       const b = parseInt(rowB.getValue("specificTypes"));
@@ -255,7 +270,8 @@ const createColumns = () => [
   }),
   columnHelper.accessor("singleDomain", {
     header: "Single Domain",
-    cell: (info) => renderCellWithPercentage(info.getValue(), MAX_VALUES.singleDomain),
+    cell: (info) =>
+      renderCellWithPercentage(info.getValue(), MAX_VALUES.singleDomain),
     sortingFn: (rowA, rowB) => {
       const a = parseInt(rowA.getValue("singleDomain"));
       const b = parseInt(rowB.getValue("singleDomain"));
@@ -264,7 +280,8 @@ const createColumns = () => [
   }),
   columnHelper.accessor("multiDomain", {
     header: "Multi Domain",
-    cell: (info) => renderCellWithPercentage(info.getValue(), MAX_VALUES.multiDomain),
+    cell: (info) =>
+      renderCellWithPercentage(info.getValue(), MAX_VALUES.multiDomain),
     sortingFn: (rowA, rowB) => {
       const a = parseInt(rowA.getValue("multiDomain"));
       const b = parseInt(rowB.getValue("multiDomain"));
@@ -273,7 +290,8 @@ const createColumns = () => [
   }),
   columnHelper.accessor("small_per_cols", {
     header: "Small % Cols",
-    cell: (info) => renderCellWithPercentage(info.getValue(), MAX_VALUES.smallPerCols),
+    cell: (info) =>
+      renderCellWithPercentage(info.getValue(), MAX_VALUES.smallPerCols),
     sortingFn: (rowA, rowB) => {
       const a = parseInt(rowA.getValue("small_per_cols"));
       const b = parseInt(rowB.getValue("small_per_cols"));
@@ -282,7 +300,8 @@ const createColumns = () => [
   }),
   columnHelper.accessor("medium_per_cols", {
     header: "Medium % Cols",
-    cell: (info) => renderCellWithPercentage(info.getValue(), MAX_VALUES.mediumPerCols),
+    cell: (info) =>
+      renderCellWithPercentage(info.getValue(), MAX_VALUES.mediumPerCols),
     sortingFn: (rowA, rowB) => {
       const a = parseInt(rowA.getValue("medium_per_cols"));
       const b = parseInt(rowB.getValue("medium_per_cols"));
@@ -291,7 +310,8 @@ const createColumns = () => [
   }),
   columnHelper.accessor("large_per_cols", {
     header: "Large % Cols",
-    cell: (info) => renderCellWithPercentage(info.getValue(), MAX_VALUES.largePerCols),
+    cell: (info) =>
+      renderCellWithPercentage(info.getValue(), MAX_VALUES.largePerCols),
     sortingFn: (rowA, rowB) => {
       const a = parseInt(rowA.getValue("large_per_cols"));
       const b = parseInt(rowB.getValue("large_per_cols"));
@@ -300,7 +320,8 @@ const createColumns = () => [
   }),
   columnHelper.accessor("small_per_rows", {
     header: "Small % Rows",
-    cell: (info) => renderCellWithPercentage(info.getValue(), MAX_VALUES.smallPerRows),
+    cell: (info) =>
+      renderCellWithPercentage(info.getValue(), MAX_VALUES.smallPerRows),
     sortingFn: (rowA, rowB) => {
       const a = parseInt(rowA.getValue("small_per_rows"));
       const b = parseInt(rowB.getValue("small_per_rows"));
@@ -309,7 +330,8 @@ const createColumns = () => [
   }),
   columnHelper.accessor("medium_per_rows", {
     header: "Medium % Rows",
-    cell: (info) => renderCellWithPercentage(info.getValue(), MAX_VALUES.mediumPerRows),
+    cell: (info) =>
+      renderCellWithPercentage(info.getValue(), MAX_VALUES.mediumPerRows),
     sortingFn: (rowA, rowB) => {
       const a = parseInt(rowA.getValue("medium_per_rows"));
       const b = parseInt(rowB.getValue("medium_per_rows"));
@@ -318,13 +340,14 @@ const createColumns = () => [
   }),
   columnHelper.accessor("large_per_rows", {
     header: "Large % Rows",
-    cell: (info) => renderCellWithPercentage(info.getValue(), MAX_VALUES.largePerRows),
+    cell: (info) =>
+      renderCellWithPercentage(info.getValue(), MAX_VALUES.largePerRows),
     sortingFn: (rowA, rowB) => {
       const a = parseInt(rowA.getValue("large_per_rows"));
       const b = parseInt(rowB.getValue("large_per_rows"));
       return a - b;
     },
-  })
+  }),
 ];
 
 const data: ModelData[] = [
@@ -349,7 +372,7 @@ const data: ModelData[] = [
     large_per_cols: "195",
     small_per_rows: "260",
     medium_per_rows: "162",
-    large_per_rows: "153"
+    large_per_rows: "153",
   },
   {
     model: "google/gemma-2-2b-it",
@@ -372,7 +395,7 @@ const data: ModelData[] = [
     large_per_cols: "164",
     small_per_rows: "234",
     medium_per_rows: "185",
-    large_per_rows: "168"
+    large_per_rows: "168",
   },
   {
     model: "google/gemma-2-9b-it",
@@ -395,7 +418,30 @@ const data: ModelData[] = [
     large_per_cols: "168",
     small_per_rows: "255",
     medium_per_rows: "176",
-    large_per_rows: "167"
+    large_per_rows: "167",
+  },
+  {
+    model: "google/gemma-3-27b-it",
+    link: "https://huggingface.co/google/gemma-3-27b-it",
+    parameters: "27B",
+    status: "Done",
+    system: "NVIDIA A40",
+    total_time: "316222",
+    accuracy: "0.377",
+    total_correct: "32037",
+    ne_cells: "84907",
+    nils: "2859",
+    acronyms: "2248",
+    genericTypes: "59",
+    specificTypes: "523",
+    singleDomain: "252",
+    multiDomain: "330",
+    small_per_cols: "85",
+    medium_per_cols: "323",
+    large_per_cols: "174",
+    small_per_rows: "230",
+    medium_per_rows: "182",
+    large_per_rows: "170",
   },
   {
     model: "meta-llama/Llama-3.2-1B",
@@ -418,7 +464,7 @@ const data: ModelData[] = [
     large_per_cols: "8",
     small_per_rows: "17",
     medium_per_rows: "2",
-    large_per_rows: "3"
+    large_per_rows: "3",
   },
   {
     model: "meta-llama/Llama-3.2-3B",
@@ -441,7 +487,7 @@ const data: ModelData[] = [
     large_per_cols: "123",
     small_per_rows: "177",
     medium_per_rows: "169",
-    large_per_rows: "158"
+    large_per_rows: "158",
   },
   {
     model: "meta-llama/Llama-3.3-70B-Instruct",
@@ -464,7 +510,7 @@ const data: ModelData[] = [
     large_per_cols: "221",
     small_per_rows: "309",
     medium_per_rows: "206",
-    large_per_rows: "200"
+    large_per_rows: "200",
   },
   {
     model: "meta-llama/Llama-3.1-8B-Instruct",
@@ -487,7 +533,7 @@ const data: ModelData[] = [
     large_per_cols: "180",
     small_per_rows: "245",
     medium_per_rows: "166",
-    large_per_rows: "159"
+    large_per_rows: "159",
   },
   {
     model: "mistralai/Mistral-Large-Instruct",
@@ -510,7 +556,7 @@ const data: ModelData[] = [
     large_per_cols: "224",
     small_per_rows: "303",
     medium_per_rows: "214",
-    large_per_rows: "226"
+    large_per_rows: "226",
   },
   {
     model: "mistralai/Mistral-7B-Instruct-v0.3",
@@ -533,7 +579,7 @@ const data: ModelData[] = [
     large_per_cols: "213",
     small_per_rows: "295",
     medium_per_rows: "199",
-    large_per_rows: "184"
+    large_per_rows: "184",
   },
   {
     model: "microsoft/Phi-3-mini-4k-instruct",
@@ -556,7 +602,7 @@ const data: ModelData[] = [
     large_per_cols: "143",
     small_per_rows: "208",
     medium_per_rows: "166",
-    large_per_rows: "145"
+    large_per_rows: "145",
   },
   {
     model: "microsoft/Phi-3-mini-128k-instruct",
@@ -579,7 +625,7 @@ const data: ModelData[] = [
     large_per_cols: "142",
     small_per_rows: "208",
     medium_per_rows: "178",
-    large_per_rows: "162"
+    large_per_rows: "162",
   },
   {
     model: "Qwen/Qwen2-0.5B",
@@ -602,7 +648,7 @@ const data: ModelData[] = [
     large_per_cols: "5",
     small_per_rows: "16",
     medium_per_rows: "2",
-    large_per_rows: "1"
+    large_per_rows: "1",
   },
   {
     model: "Qwen/Qwen2-1.5B",
@@ -625,7 +671,7 @@ const data: ModelData[] = [
     large_per_cols: "57",
     small_per_rows: "90",
     medium_per_rows: "110",
-    large_per_rows: "108"
+    large_per_rows: "108",
   },
   {
     model: "Qwen/Qwen2-7B",
@@ -648,7 +694,7 @@ const data: ModelData[] = [
     large_per_cols: "104",
     small_per_rows: "136",
     medium_per_rows: "155",
-    large_per_rows: "135"
+    large_per_rows: "135",
   },
   {
     model: "Qwen/Qwen2.5-0.5B",
@@ -671,7 +717,7 @@ const data: ModelData[] = [
     large_per_cols: "0",
     small_per_rows: "1",
     medium_per_rows: "1",
-    large_per_rows: "0"
+    large_per_rows: "0",
   },
   {
     model: "Qwen/Qwen2.5-7B",
@@ -694,7 +740,7 @@ const data: ModelData[] = [
     large_per_cols: "222",
     small_per_rows: "298",
     medium_per_rows: "198",
-    large_per_rows: "185"
+    large_per_rows: "185",
   },
   {
     model: "osunlp/TableLlama",
@@ -717,7 +763,7 @@ const data: ModelData[] = [
     large_per_cols: "234",
     small_per_rows: "332",
     medium_per_rows: "209",
-    large_per_rows: "197"
+    large_per_rows: "197",
   },
   {
     model: "01-ai/Yi-1.5-6B",
@@ -740,7 +786,7 @@ const data: ModelData[] = [
     large_per_cols: "25",
     small_per_rows: "39",
     medium_per_rows: "24",
-    large_per_rows: "14"
+    large_per_rows: "14",
   },
   {
     model: "01-ai/Yi-1.5-9B",
@@ -763,7 +809,7 @@ const data: ModelData[] = [
     large_per_cols: "67",
     small_per_rows: "86",
     medium_per_rows: "119",
-    large_per_rows: "107"
+    large_per_rows: "107",
   },
   {
     model: "microsoft/Phi-3-small-8k-instruct",
@@ -786,30 +832,7 @@ const data: ModelData[] = [
     large_per_cols: "199",
     small_per_rows: "283",
     medium_per_rows: "184",
-    large_per_rows: "176"
-  },
-  {
-    model: "Qwen/Qwen3-235B-A22B",
-    link: "https://huggingface.co/Qwen/Qwen3-235B-A22B",
-    parameters: "235B",
-    status: "Unusable results",
-    system: "NVIDIA A40",
-    total_time: "",
-    accuracy: "",
-    total_correct: "",
-    ne_cells: "84907",
-    nils: "",
-    acronyms: "",
-    genericTypes: "",
-    specificTypes: "",
-    singleDomain: "",
-    multiDomain: "",
-    small_per_cols: "",
-    medium_per_cols: "",
-    large_per_cols: "",
-    small_per_rows: "",
-    medium_per_rows: "",
-    large_per_rows: ""
+    large_per_rows: "176",
   },
   {
     model: "google/gemma-3-27b-it",
@@ -832,64 +855,95 @@ const data: ModelData[] = [
     large_per_cols: "174",
     small_per_rows: "230",
     medium_per_rows: "182",
-    large_per_rows: "170"
+    large_per_rows: "170",
   },
   {
     model: "deepseek-ai/DeepSeek-R1",
     link: "https://huggingface.co/deepseek-ai/DeepSeek-R1",
     parameters: "651B",
-    status: "Unusable results",
+    status: "Done",
     system: "NVIDIA A40",
-    total_time: "",
-    accuracy: "",
-    total_correct: "",
+    total_time: "6697997.264",
+    accuracy: "0.693",
+    total_correct: "58921",
     ne_cells: "84907",
-    nils: "",
-    acronyms: "",
-    genericTypes: "",
-    specificTypes: "",
-    singleDomain: "",
-    multiDomain: "",
-    small_per_cols: "",
-    medium_per_cols: "",
-    large_per_cols: "",
-    small_per_rows: "",
-    medium_per_rows: "",
-    large_per_rows: ""
-  }
+    nils: "6179",
+    acronyms: "2775",
+    genericTypes: "93",
+    specificTypes: "703",
+    singleDomain: "365",
+    multiDomain: "431",
+    small_per_cols: "127",
+    medium_per_cols: "429",
+    large_per_cols: "240",
+    small_per_rows: "332",
+    medium_per_rows: "225",
+    large_per_rows: "239",
+  },
+  {
+    model: "Qwen/Qwen2.5-72B-Instruct ",
+    link: "https://huggingface.co/Qwen/Qwen2.5-72B-Instruct",
+    parameters: "73B",
+    status: "Done",
+    system: "NVIDIA A40",
+    total_time: "410015.6",
+    accuracy: "0.735",
+    total_correct: "62439",
+    ne_cells: "84907",
+    nils: "7262",
+    acronyms: "2704",
+    genericTypes: "92",
+    specificTypes: "686",
+    singleDomain: "356",
+    multiDomain: "422",
+    small_per_cols: "125",
+    medium_per_cols: "417",
+    large_per_cols: "236",
+    small_per_rows: "328",
+    medium_per_rows: "221",
+    large_per_rows: "229",
+  },
 ];
 
 export default function Leaderboard(): JSX.Element {
   const { siteConfig } = useDocusaurusContext();
-  
-  // Memoize initial state
-  const initialSorting = useMemo<SortingState>(() => [
-    {
-      id: "status",
-      desc: false,
-    }
-  ], []);
 
-  const initialColumnVisibility = useMemo<Record<string, boolean>>(() => ({
-    model: true,
-    parameters: true,
-    status: true,
-    nils: true,
-    acronyms: true,
-    genericTypes: true,
-    specificTypes: true,
-    singleDomain: true,
-    multiDomain: true,
-    small_per_cols: true,
-    medium_per_cols: true,
-    large_per_cols: true,
-    small_per_rows: true,
-    medium_per_rows: true,
-    large_per_rows: true
-  }), []);
+  // Memoize initial state
+  const initialSorting = useMemo<SortingState>(
+    () => [
+      {
+        id: "status",
+        desc: false,
+      },
+    ],
+    []
+  );
+
+  const initialColumnVisibility = useMemo<Record<string, boolean>>(
+    () => ({
+      model: true,
+      parameters: true,
+      status: true,
+      nils: true,
+      acronyms: true,
+      genericTypes: true,
+      specificTypes: true,
+      singleDomain: true,
+      multiDomain: true,
+      small_per_cols: true,
+      medium_per_cols: true,
+      large_per_cols: true,
+      small_per_rows: true,
+      medium_per_rows: true,
+      large_per_rows: true,
+    }),
+    []
+  );
 
   const [sorting, setSorting] = useState<SortingState>(initialSorting);
-  const [columnVisibility, setColumnVisibility] = useState<Record<string, boolean>>(initialColumnVisibility);
+  const [columnVisibility, setColumnVisibility] = useState<
+    Record<string, boolean>
+  >(initialColumnVisibility);
   const [showColumnMenu, setShowColumnMenu] = useState(false);
 
   // Memoize columns
@@ -910,56 +964,89 @@ export default function Leaderboard(): JSX.Element {
 
   // Memoize toggle function
   const toggleColumnMenu = useCallback(() => {
-    setShowColumnMenu(prev => !prev);
+    setShowColumnMenu((prev) => !prev);
   }, []);
 
   // Count models with usable results
   const usableModelsCount = useMemo(() => {
-    return data.filter(model => model.status !== "Unusable results").length;
+    return data.filter((model) => model.status !== "Unusable results").length;
   }, []);
 
   // Update the span element with the count
   useEffect(() => {
-    const spanElement = document.getElementById('llm-models');
+    const spanElement = document.getElementById("llm-models");
     if (spanElement) {
       spanElement.textContent = usableModelsCount.toString();
     }
   }, [usableModelsCount]);
 
   return (
-    <Layout title={`${siteConfig.title}`} description="MammoTab, is a dataset composed of 1M Wikipedia tables extracted from over 20M Wikipedia pages and annotated through Wikidata.">
+    <Layout
+      title={`${siteConfig.title}`}
+      description="MammoTab, is a dataset composed of 1M Wikipedia tables extracted from over 20M Wikipedia pages and annotated through Wikidata."
+    >
       <main className="flex flex-col min-h-[calc(100vh-4rem)]">
         <img
           src="/mammotab-docs/img/bblurrymam.svg"
           className="absolute opacity-10 -top-[45rem]"
         />
 
-        <section id="tanstack-table-container" className="mx-auto relative z-10 p-8 w-full flex-1">
+        <section
+          id="tanstack-table-container"
+          className="mx-auto relative z-10 p-8 w-full flex-1"
+        >
           <div className="mb-8">
-            <h1 className="text-4xl font-bold text-primary dark:text-primary-light">LLM Leaderboard</h1>
-            <p className="text-stone-800 dark:text-stone-100 mt-2">Compare the performance of <span id="llm-models"></span> language models (continuously updated) on the MammoTab dataset</p>
+            <h1 className="text-4xl font-bold text-primary dark:text-primary-light">
+              LLM Leaderboard
+            </h1>
+            <p className="text-stone-800 dark:text-stone-100 mt-2">
+              Compare the performance of <span id="llm-models"></span> language
+              models (continuously updated) on the MammoTab dataset
+            </p>
             <p className="text-stone-600 dark:text-stone-300 mt-4 text-sm">
-              This leaderboard has been <a href="/mammotab-docs/docs/leaderboard-instructions" className="text-primary dark:text-primary-light hover:underline">generated</a> using the MammoTab sample dataset, which consists of 870 tables containing a total of 84,907 distinct mentions.
+              This leaderboard has been{" "}
+              <a
+                href="/mammotab-docs/docs/leaderboard-instructions"
+                className="text-primary dark:text-primary-light hover:underline"
+              >
+                generated
+              </a>{" "}
+              using the MammoTab sample dataset, which consists of 870 tables
+              containing a total of 84,907 distinct mentions.
             </p>
             <div className="mt-6 p-4 bg-primary-light/10 dark:bg-primary-darker/10 rounded-lg border border-primary-light/20 dark:border-primary-darker/20">
-              <p className="text-stone-800 dark:text-stone-100 font-semibold mb-2">This leaderboard is managed by:</p>
+              <p className="text-stone-800 dark:text-stone-100 font-semibold mb-2">
+                This leaderboard is managed by:
+              </p>
               <div className="flex flex-wrap gap-2">
                 <span className="text-stone-700 dark:text-stone-300">
                   <span className="font-medium">Marco Cremaschi</span>,{" "}
                   <span className="font-medium">Federico Belotti</span>,{" "}
                   <span className="font-medium">Matteo Palmonari</span>
-                  <span className="text-stone-600 dark:text-stone-400"> from the University of Milano-Bicocca</span>
+                  <span className="text-stone-600 dark:text-stone-400">
+                    {" "}
+                    from the University of Milano-Bicocca
+                  </span>
                 </span>
                 <span className="text-stone-700 dark:text-stone-300">
-                  and <span className="font-medium"><a href="https://www.tib.eu/en/research-development/research-groups-and-labs/data-science-and-digital-libraries/staff/jennifer-dsouza">Jennifer D'Souza</a></span>
-                  <span className="text-stone-600 dark:text-stone-400"> from TIB Leibniz Information Centre for Science and Technology</span>
+                  and{" "}
+                  <span className="font-medium">
+                    <a href="https://www.tib.eu/en/research-development/research-groups-and-labs/data-science-and-digital-libraries/staff/jennifer-dsouza">
+                      Jennifer D'Souza
+                    </a>
+                  </span>
+                  <span className="text-stone-600 dark:text-stone-400">
+                    {" "}
+                    from TIB Leibniz Information Centre for Science and
+                    Technology
+                  </span>
                 </span>
               </div>
             </div>
           </div>
           <div className="fixed top-20 right-4 z-50">
             <div className="relative">
-              <button 
+              <button
                 className="px-4 py-2 bg-primary-darkest text-white rounded-lg hover:bg-opacity-90 flex items-center gap-2 transition-all duration-200"
                 onClick={toggleColumnMenu}
               >
@@ -969,12 +1056,17 @@ export default function Leaderboard(): JSX.Element {
               {showColumnMenu && (
                 <div className="absolute right-0 mt-2 w-56 bg-white dark:bg-[#1b1b1d] rounded-lg shadow-xl py-2 z-50 max-h-[400px] overflow-y-auto border border-gray-200 dark:border-gray-700">
                   <div className="px-4 py-2 border-b border-gray-200 dark:border-gray-700">
-                    <h3 className="text-sm font-semibold text-gray-800 dark:text-gray-100">Visible Columns</h3>
+                    <h3 className="text-sm font-semibold text-gray-800 dark:text-gray-100">
+                      Visible Columns
+                    </h3>
                   </div>
                   {table.getAllLeafColumns().map((column) => {
                     if (column.id === "model") return null;
                     return (
-                      <div key={column.id} className="px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800/50 transition-colors duration-150">
+                      <div
+                        key={column.id}
+                        className="px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800/50 transition-colors duration-150"
+                      >
                         <label className="flex items-center space-x-2 cursor-pointer">
                           <input
                             type="checkbox"
@@ -982,7 +1074,9 @@ export default function Leaderboard(): JSX.Element {
                             onChange={column.getToggleVisibilityHandler()}
                             className="rounded text-primary-darkest focus:ring-primary-darkest h-4 w-4 bg-white dark:bg-[#1b1b1d] border-gray-300 dark:border-gray-600"
                           />
-                          <span className="text-sm text-gray-800 dark:text-gray-100">{column.columnDef.header as string}</span>
+                          <span className="text-sm text-gray-800 dark:text-gray-100">
+                            {column.columnDef.header as string}
+                          </span>
                         </label>
                       </div>
                     );
@@ -1000,16 +1094,37 @@ export default function Leaderboard(): JSX.Element {
                     <tr key={headerGroup.id}>
                       {headerGroup.headers.map((header) => {
                         const isMetricColumn = [
-                          'cea', 'nils', 'acronyms', 'aliases', 'typos', 
-                          'genericTypes', 'specificTypes', 'singleDomain', 'multiDomain',
-                          'small_per_rows', 'medium_per_rows', 'large_per_rows',
-                          'small_per_cols', 'medium_per_cols', 'large_per_cols'
+                          "cea",
+                          "nils",
+                          "acronyms",
+                          "aliases",
+                          "typos",
+                          "genericTypes",
+                          "specificTypes",
+                          "singleDomain",
+                          "multiDomain",
+                          "small_per_rows",
+                          "medium_per_rows",
+                          "large_per_rows",
+                          "small_per_cols",
+                          "medium_per_cols",
+                          "large_per_cols",
                         ].includes(header.id);
-                        
+
                         return (
-                          <th 
-                            key={header.id} 
-                            className={`p-2 ${isMetricColumn ? 'w-[80px]' : header.id === 'model' ? 'min-w-[180px]' : 'min-w-[80px]'} text-center cursor-pointer hover:bg-opacity-80 ${header.id === 'model' ? 'text-left' : 'text-center'}`}
+                          <th
+                            key={header.id}
+                            className={`p-2 ${
+                              isMetricColumn
+                                ? "w-[80px]"
+                                : header.id === "model"
+                                ? "min-w-[180px]"
+                                : "min-w-[80px]"
+                            } text-center cursor-pointer hover:bg-opacity-80 ${
+                              header.id === "model"
+                                ? "text-left"
+                                : "text-center"
+                            }`}
                             onClick={header.column.getToggleSortingHandler()}
                           >
                             <div className="flex items-center justify-center gap-1">
@@ -1030,10 +1145,23 @@ export default function Leaderboard(): JSX.Element {
                 </thead>
                 <tbody className="text-foreground">
                   {table.getRowModel().rows.map((row) => (
-                    <tr key={row.id} className="dark:even:bg-darksilver even:bg-darkvanilla dark:odd:bg-umber odd:bg-desertsand">
+                    <tr
+                      key={row.id}
+                      className="dark:even:bg-darksilver even:bg-darkvanilla dark:odd:bg-umber odd:bg-desertsand"
+                    >
                       {row.getVisibleCells().map((cell) => (
-                        <td key={cell.id} className={`p-2 min-w-20 ${cell.column.id === 'model' ? 'text-left' : 'text-center'}`}>
-                          {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                        <td
+                          key={cell.id}
+                          className={`p-2 min-w-20 ${
+                            cell.column.id === "model"
+                              ? "text-left"
+                              : "text-center"
+                          }`}
+                        >
+                          {flexRender(
+                            cell.column.columnDef.cell,
+                            cell.getContext()
+                          )}
                         </td>
                       ))}
                     </tr>

@@ -31,13 +31,12 @@ export default function Home(): JSX.Element {
                   extracted from over 20M Wikipedia pages and annotated through
                   Wikidata.
                   <br />
-                  The lack of this kind of datasets in the
-                  stateof-the-art makes MammoTab a good resource for testing and
-                  training Semantic Table Interpretation approaches.
+                  The lack of this kind of datasets in the stateof-the-art makes
+                  MammoTab a good resource for testing and training Semantic
+                  Table Interpretation approaches.
                   <br />
-                  The dataset
-                  has been designed to cover several key challenges, such as
-                  disambiguation, homonymy, and NIL-mentions
+                  The dataset has been designed to cover several key challenges,
+                  such as disambiguation, homonymy, and NIL-mentions
                 </p>
                 <a
                   href="/mammotab-docs/docs/introduction"
@@ -58,6 +57,23 @@ export default function Home(): JSX.Element {
         <section className="mx-auto max-w-6xl">
           <ul className="relative border-s border-stone-900 dark:border-stone-200 max-w-screen-lg mx-12 list-none">
             <div className="absolute top-0 left-0 w-[1px] h-full bg-primary dark:bg-primary-dark"></div>
+            <li className="mb-10 ms-6">
+              <span className="absolute flex items-center justify-center w-6 h-6 bg-primary rounded-full -start-3 dark:bg-primary-dark"></span>
+              <p className="pt-1.5 mb-1 text-lg uppercase leading-none text-stone-500 dark:text-stone-400">
+                Mammotab 2026
+              </p>
+              <h3 className="text-3xl font-semibold text-primary dark:text-primary-light">
+                V3 (Next Release)
+              </h3>
+              <p className="mb-4 text-base font-normal text-stone-800 dark:text-stone-100">
+                A new version of MammoTab will be launched in 2026, bringing
+                major updates in data coverage, semantic linking, and
+                multilingual support. This release will integrate advanced
+                LLM-based entity disambiguation, improved NIL handling, and
+                expanded Wikidata synchronization. Stay tuned for the official
+                release!
+              </p>
+            </li>
 
             <li className="mb-10 ms-6">
               <span className="absolute flex items-center justify-center w-6 h-6 bg-primary rounded-full -start-3 dark:bg-primary-dark"></span>
