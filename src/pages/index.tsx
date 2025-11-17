@@ -26,6 +26,9 @@ export default function Home(): JSX.Element {
                 <h1 className="pt-12 leading-none sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-wide">
                   <span className={styles.gradientText}>MammoTab</span>
                 </h1>
+                <span className="font-bold text-xl text-primary dark:text-primary-light">
+                  🏆 Best Resource Paper at Nara ISWC 2025!
+                </span>
                 <p className="text-stone-800 dark:text-stone-100 sm:text-lg lg:mb-8 md:text-lg lg:text-xl">
                   MammoTab, is a dataset composed of 1M Wikipedia tables
                   extracted from over 20M Wikipedia pages and annotated through
