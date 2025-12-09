@@ -1,6 +1,25 @@
 import Layout from "@theme/Layout";
+import { useEffect } from "react";
 
 export default function SemTab(): JSX.Element {
+  useEffect(() => {
+    const existing = document.getElementById("MathJax-script");
+    if (existing) {
+      return;
+    }
+
+    const script = document.createElement("script");
+    script.id = "MathJax-script";
+    script.async = true;
+    script.src =
+      "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js";
+    document.head.appendChild(script);
+
+    return () => {
+      script.remove();
+    };
+  }, []);
+
   return (
     <Layout
       title="SemTab 2025 – MammoTab Track"
@@ -213,7 +232,7 @@ export default function SemTab(): JSX.Element {
                 filename, row id (0-indexed), column id (0-indexed), entity id
                 <br />
                 <br />
-                <code className="bg-gray-800 dark:bg-gray-900 p-4 rounded-lg block font-mono text-sm text-gray-100">
+                <code className="bg-primary-light/10 dark:bg-primary-darker/20 border border-primary-light/20 dark:border-primary-darker/30 p-4 rounded-lg block font-mono text-sm text-stone-800 dark:text-stone-100">
                   Annotation:
                   <br />
                   LYQZQ0T5,1,1,Q3576864
