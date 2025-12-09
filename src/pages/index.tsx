@@ -26,9 +26,6 @@ export default function Home(): JSX.Element {
                 <h1 className="pt-12 leading-none sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-wide">
                   <span className={styles.gradientText}>MammoTab</span>
                 </h1>
-                <span className="font-bold text-xl text-primary dark:text-primary-light">
-                  🏆 Best Resource Paper at Nara ISWC 2025!
-                </span>
                 <p className="text-stone-800 dark:text-stone-100 sm:text-lg lg:mb-8 md:text-lg lg:text-xl">
                   MammoTab, is a dataset composed of 1M Wikipedia tables
                   extracted from over 20M Wikipedia pages and annotated through
@@ -80,9 +77,21 @@ export default function Home(): JSX.Element {
 
             <li className="mb-10 ms-6">
               <span className="absolute flex items-center justify-center w-6 h-6 bg-primary rounded-full -start-3 dark:bg-primary-dark"></span>
-              <p className="pt-1.5 mb-1 text-lg uppercase leading-none text-stone-500 dark:text-stone-400">
-                Mammotab 2025
-              </p>
+              <div className="flex items-center justify-between gap-3 flex-wrap">
+                <p className="pt-1.5 mb-1 text-lg uppercase leading-none text-stone-500 dark:text-stone-400">
+                  Mammotab 2025
+                </p>
+                <span className="inline-flex items-center gap-2 text-sm font-semibold text-primary dark:text-primary-light">
+                  🏆 MammoTab 25 won the Best Resource Award •{" "}
+                  <a
+                    href="https://www.linkedin.com/posts/iswc_iswc2025-iswc2025-semanticweb-activity-7392926034574274560-QV70?utm_source=share&utm_medium=member_desktop&rcm=ACoAAA-espEBsZloJvZa2XEeNAQY2CfDze7XmrI"
+                    target="_blank"
+                    className="underline hover:text-primary-dark"
+                  >
+                    ISWC 2025
+                  </a>
+                </span>
+              </div>
               <h3 className="text-3xl font-semibold text-primary dark:text-primary-light">
                 V2
               </h3>
@@ -94,11 +103,13 @@ export default function Home(): JSX.Element {
                 table is complemented by comprehensive metadata that detail
                 their features, addressing the key challenges of the STI.
               </p>
-              <Tooltip content="Coming soon..." trigger="hover" placement="top">
-                <span className="hover:text-stone-100 relative inline-flex justify-center items-center px-4 py-2 text-sm font-bold rounded-lg text-stone-100 dark:bg-brick bg-chocolate font-sm me-2 mb-2">
-                  Download <ArrowDownToLine className="ml-2 h-5 w-5" />{" "}
-                </span>
-              </Tooltip>
+              <a
+                target="_blank"
+                href="https://zenodo.org/records/16562700"
+                className="hover:text-stone-100 relative inline-flex justify-center items-center px-4 py-2 text-sm font-bold rounded-lg text-stone-100 dark:bg-brick bg-chocolate font-sm me-2 mb-2"
+              >
+                Download <ArrowDownToLine className="ml-2 h-5 w-5" />{" "}
+              </a>
 
               <div className="space-y-4 mt-8">
                 <div className="grid grid-cols-1 lg:grid-cols-5 gap-5">
