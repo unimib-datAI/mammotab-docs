@@ -37,7 +37,7 @@ export default function SemTab(): JSX.Element {
             <p className="text-stone-800 dark:text-stone-100 font-semibold mb-2">
               This challenge is managed by:
             </p>
-            <div className="flex flex-wrap gap-2 text-stone-700 dark:text-stone-300">0
+            <div className="flex flex-wrap gap-2 text-stone-700 dark:text-stone-300">
               <span>
                 <span className="font-medium">Marco Cremaschi</span>,{" "}
                 <span className="font-medium">Fabio D&apos;Adda</span>
