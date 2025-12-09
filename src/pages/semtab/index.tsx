@@ -1,25 +1,8 @@
 import Layout from "@theme/Layout";
-import { useEffect } from "react";
+import { BlockMath, InlineMath } from "react-katex";
+import "katex/dist/katex.min.css";
 
 export default function SemTab(): JSX.Element {
-  useEffect(() => {
-    const existing = document.getElementById("MathJax-script");
-    if (existing) {
-      return;
-    }
-
-    const script = document.createElement("script");
-    script.id = "MathJax-script";
-    script.async = true;
-    script.src =
-      "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js";
-    document.head.appendChild(script);
-
-    return () => {
-      script.remove();
-    };
-  }, []);
-
   return (
     <Layout
       title="SemTab 2025 – MammoTab Track"
@@ -45,16 +28,41 @@ export default function SemTab(): JSX.Element {
               challenges of web and Wikipedia data.
             </p>
             <p className="text-stone-600 dark:text-stone-300 mt-4 text-sm">
-              This leaderboard has been{" "}
-              <a
-                href="/mammotab-docs/docs/leaderboard-instructions"
-                className="text-primary dark:text-primary-light hover:underline"
-              >
+              This leaderboard has been
                 generated
-              </a>{" "}
               using the MammoTab sample dataset, which consists of 870 tables
               containing a total of 84,907 distinct mentions.
             </p>
+                      <div className="mt-6 p-4 bg-primary-light/10 dark:bg-primary-darker/10 rounded-lg border border-primary-light/20 dark:border-primary-darker/20">
+            <p className="text-stone-800 dark:text-stone-100 font-semibold mb-2">
+              This challenge is managed by:
+            </p>
+            <div className="flex flex-wrap gap-2 text-stone-700 dark:text-stone-300">0
+              <span>
+                <span className="font-medium">Marco Cremaschi</span>,{" "}
+                <span className="font-medium">Fabio D&apos;Adda</span>
+                <span className="text-stone-600 dark:text-stone-400">
+                  {" "}
+                  from the University of Milano-Bicocca,
+                </span>
+              </span>
+              <span>
+                <span className="font-medium">Ernesto Jimenez-Ruiz</span>
+                <span className="text-stone-600 dark:text-stone-400">
+                  {" "}
+                  from City St George&apos;s, University of London
+                </span>
+              </span>
+              <span>
+                and{" "}
+                <span className="font-medium">Oktie Hassanzadeh</span>
+                <span className="text-stone-600 dark:text-stone-400">
+                  {" "}
+                  from IBM Research
+                </span>
+              </span>
+            </div>
+          </div>
             <p className="text-stone-800 dark:text-stone-100 mt-4">
               Only approaches based on Large Language Models are allowed, either:
             </p>
@@ -180,36 +188,6 @@ export default function SemTab(): JSX.Element {
               scenarios.
             </p>
           </div>
-          <div className="mt-6 p-4 bg-primary-light/10 dark:bg-primary-darker/10 rounded-lg border border-primary-light/20 dark:border-primary-darker/20">
-            <p className="text-stone-800 dark:text-stone-100 font-semibold mb-2">
-              This challenge is managed by:
-            </p>
-            <div className="flex flex-wrap gap-2 text-stone-700 dark:text-stone-300">
-              <span>
-                <span className="font-medium">Marco Cremaschi</span>,{" "}
-                <span className="font-medium">Fabio D&apos;Adda</span>
-                <span className="text-stone-600 dark:text-stone-400">
-                  {" "}
-                  from the University of Milano-Bicocca,
-                </span>
-              </span>
-              <span>
-                <span className="font-medium">Ernesto Jimenez-Ruiz</span>
-                <span className="text-stone-600 dark:text-stone-400">
-                  {" "}
-                  from City St George&apos;s, University of London
-                </span>
-              </span>
-              <span>
-                and{" "}
-                <span className="font-medium">Oktie Hassanzadeh</span>
-                <span className="text-stone-600 dark:text-stone-400">
-                  {" "}
-                  from IBM Research
-                </span>
-              </span>
-            </div>
-          </div>
           <div className="mt-8 space-y-6">
             <div>
               <h3 className="text-xl font-bold text-stone-800 dark:text-white">
@@ -259,26 +237,23 @@ export default function SemTab(): JSX.Element {
               <p className="text-stone-800 dark:text-stone-100 mt-2">
                 Precision, Recall and F1 Score are calculated:
               </p>
-              <div className="my-4">
-                <p className="text-stone-800 dark:text-stone-100">
-                  {"$$ Precision = \\frac{\\#correct\\_annotations}{\\#submitted\\_annotations} $$"}
-                </p>
+              <div className="my-4 text-stone-800 dark:text-stone-100">
+                <BlockMath math="Precision = \frac{\#correct\_annotations}{\#submitted\_annotations}" />
               </div>
-              <div className="my-4">
-                <p className="text-stone-800 dark:text-stone-100">
-                  {"$$ Recall = \\frac{\\#correct\\_annotations}{\\#ground\\_truth\\_annotations} $$"}
-                </p>
+              <div className="my-4 text-stone-800 dark:text-stone-100">
+                <BlockMath math="Recall = \frac{\#correct\_annotations}{\#ground\_truth\_annotations}" />
               </div>
-              <div className="my-4">
-                <p className="text-stone-800 dark:text-stone-100">
-                  {"$$ F_1 = \\frac{2 \\times Precision \\times Recall}{Precision + Recall} $$"}
-                </p>
+              <div className="my-4 text-stone-800 dark:text-stone-100">
+                <BlockMath math="F_1 = \frac{2 \times Precision \times Recall}{Precision + Recall}" />
               </div>
               <p className="text-stone-800 dark:text-stone-100 mt-4">Notes:</p>
               <ul className="list-disc ml-5 mb-4 text-stone-800 dark:text-stone-100">
-                <li>{"\\(\\#\\) denotes the number."}</li>
                 <li>
-                  {"\\(F_1\\) is used as the primary score, and \\(Precision\\) is used as the secondary score."}
+                  <InlineMath math="\#" /> denotes the number.
+                </li>
+                <li>
+                  <InlineMath math="F_1" /> is used as the primary score, and{" "}
+                  <InlineMath math="Precision" /> is used as the secondary score.
                 </li>
               </ul>
             </div>
@@ -365,4 +340,3 @@ export default function SemTab(): JSX.Element {
     </Layout>
   );
 }
-
