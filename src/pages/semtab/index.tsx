@@ -24,7 +24,25 @@ export default function SemTab(): JSX.Element {
               SemTab Challenge
             </h1>
             <p className="text-stone-800 dark:text-stone-100 mt-2">
-              This page presents the ongoing SemTab Challenge, a direct continuation of SemTab 2025 within the long-running SemTab series on semantic annotation and table-to-knowledge-graph matching.
+              This page presents the ongoing SemTab Challenge, a direct continuation of{" "}
+              <a
+                href="https://sem-tab-challenge.github.io/2025/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary dark:text-primary-light hover:underline"
+              >
+                SemTab 2025
+              </a>{" "}
+              within the long-running{" "}
+              <a
+                href="https://www.cs.ox.ac.uk/isg/challenges/sem-tab/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary dark:text-primary-light hover:underline"
+              >
+                SemTab series
+              </a>{" "}
+              on semantic annotation and table-to-knowledge-graph matching.
               New submissions are welcome and actively encouraged. All participating systems will be evaluated on a rolling basis, and top-performing solutions will be invited to submit a manuscript and present their work at an upcoming venue (TBD — either the TaDA Workshop at VLDB 2026 or the Ontology Matching (OM) Workshop at ISWC 2026).
             </p>
             <p className="text-stone-800 dark:text-stone-100 mt-4">
