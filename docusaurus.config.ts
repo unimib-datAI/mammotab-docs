@@ -72,6 +72,11 @@ const config: Config = {
           position: 'left',
         },
         {
+          href: '/semtab',
+          label: 'SemTab Challenge',
+          position: 'left',
+        },
+        {
           type: "docSidebar",
           sidebarId: "tutorialSidebar",
           position: "left",
