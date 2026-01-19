@@ -1018,6 +1018,29 @@ const data: ModelData[] = [
     medium_per_rows: "1",
     large_per_rows: "0",
   },
+  {
+    model: "qwen3-30b-a3b-thinking-2507",
+    link: "https://huggingface.co/Qwen/Qwen3-30B-A3B-Thinking-2507",
+    parameters: "31B",
+    status: "Done",
+    system: "NVIDIA A6000",
+    total_time: "986053.507",
+    accuracy: "0.626",
+    total_correct: "53179",
+    ne_cells: "84907",
+    nils: "5905",
+    acronyms: "2733",
+    genericTypes: "90",
+    specificTypes: "696",
+    singleDomain: "356",
+    multiDomain: "430",
+    small_per_cols: "126",
+    medium_per_cols: "418",
+    large_per_cols: "242",
+    small_per_rows: "325",
+    medium_per_rows: "220",
+    large_per_rows: "241",
+  },
 ];
 
 export default function Leaderboard(): JSX.Element {
@@ -1031,7 +1054,7 @@ export default function Leaderboard(): JSX.Element {
         desc: false,
       },
     ],
-    []
+    [],
   );
 
   const initialColumnVisibility = useMemo<Record<string, boolean>>(
@@ -1052,7 +1075,7 @@ export default function Leaderboard(): JSX.Element {
       medium_per_rows: true,
       large_per_rows: true,
     }),
-    []
+    [],
   );
 
   const [sorting, setSorting] = useState<SortingState>(initialSorting);
@@ -1233,8 +1256,8 @@ export default function Leaderboard(): JSX.Element {
                               isMetricColumn
                                 ? "w-[80px]"
                                 : header.id === "model"
-                                ? "min-w-[180px]"
-                                : "min-w-[80px]"
+                                  ? "min-w-[180px]"
+                                  : "min-w-[80px]"
                             } text-center cursor-pointer hover:bg-opacity-80 ${
                               header.id === "model"
                                 ? "text-left"
@@ -1245,7 +1268,7 @@ export default function Leaderboard(): JSX.Element {
                             <div className="flex items-center justify-center gap-1">
                               {flexRender(
                                 header.column.columnDef.header,
-                                header.getContext()
+                                header.getContext(),
                               )}
                               {{
                                 asc: " ↑",
@@ -1275,7 +1298,7 @@ export default function Leaderboard(): JSX.Element {
                         >
                           {flexRender(
                             cell.column.columnDef.cell,
-                            cell.getContext()
+                            cell.getContext(),
                           )}
                         </td>
                       ))}
