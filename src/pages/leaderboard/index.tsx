@@ -1042,7 +1042,7 @@ const data: ModelData[] = [
     large_per_rows: "241",
   },
   {
-    model: "qwen3-30b-a3b-thinking-2507",
+    model: "qwen3-235b-a22b",
     link: "Qwen/Qwen3-235B-A22B",
     parameters: "235B",
     status: "Done",
@@ -1064,8 +1064,30 @@ const data: ModelData[] = [
     medium_per_rows: "208",
     large_per_rows: "229",
   },
+  {
+    model: "mistral-large-3-675b-instruct-2512",
+    link: "mistralai/Mistral-Large-3-675B-Instruct-2512",
+    parameters: "675B",
+    status: "Done",
+    system: "NVIDIA A6000",
+    total_time: "448644.415",
+    accuracy: "0.739",
+    total_correct: "62752",
+    ne_cells: "84907",
+    nils: "6762",
+    acronyms: "2707",
+    genericTypes: "84",
+    specificTypes: "670",
+    singleDomain: "352",
+    multiDomain: "402",
+    small_per_cols: "123",
+    medium_per_cols: "409",
+    large_per_cols: "222",
+    small_per_rows: "311",
+    medium_per_rows: "210",
+    large_per_rows: "233",
+  },
 ];
-
 export default function Leaderboard(): JSX.Element {
   const { siteConfig } = useDocusaurusContext();
 
