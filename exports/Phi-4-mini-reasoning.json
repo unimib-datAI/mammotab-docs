@@ -1,0 +1,43 @@
+{
+  "system": "Linux",
+  "machine": "x86_64",
+  "processor": "x86_64",
+  "cuda": "NVIDIA RTX A6000",
+  "model_name": "microsoft/Phi-4-mini-reasoning",
+  "ne_cells": 84907,
+  "total_time": 135368.398,
+  "accuracy": 0.008,
+  "total_correct": 757,
+  "stats": {
+    "nils": 24,
+    "acronyms": 1,
+    "typos": 0,
+    "alias": 0,
+    "generic_types": 0,
+    "specific_types": 1,
+    "single_domain": 1,
+    "multi_domain": 0,
+    "small_per_cols": 0,
+    "medium_per_cols": 1,
+    "large_per_cols": 0,
+    "small_per_rows": 0,
+    "medium_per_rows": 1,
+    "large_per_rows": 0
+  },
+  "final_stats": {
+    "nils": "0.1%",
+    "acronyms": "0.0%",
+    "typos": "0.0%",
+    "alias": "0.0%",
+    "generic_types": "0.0%",
+    "specific_types": "0.1%",
+    "single_domain": "0.2%",
+    "multi_domain": "0.0%",
+    "small_per_cols": "0.0%",
+    "medium_per_cols": "0.2%",
+    "large_per_cols": "0.0%",
+    "small_per_rows": "0.0%",
+    "medium_per_rows": "0.4%",
+    "large_per_rows": "0.0%"
+  }
+}
