@@ -19,6 +19,7 @@ type ModelData = {
   link: string;
   parameters: string;
   status: "To do" | "In progress" | "Done" | "Unusable results";
+  priority?: "Alta" | "Media" | "Bassa";
   system: string;
   total_time: string;
   accuracy: string;
@@ -143,6 +144,26 @@ const renderStatusCell = (status: ModelData["status"]) => {
   );
 };
 
+const renderPriorityCell = (priority?: ModelData["priority"]) => {
+  if (!priority) return "";
+
+  const styleMap: Record<NonNullable<ModelData["priority"]>, string> = {
+    Alta: "bg-red-600 text-stone-100",
+    Media: "bg-amber-500 text-stone-100",
+    Bassa: "bg-sky-600 text-stone-100",
+  };
+
+  return (
+    <div className="flex justify-center items-center">
+      <span
+        className={`${styleMap[priority]} px-3 py-1 rounded-full text-xs font-semibold w-20 text-center`}
+      >
+        {priority}
+      </span>
+    </div>
+  );
+};
+
 const columnHelper = createColumnHelper<ModelData>();
 
 // Memoize columns to prevent unnecessary re-renders
@@ -186,6 +207,24 @@ const createColumns = () => [
       const statusA = rowA.getValue("status") as ModelData["status"];
       const statusB = rowB.getValue("status") as ModelData["status"];
       return statusOrder[statusA] - statusOrder[statusB];
+    },
+  }),
+  columnHelper.accessor("priority", {
+    header: "Priorita",
+    cell: (info) => renderPriorityCell(info.getValue()),
+    sortingFn: (rowA, rowB) => {
+      const priorityOrder: Record<NonNullable<ModelData["priority"]>, number> =
+        {
+          Alta: 0,
+          Media: 1,
+          Bassa: 2,
+        };
+
+      const priorityA = rowA.getValue("priority") as ModelData["priority"];
+      const priorityB = rowB.getValue("priority") as ModelData["priority"];
+      const rankA = priorityA ? priorityOrder[priorityA] : 99;
+      const rankB = priorityB ? priorityOrder[priorityB] : 99;
+      return rankA - rankB;
     },
   }),
   columnHelper.accessor("system", {
@@ -371,6 +410,7 @@ export default function Leaderboard(): JSX.Element {
       model: true,
       parameters: true,
       status: true,
+      priority: true,
       nils: true,
       acronyms: true,
       genericTypes: true,
