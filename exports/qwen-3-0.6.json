@@ -1,0 +1,43 @@
+{
+  "system": "Linux",
+  "machine": "x86_64",
+  "processor": "x86_64",
+  "cuda": "NVIDIA RTX A6000",
+  "model_name": "Qwen/Qwen3-0.6B",
+  "ne_cells": 84907,
+  "total_time": 74017.342,
+  "accuracy": 0.181,
+  "total_correct": 15412,
+  "stats": {
+    "nils": 4273,
+    "acronyms": 1151,
+    "typos": 5207,
+    "alias": 2581,
+    "generic_types": 29,
+    "specific_types": 325,
+    "single_domain": 151,
+    "multi_domain": 203,
+    "small_per_cols": 49,
+    "medium_per_cols": 238,
+    "large_per_cols": 67,
+    "small_per_rows": 116,
+    "medium_per_rows": 121,
+    "large_per_rows": 117
+  },
+  "final_stats": {
+    "nils": "28.7%",
+    "acronyms": "32.7%",
+    "typos": "42.9%",
+    "alias": "36.2%",
+    "generic_types": "30.2%",
+    "specific_types": "41.9%",
+    "single_domain": "34.7%",
+    "multi_domain": "46.6%",
+    "small_per_cols": "32.2%",
+    "medium_per_cols": "51.1%",
+    "large_per_cols": "26.4%",
+    "small_per_rows": "29.4%",
+    "medium_per_rows": "52.1%",
+    "large_per_rows": "47.9%"
+  }
+}
