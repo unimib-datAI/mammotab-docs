@@ -1171,7 +1171,7 @@
     "model": "Qwen/Qwen3-0.6B",
     "link": "https://huggingface.co/Qwen/Qwen3-0.6B",
     "parameters": "0.6B",
-    "status": "In progress",
+    "status": "Done",
     "system": "NVIDIA A6000",
     "total_time": "74017.342",
     "accuracy": "0.181",
