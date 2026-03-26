@@ -741,7 +741,6 @@
     "link": "https://huggingface.co/openai/gpt-oss-120b",
     "parameters": "120B",
     "status": "In progress",
-    "priority": "Alta",
     "system": "NVIDIA L40S",
     "total_time": "313682.595",
     "accuracy": "0.159",
