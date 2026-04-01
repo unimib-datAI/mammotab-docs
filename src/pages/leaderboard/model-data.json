@@ -1098,7 +1098,7 @@
     "model": "medgemma-27b-it",
     "link": "https://huggingface.co/google/MedGemma-2-27B-Instruct",
     "parameters": "",
-    "status": "To do",
+    "status": "In progress",
     "priority": "Bassa",
     "system": "",
     "total_time": "",
