@@ -1,0 +1,43 @@
+{
+  "system": "Linux",
+  "machine": "x86_64",
+  "processor": "x86_64",
+  "cuda": "NVIDIA RTX A6000",
+  "model_name": "RUCKBReasoning/TableLLM-13b",
+  "ne_cells": 84907,
+  "total_time": 277895.416,
+  "accuracy": 0.263,
+  "total_correct": 22339,
+  "stats": {
+    "nils": 6758,
+    "acronyms": 2102,
+    "typos": 6739,
+    "alias": 3085,
+    "generic_types": 40,
+    "specific_types": 444,
+    "single_domain": 196,
+    "multi_domain": 288,
+    "small_per_cols": 60,
+    "medium_per_cols": 298,
+    "large_per_cols": 126,
+    "small_per_rows": 176,
+    "medium_per_rows": 160,
+    "large_per_rows": 148
+  },
+  "final_stats": {
+    "nils": "45.4%",
+    "acronyms": "59.7%",
+    "typos": "55.5%",
+    "alias": "43.3%",
+    "generic_types": "41.6%",
+    "specific_types": "57.3%",
+    "single_domain": "45.0%",
+    "multi_domain": "66.2%",
+    "small_per_cols": "39.4%",
+    "medium_per_cols": "64.0%",
+    "large_per_cols": "49.8%",
+    "small_per_rows": "44.6%",
+    "medium_per_rows": "68.9%",
+    "large_per_rows": "60.6%"
+  }
+}
