@@ -787,7 +787,7 @@
     "model": "glm-4.7",
     "link": "https://huggingface.co/zai-org/GLM-4.7",
     "parameters": "",
-    "status": "To do",
+    "status": "In progress",
     "priority": "Alta",
     "system": "",
     "total_time": "",
