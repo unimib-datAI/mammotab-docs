@@ -19,7 +19,7 @@ type ModelData = {
   link: string;
   parameters: string;
   status: "To do" | "In progress" | "Done" | "Unusable results";
-  priority?: "Alta" | "Media" | "Bassa";
+  priority?: "High" | "Medium" | "Low";
   system: string;
   total_time: string;
   accuracy: string;
@@ -148,9 +148,9 @@ const renderPriorityCell = (priority?: ModelData["priority"]) => {
   if (!priority) return "";
 
   const styleMap: Record<NonNullable<ModelData["priority"]>, string> = {
-    Alta: "bg-red-600 text-stone-100",
-    Media: "bg-amber-500 text-stone-100",
-    Bassa: "bg-sky-600 text-stone-100",
+    High: "bg-red-600 text-stone-100",
+    Medium: "bg-amber-500 text-stone-100",
+    Low: "bg-sky-600 text-stone-100",
   };
 
   return (
@@ -210,14 +210,14 @@ const createColumns = () => [
     },
   }),
   columnHelper.accessor("priority", {
-    header: "Priorita",
+    header: "Priority",
     cell: (info) => renderPriorityCell(info.getValue()),
     sortingFn: (rowA, rowB) => {
       const priorityOrder: Record<NonNullable<ModelData["priority"]>, number> =
         {
-          Alta: 0,
-          Media: 1,
-          Bassa: 2,
+          High: 0,
+          Medium: 1,
+          Low: 2,
         };
 
       const priorityA = rowA.getValue("priority") as ModelData["priority"];
