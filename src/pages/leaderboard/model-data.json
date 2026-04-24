@@ -809,7 +809,7 @@
   {
     "model": "glm-4.7",
     "link": "https://huggingface.co/zai-org/GLM-4.7",
-    "parameters": "",
+    "parameters": "358B",
     "status": "Done",
     "system": "NVIDIA L40S",
     "total_time": "304387.901",
